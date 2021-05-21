@@ -1,4 +1,4 @@
-RootDirectory = "E:\Projects\dotfiles"
+$RootDirectory = "E:\Projects\dotfiles"
 Write-Host " "
 
 Write-Host "Copying config files for the following files to local repository..."
