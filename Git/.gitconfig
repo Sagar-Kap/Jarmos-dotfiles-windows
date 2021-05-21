@@ -13,16 +13,22 @@
     eol = lf                                        # Adds LF line endings to all files.
     longpaths = true                                # Circumvents the Windows limitation of 260 characters.
     whitespace=fix                                  # Fixes whitespace errors introduced by editors.
-	editor = vim                                    # Uses Vim as the text editor for editing needs like commit messages & such.
+	editor = nvim                                   # Uses Vim as the text editor for editing needs like commit messages & such.
 #   pager = delta                                     More info on this is available on https://github.com/dandavison/delta
     pager = ""                                      # Defaults to Less but it doesn't ship with Windows. Need to look further into it.
 [diff]
-    tool = vimdiff                                  # Uses Vim for viewing Git diffs.
+    tool = nvimdiff                                 # Uses Vim for viewing Git diffs.
 [difftool]
     prompt = false                                  # Ensures Git doesn't prompt before starting vimdiff.
+[difftool "nvimdiff"]                               # Uses Neovim as a Git difftool
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [merge]
-	tool = vimdiff                                  # Uses Vim for fixing merge conflicts.
+	tool = nvimdiff                                  # Uses Vim for fixing merge conflicts.
 	conflictstyle = diff3                           # Is supposed to do something I'm not aware of.
+[mergetool]
+    keepBackup = false
+[mergetool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c 'wincmd w' -c 'wincmd J'"
 [help]
 	autocorrect = 1                                 # Enables autocorrecting wrong Git commands.
 [color]
@@ -46,11 +52,17 @@
     insteadof = "gh:"                               # Use case: "git clone gh:<user-name>/<repo-name>
 [url "git@github.com:Jarmos-san/"]                  # URL shorthand for personal repositories. 
     insteadof = "Jarmos:"                           # Use case: "git clone Jarmos:<repo-name>"
-[pull]
-	rebase = true                                   # Is synonymous to "git pull --rebase".
 [status]
     showStash = true                                # Shows existing stashed changes with the "git status" command.
 [tag]
     forceSignAnnotated = true                       # Forces all annotated tags to be signed.
     gpgSign = true                                  # Ensure all tags are GPG signed.
-# Add some alises here.
+[init]
+	defaultBranch = dev
+# List of all aliases for Git commands are as follows:
+[alias]
+	st = status -sb                                 # Equivalent to "git status -sb"
+    ci = commit -m                                  # Equivalent to "git commit -m"
+    pl = pull --rebase                              # Equivalent to "git pull --rebase"
+    pu = push                                       # Equivalent to "git push"
+    cl = clone                                      # Equivalent to "git clone"

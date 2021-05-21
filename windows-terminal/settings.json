@@ -1,96 +1,198 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "copyFormatting": "none",
     "copyOnSelect": false,
-    "copyFormatting": false,
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "disabledProfileSources": [
         "Windows.Terminal.Azure",
         "Windows.Terminal.Wsl"
     ],
-    "theme": "dark",
-    "tabWidthMode": "equal",
     "launchMode": "maximized",
     "profiles": {
         "defaults": {
-            "startingDirectory": "E:\\Projects",
-            "fontFace": "MesloLGL Nerd Font",
-            "fontSize": 14,
-            "padding": "20, 8, 8, 3",
-            "cursorShape": "filledBox",
+            "acrylicOpacity": 0.9,
+            "backgroundImage": "%USERPROFILE%\\Pictures\\Saved Pictures\\312629.jpg",
+            // Available colour schemes are: [
+            // Gruvbox Dark,
+            // Builtin Pastel Dark,
+            // Nord,
+            // Brogrammer,
+            // Breeze,
+            // Builtin Dark
+            // ]
+            "colorScheme": "Gruvbox Dark",
             "cursorColor": "#969696",
-            "useAcrylic": true,
-            "acrylicOpacity": 0.6,
-            "colorScheme": "Blue Matrix"
+            "cursorShape": "filledBox",
+            "fontFace": "MesloLGL Nerd Font",
+            "fontSize": 11,
+            "padding": "20, 8, 8, 3",
+            "startingDirectory": "E:\\Projects",
+            "useAcrylic": true
         },
         "list": [
             {
-                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "name": "Windows PowerShell v5.1",
                 "commandline": "powershell.exe",
-                "hidden": false
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
             },
             {
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "name": "Command Prompt",
                 "commandline": "cmd.exe",
-                "hidden": true
-            },
-            {
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure",
-                "hidden": true
-            },
-            {
-                "guid": "{6e22be46-d6b7-4d4e-846a-dc8ff94f006d}",
-                "name": "Git Bash v2.29.2",
-                "commandline": "\"%PROGRAMFILES%\\Git\\usr\\bin\\bash.exe\" -i -l",
-                "icon": "%PROGRAMFILES%\\Git\\mingw64\\share\\git\\git-for-windows.ico",
-                "suppressApplicationTitle": true
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": true,
+                "name": "Command Prompt"
             },
             {
                 "guid": "{905ee199-8709-449b-b0f1-5ac7ea8638b9}",
                 "commandline": "py.exe",
                 "icon": "%PROGRAMFILES(x86)%\\Python38-32\\python.png",
-                "name": "Python v3.8.5"
-            },
-            {
-                "guid": "{cec59ed5-e63e-4199-9e5f-d292b4ce5346}",
-                "commandline": "nvim",
-                "icon": "%PROGRAMFILES(x86)%\\Neovim\\neovim.png",
-                "name": "Neovim v0.4.4"
-            },
-            {
-                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-                "hidden": false,
-                "name": "PowerShell v7.2 (Preview)",
-                "source": "Windows.Terminal.PowershellCore"
+                "name": "Python3"
             }
         ]
     },
     "schemes": [
         {
-            "name": "Blue Matrix",
-            "black": "#101116",
-            "red": "#ff5680",
-            "green": "#00ff9c",
-            "yellow": "#fffc58",
-            "blue": "#00b0ff",
-            "purple": "#d57bff",
-            "cyan": "#76c1ff",
-            "white": "#c7c7c7",
-            "brightBlack": "#686868",
-            "brightRed": "#ff6e67",
-            "brightGreen": "#5ffa68",
-            "brightYellow": "#fffc67",
-            "brightBlue": "#6871ff",
-            "brightPurple": "#d682ec",
-            "brightCyan": "#60fdff",
+            "name": "Gruvbox Dark",
+            "black": "#1e1e1e",
+            "red": "#be0f17",
+            "green": "#868715",
+            "yellow": "#cc881a",
+            "blue": "#377375",
+            "purple": "#a04b73",
+            "cyan": "#578e57",
+            "white": "#978771",
+            "brightBlack": "#7f7061",
+            "brightRed": "#f73028",
+            "brightGreen": "#aab01e",
+            "brightYellow": "#f7b125",
+            "brightBlue": "#719586",
+            "brightPurple": "#c77089",
+            "brightCyan": "#7db669",
+            "brightWhite": "#e6d4a3",
+            "background": "#1e1e1e",
+            "foreground": "#e6d4a3",
+            "selectionBackground": "#e6d4a3",
+            "cursorColor": "#e6d4a3"
+        },
+        {
+            "name": "Builtin Pastel Dark",
+            "black": "#4f4f4f",
+            "red": "#ff6c60",
+            "green": "#a8ff60",
+            "yellow": "#ffffb6",
+            "blue": "#96cbfe",
+            "purple": "#ff73fd",
+            "cyan": "#c6c5fe",
+            "white": "#eeeeee",
+            "brightBlack": "#7c7c7c",
+            "brightRed": "#ffb6b0",
+            "brightGreen": "#ceffac",
+            "brightYellow": "#ffffcc",
+            "brightBlue": "#b5dcff",
+            "brightPurple": "#ff9cfe",
+            "brightCyan": "#dfdffe",
             "brightWhite": "#ffffff",
-            "background": "#101116",
-            "foreground": "#00a2ff"
+            "background": "#000000",
+            "foreground": "#bbbbbb",
+            "selectionBackground": "#363983",
+            "cursorColor": "#ffa560"
+        },
+        {
+            "name": "Nord",
+            "background": "#2E3440",
+            "black": "#3B4252",
+            "blue": "#81A1C1",
+            "brightBlack": "#4C566A",
+            "brightBlue": "#81A1C1",
+            "brightCyan": "#88C0D0",
+            "brightGreen": "#A3BE8C",
+            "brightPurple": "#B48EAD",
+            "brightRed": "#BF616A",
+            "brightWhite": "#E5E9F0",
+            "brightYellow": "#EBCB8B",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#88C0D0",
+            "foreground": "#D8DEE9",
+            "green": "#A3BE8C",
+            "purple": "#B48EAD",
+            "red": "#BF616A",
+            "selectionBackground": "#FFFFFF",
+            "white": "#E5E9F0",
+            "yellow": "#EBCB8B"
+        },
+        {
+            "name": "Breeze",
+            "black": "#31363b",
+            "red": "#ed1515",
+            "green": "#11d116",
+            "yellow": "#f67400",
+            "blue": "#1d99f3",
+            "purple": "#9b59b6",
+            "cyan": "#1abc9c",
+            "white": "#eff0f1",
+            "brightBlack": "#7f8c8d",
+            "brightRed": "#c0392b",
+            "brightGreen": "#1cdc9a",
+            "brightYellow": "#fdbc4b",
+            "brightBlue": "#3daee9",
+            "brightPurple": "#8e44ad",
+            "brightCyan": "#16a085",
+            "brightWhite": "#fcfcfc",
+            "background": "#31363b",
+            "foreground": "#eff0f1",
+            "selectionBackground": "#eff0f1",
+            "cursorColor": "#eff0f1"
+        },
+        {
+            "name": "Brogrammer",
+            "black": "#1f1f1f",
+            "red": "#f81118",
+            "green": "#2dc55e",
+            "yellow": "#ecba0f",
+            "blue": "#2a84d2",
+            "purple": "#4e5ab7",
+            "cyan": "#1081d6",
+            "white": "#d6dbe5",
+            "brightBlack": "#d6dbe5",
+            "brightRed": "#de352e",
+            "brightGreen": "#1dd361",
+            "brightYellow": "#f3bd09",
+            "brightBlue": "#1081d6",
+            "brightPurple": "#5350b9",
+            "brightCyan": "#0f7ddb",
+            "brightWhite": "#ffffff",
+            "background": "#131313",
+            "foreground": "#d6dbe5",
+            "selectionBackground": "#1f1f1f",
+            "cursorColor": "#b9b9b9"
+        },
+        {
+            "name": "Builtin Dark",
+            "black": "#000000",
+            "red": "#bb0000",
+            "green": "#00bb00",
+            "yellow": "#bbbb00",
+            "blue": "#0000bb",
+            "purple": "#bb00bb",
+            "cyan": "#00bbbb",
+            "white": "#bbbbbb",
+            "brightBlack": "#555555",
+            "brightRed": "#ff5555",
+            "brightGreen": "#55ff55",
+            "brightYellow": "#ffff55",
+            "brightBlue": "#5555ff",
+            "brightPurple": "#ff55ff",
+            "brightCyan": "#55ffff",
+            "brightWhite": "#ffffff",
+            "background": "#000000",
+            "foreground": "#bbbbbb",
+            "selectionBackground": "#b5d5ff",
+            "cursorColor": "#bbbbbb"
         }
     ],
+    "tabWidthMode": "equal",
+    "theme": "dark",
+    // Keymaps
     "actions": [
         {
             "command": {
@@ -114,14 +216,6 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
-        },
-        {
-            "command": {
-                "action": "splitPane",
-                "split": "auto",
-                "profile": "Neovim v0.4.4"
-            },
-            "keys": "shift+alt+2"
         },
         {
             "command": "closeTab",
