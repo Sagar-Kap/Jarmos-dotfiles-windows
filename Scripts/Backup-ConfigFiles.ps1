@@ -18,7 +18,7 @@ Write-Host "    --> Windows PowerShell"
 Copy-Item -Path $PROFILE -Destination "$RootDirectory\windows-powershell"
 
 Write-Host "    --> Neovim"
-Copy-Item -Path "$ENV:LOCALAPPDATA\nvim" -Destination "$RootDirectory\neovim" -Recurse -Force
+Copy-Item -Path "$ENV:LOCALAPPDATA\nvim" -Recurse -Force -Destination "$RootDirectory\neovim"
 
 Write-Host " "
 
