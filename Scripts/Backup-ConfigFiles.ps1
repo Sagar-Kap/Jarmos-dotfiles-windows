@@ -1,7 +1,7 @@
 $RootDirectory = "E:\Projects\dotfiles"
 Write-Host " "
 
-Write-Host "Copying config files for the following files to local repository..."
+Write-Host "Copying config files for the following files to $RootDirectory..."
 Write-Host "    --> Windows Terminal"
 Copy-Item -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" `
     -Destination "$RootDirectory\windows-terminal"
