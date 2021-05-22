@@ -67,7 +67,7 @@
             "background": "#1e1e1e",
             "foreground": "#e6d4a3",
             "selectionBackground": "#e6d4a3",
-            "cursorColor": "#e6d4a3"
+            "cursorColor": "#ffffff"
         }
     ],
     "actions": [
