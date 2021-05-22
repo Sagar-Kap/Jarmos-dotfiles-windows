@@ -2,7 +2,7 @@
 
 This directory holds all the scripts, config files & among other stuff. These are stuff which are required to setup my development environment on a Windows machine. As of the latest commit, the directory contains configurations for the following software(s) among other stuff like font(s) & scripts for automatic installations.
 
-Software Development needs:
+**Software Development needs**:
 
 - [Git][Git]
 - [Windows Terminal][Windows Terminal]
@@ -12,7 +12,7 @@ Software Development needs:
 - [NodeJS][NodeJS]
 <!-- - [Docker][Docker] -->
 
-Miscellaneous software (can't be configured progamatically):
+**Miscellaneous software** (can't be configured progamatically):
 
 - [Google Backup & Sync][Google Backup & Sync] (Google Drive for the desktop)
 - [Steam][Steam]
@@ -20,9 +20,10 @@ Miscellaneous software (can't be configured progamatically):
 - [VLC Media Player][VLC]
 - [ShareX][ShareX]
 
-And fonts:
+**Others**:
 
-- [Fira Code Nerd Font][Fira Code Nerd Font]
+- [Fira Code Nerd Font][Fira Code Nerd Font] (patched Nerd Fonts with programming ligatures)
+- [Windows Package Manager CLI][Winget] (winget)
 
 ## Setup Instructions
 
@@ -43,6 +44,7 @@ You can find some of the configurations I use in the list below. Don note, each 
 - [Neovim](./neovim)
 - [Git](./git)
 - [Starship](./starship)
+- [Windows Package Manager CLI](./winget) (TODO) Configuration documentation is available [here](https://github.com/microsoft/winget-cli/blob/master/doc/Settings.md).
 
 <!-- Reference Links -->
 [Windows Terminal]: https://github.com/microsoft/terminal
@@ -58,3 +60,4 @@ You can find some of the configurations I use in the list below. Don note, each 
 [Docker]: https://www.docker.com/
 [Git]: https://git-scm.com/
 [NodeJS]: https://nodejs.org/en/
+[Winget]: https://github.com/microsoft/winget-cli
