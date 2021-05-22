@@ -1,4 +1,5 @@
-$RootDirectory = "E:\Projects\dotfiles"
+$RootDirectory = Resolve-Path "../dotfiles"
+
 Write-Host " "
 
 Write-Host "Copying config files for the following files to $RootDirectory..."
@@ -10,9 +11,7 @@ Write-Host "    --> Starship"
 Copy-Item -Path "$ENV:USERPROFILE\.starship\starship.toml" -Destination "$RootDirectory\starship"
 
 Write-Host "    --> Git"
-Copy-Item -Path "$ENV:USERPROFILE\.gitconfig" -Destination "$RootDirectory\git"
-Copy-Item -Path "$ENV:USERPROFILE\.gitattributes" -Destination "$RootDirectory\git"
-Copy-Item -Path "$ENV:USERPROFILE\.gitignore" -Destination "$RootDirectory\git"
+Copy-Item -Path "$ENV:USERPROFILE\.git*" -Destination "$RootDirectory\git"
 
 Write-Host "    --> Windows PowerShell"
 Copy-Item -Path $PROFILE -Destination "$RootDirectory\windows-powershell"
@@ -28,7 +27,7 @@ Write-Host "All config files copied to local repository!"
 Write-Host " "
 
 Write-Host "Backing up the configurations to GitHub"
-Invoke-Expression "git add ..; git commit -am ':truck: Backup config files to GitHub'; git pu"
+Invoke-Expression "git add .; git commit -am ':truck: Backup config files to GitHub'; git pu"
 
 Write-Host " "
 
