@@ -60,6 +60,7 @@ nmap <silent> \sv :so $MYVIMRC<CR>                          " Press <S-V> in Nor
 " =======================================================
 " Some global configurations
 " =======================================================
+let g:netrw_menu=0                                          " Disable Netrw built-in plugin for Neovim File Explorer
 let g:loaded_python_provider=0                              " Disables loading Python 2
 let g:loaded_ruby_provider=0                                " Disables loading Ruby
 let g:lightline = {'colorscheme': 'gruvbox'}                " Colour scheme for the Lightline plugin
