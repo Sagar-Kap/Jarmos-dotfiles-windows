@@ -26,7 +26,7 @@ Write-Host "All config files copied to local repository!"
 Write-Host " "
 
 Write-Host "Backing up the configurations to GitHub"
-Invoke-Expression "git add $RootDirectory; git commit -am ':truck: Backup config files to GitHub'; git pu"
+Invoke-Expression "git add $RootDirectory; git commit -am ':truck: Backup config files to GitHub'; git push"
 
 Write-Host " "
 
