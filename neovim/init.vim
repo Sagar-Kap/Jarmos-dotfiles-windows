@@ -44,7 +44,7 @@ call plug#end()
 " Following resources might be useful to cycle through many colour schemes & then eventually settling down on one some day.
 " 1. https://github.com/flazz/vim-colorschemes
 " 2. https://vim.fandom.com/wiki/Switch_color_schemes
-colorscheme gruvbox                                       " A warm & retro colorscheme perfect for Neovim
+colorscheme gruvbox                                         " A warm & retro colorscheme perfect for Neovim
 
 " ======================================================
 " Key mappings
@@ -63,6 +63,7 @@ nmap <silent> \sv :so $MYVIMRC<CR>                          " Press <S-V> in Nor
 let g:loaded_python_provider=0                              " Disables loading Python 2
 let g:loaded_ruby_provider=0                                " Disables loading Ruby
 let g:lightline = {'colorscheme': 'gruvbox'}                " Colour scheme for the Lightline plugin
+highlight Normal guibg=NONE ctermbg=NONE                    " Makes Neovim background transparent
 
 " =======================================================
 " Resources to learn Neomvim (or Vim in general)
