@@ -10,6 +10,7 @@ This directory holds all the scripts, config files & among other stuff. These ar
 - [Visual Studio Code][VSCode]
 - [Python Programming Language][Python]
 - [NodeJS][NodeJS]
+- [MongoDB][MongoDB] (can't automate it's installation because of this: [Winget Issue #874][Winget Issue #874])
 <!-- - [Docker][Docker] -->
 
 **Miscellaneous software** (can't be configured progamatically):
@@ -61,3 +62,5 @@ You can find some of the configurations I use in the list below. Don note, each 
 [Git]: https://git-scm.com/
 [NodeJS]: https://nodejs.org/en/
 [Winget]: https://github.com/microsoft/winget-cli
+[MongoDB]: https://www.mongodb.com/
+[Winget Issue #874]: https://github.com/microsoft/winget-cli/issues/874
