@@ -1,27 +1,31 @@
-$RootDirectory = Resolve-Path "../dotfiles"
+$RootDirectory = Resolve-Path -Path "..\dotfiles"
+$WindowsPackages = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages"
 
-Write-Host " "
+$WTConfigurations = Resolve-Path -Path "$WindowsPackages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+$WingetConfigurations = Resolve-Path -Path "$WindowsPackages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json"
+$StarshipConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.starship\starship.toml"
+$GitConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.git*"
+$NeovimConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\nvim\*"
 
-Write-Host "Copying config files for the following files to $RootDirectory..."
-Write-Host "    --> Windows Terminal"
-Copy-Item -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" `
-    -Destination "$RootDirectory\windows-terminal"
+Write-Host "The config files will be copied to $RootDirectory..."
 
-Write-Host "    --> Starship"
-Copy-Item -Path "$ENV:USERPROFILE\.starship\starship.toml" -Destination "$RootDirectory\starship"
+Write-Host "Copying configurations for Windows Terminal at: $WTConfigurations"
+Copy-Item -Path $WTConfigurations -Destination "$RootDirectory\windows-terminal"
 
-Write-Host "    --> Git"
-Copy-Item -Path "$ENV:USERPROFILE\.git*" -Destination "$RootDirectory\git"
+Write-Host "Copying configurations for Starship at: $StarshipConfigurations"
+Copy-Item -Path $StarshipConfigurations -Destination "$RootDirectory\starship"
 
-Write-Host "    --> Windows PowerShell"
+Write-Host "Copying configurations for Git at: $GitConfigurations"
+Copy-Item -Path $GitConfigurations -Destination "$RootDirectory\git"
+
+Write-Host "Copying configurations for Windows PowerShell at: $PROFILE"
 Copy-Item -Path $PROFILE -Destination "$RootDirectory\windows-powershell"
 
-Write-Host "    --> Neovim"
-Copy-Item -Path "$ENV:LOCALAPPDATA\nvim\*" -Recurse -Force -Destination "$RootDirectory\neovim"
+Write-Host "Copying configurations for Neovim at: $NeovimConfigurations"
+Copy-Item -Path $NeovimConfigurations -Recurse -Force -Destination "$RootDirectory\neovim"
 
-Write-Host "    --> Winget"
-Copy-Item -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json" `
-    -Destination "$RootDirectory\winget"
+Write-Host "Copying configurations for Winget at: $WingetConfigurations"
+Copy-Item -Path $WingetConfigurations -Destination "$RootDirectory\winget"
 
 Write-Host " "
 
