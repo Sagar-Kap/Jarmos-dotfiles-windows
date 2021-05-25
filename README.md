@@ -11,8 +11,8 @@ This directory holds all the scripts, config files & among other stuff. These ar
 - [Python Programming Language][Python]
 - [NodeJS][NodeJS]
 - [MongoDB][MongoDB] (can't automate it's installation because of this: [Winget Issue #874][Winget Issue #874])
-<!-- - [Docker][Docker] -->
 - [GNU Privacy Guard][GPG]
+<!-- - [Docker][Docker] -->
 
 **Miscellaneous software** (can't be configured progamatically):
 
