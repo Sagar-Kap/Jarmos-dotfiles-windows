@@ -1,4 +1,5 @@
 # Git configuration reference available at: https://git-scm.com/docs/git-config
+# Example gitconfig is avaialable at: http://michaelwales.com/articles/make-gitconfig-work-for-you/
 [user]                                              # Basic user info like email & name. 
 	email = somraj.mle@gmail.com                    # More info with regards to this section is available at:
 	name = Jarmos-san                               # https://git-scm.com/docs/git-config#Documentation/git-config.txt-username
@@ -45,7 +46,7 @@
     whitespace = red reverse
 [color "status"]                                    # Colour settings for Git status command.
     added = green bold
-    changed = yellow bold
+    changed = red bold
     untracked = red bold
     defaultBranch = dev
 [url "git@github.com:"]                             # URL shorthand for the SSH address while cloning a remote repo.
@@ -66,3 +67,4 @@
     pl = pull --rebase                              # Equivalent to "git pull --rebase"
     pu = push                                       # Equivalent to "git push"
     cl = clone                                      # Equivalent to "git clone"
+    vb = branch -vv                                 # Equivalent to "git branch -vv"

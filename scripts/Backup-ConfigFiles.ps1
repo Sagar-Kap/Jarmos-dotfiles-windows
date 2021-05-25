@@ -19,6 +19,10 @@ Copy-Item -Path $PROFILE -Destination "$RootDirectory\windows-powershell"
 Write-Host "    --> Neovim"
 Copy-Item -Path "$ENV:LOCALAPPDATA\nvim\*" -Recurse -Force -Destination "$RootDirectory\neovim"
 
+Write-Host "    --> Winget"
+Copy-Item -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json" `
+    -Destination "$RootDirectory\winget"
+
 Write-Host " "
 
 Write-Host "All config files copied to local repository!"

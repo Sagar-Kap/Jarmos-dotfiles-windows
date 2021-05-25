@@ -39,11 +39,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}           " Code completion & LS
 " Plug 'iamcco/markdown-preview.nvim                      " Live Markdown preview.
 call plug#end()
 
-" The current color scheme looks a bit too dark on the darker Windows Terminal.
-" Need to figure a way out to cycle through many colorschemes or use Gruvbox.
-" Following resources might be useful to cycle through many colour schemes & then eventually settling down on one some day.
-" 1. https://github.com/flazz/vim-colorschemes
-" 2. https://vim.fandom.com/wiki/Switch_color_schemes
+" More colour schemes are available at: https://github.com/flazz/vim-colorschemes
 colorscheme gruvbox                                         " A warm & retro colorscheme perfect for Neovim
 
 " ======================================================
