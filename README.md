@@ -45,7 +45,7 @@ You can find some of the configurations I use in the list below. Don note, each 
 - [Neovim](./neovim)
 - [Git](./git)
 - [Starship](./starship)
-- [Windows Package Manager CLI](./winget) (TODO) Configuration documentation is available [here](https://github.com/microsoft/winget-cli/blob/master/doc/Settings.md).
+- [Winget](./winget) (TODO) Configuration documentation is available [here](https://github.com/microsoft/winget-cli/blob/master/doc/Settings.md).
 
 <!-- Reference Links -->
 [Windows Terminal]: https://github.com/microsoft/terminal
