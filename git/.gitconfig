@@ -1,14 +1,14 @@
 # Git configuration reference available at: https://git-scm.com/docs/git-config
 # Example gitconfig is avaialable at: http://michaelwales.com/articles/make-gitconfig-work-for-you/
-[user]                                              # Basic user info like email & name. 
+[user]                                              # Basic user info like email & name.
 	email = somraj.mle@gmail.com                    # More info with regards to this section is available at:
 	name = Jarmos-san                               # https://git-scm.com/docs/git-config#Documentation/git-config.txt-username
 	signingkey = 7AF6097D41B9FA3E                   # GPG Signing key used to sign commits & annotated tags.
 [commit]
 	gpgsign = true                                  # Ensures all commits are signed.
 [core]
-    excludesfile = ~/.gitignore                     # Global .gitignore file at $HOME/.git
-    attributesfile = ~/.gitattributes               # Global .gitattributes file at $HOME/.git
+    excludesfile = ~/.gitignore_global              # Global .gitignore file at $HOME/.git
+    attributesfile = ~/.gitattributes_global        # Global .gitattributes file at $HOME/.git
     untrackedcache = true                           # Speeds up commands involving untracked files. More info available at: https://git-scm.com/docs/git-update-index#_untracked_cache
 	autocrlf = false                                # Ensures files in the remote repo has LF line endings but CRLF in the local repo.
     eol = lf                                        # Adds LF line endings to all files.
@@ -33,11 +33,14 @@
 [help]
 	autocorrect = 1                                 # Enables autocorrecting wrong Git commands.
 [color]
+# The colour format is like this: <FOREGROUND> <BACKGROUND> <ATTRIBUTE>.
     ui = auto                                       # Default value is "auto" & it takes care of colouring issues.
 [color "branch"]                                    # Colour settings for Git branch command.
-    current = yellow bold
+    current = white magenta bold
     local = green bold
-    remote = cyan bold
+    remote = blue bold
+    upstream = magenta bold
+    plain = white bold
 [color "diff"]                                      # Colour settings for Git diff command.
     meta = yellow bold
     frag = magenta bold
@@ -45,16 +48,21 @@
     new = green bold
     whitespace = red reverse
 [color "status"]                                    # Colour settings for Git status command.
+#   header = <something>                            # Need more information on what it's supposed to do.
     added = green bold
+    updated = yellow bold
     changed = red bold
-    untracked = red bold
-    defaultBranch = dev
+    untracked = white black bold
+# The following variables are used when "git st" is invoked.
+    localBranch = cyan bold
+    remoteBranch = red bold
 [url "git@github.com:"]                             # URL shorthand for the SSH address while cloning a remote repo.
     insteadof = "gh:"                               # Use case: "git clone gh:<user-name>/<repo-name>
-[url "git@github.com:Jarmos-san/"]                  # URL shorthand for personal repositories. 
+[url "git@github.com:Jarmos-san/"]                  # URL shorthand for personal repositories.
     insteadof = "Jarmos:"                           # Use case: "git clone Jarmos:<repo-name>"
 [status]
     showStash = true                                # Shows existing stashed changes with the "git status" command.
+    relativePaths = false                           # All paths are shown relative to repository root rather than the current directory.
 [tag]
     forceSignAnnotated = true                       # Forces all annotated tags to be signed.
     gpgSign = true                                  # Ensure all tags are GPG signed.
@@ -68,3 +76,5 @@
     pu = push                                       # Equivalent to "git push"
     cl = clone                                      # Equivalent to "git clone"
     vb = branch -vv                                 # Equivalent to "git branch -vv"
+    rm = remote -v                                  # Equivalent to "git remote -v"
+    ra = remote add                                 # Equivalent to "git remote add"
