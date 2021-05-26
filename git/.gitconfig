@@ -52,7 +52,7 @@
     added = green bold
     updated = yellow bold
     changed = red bold
-    untracked = white black bold
+    untracked = cyan black bold
 # The following variables are used when "git st" is invoked.
     localBranch = cyan bold
     remoteBranch = red bold
