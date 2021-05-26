@@ -7,35 +7,38 @@ $StarshipConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.starship\starshi
 $GitConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.git*"
 $NeovimConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\nvim\*"
 
-Write-Host "The config files will be copied to $RootDirectory..."
+Write-Host "The config files will be copied to $RootDirectory..." `
+    -ForegroundColor DarkMagenta -BackgroundColor White
 
-Write-Host "Copying configurations for Windows Terminal at: $WTConfigurations"
+Write-Host "Copying configurations for Windows Terminal at: $WTConfigurations" -ForegroundColor Cyan
 Copy-Item -Path $WTConfigurations -Destination "$RootDirectory\windows-terminal"
 
-Write-Host "Copying configurations for Starship at: $StarshipConfigurations"
+Write-Host "Copying configurations for Starship at: $StarshipConfigurations" -ForegroundColor Cyan
 Copy-Item -Path $StarshipConfigurations -Destination "$RootDirectory\starship"
 
-Write-Host "Copying configurations for Git at: $GitConfigurations" -Seperator ", "
+Write-Host "Copying configurations for Git at: $GitConfigurations" -ForegroundColor Cyan
 Copy-Item -Path $GitConfigurations -Destination "$RootDirectory\git"
 
-Write-Host "Copying configurations for Windows PowerShell at: $PROFILE"
+Write-Host "Copying configurations for Windows PowerShell at: $PROFILE" -ForegroundColor Cyan
 Copy-Item -Path $PROFILE -Destination "$RootDirectory\windows-powershell"
 
-Write-Host "Copying configurations for Neovim at: $NeovimConfigurations"
+Write-Host "Copying configurations for Neovim at: $NeovimConfigurations" -ForegroundColor Cyan
 Copy-Item -Path $NeovimConfigurations -Recurse -Force -Destination "$RootDirectory\neovim"
 
-Write-Host "Copying configurations for Winget at: $WingetConfigurations"
+Write-Host "Copying configurations for Winget at: $WingetConfigurations" -ForegroundColor Cyan
 Copy-Item -Path $WingetConfigurations -Destination "$RootDirectory\winget"
 
 Write-Host " "
 
-Write-Host "All config files copied to local repository!"
+Write-Host "All config files copied to local repository!" `
+    -ForegroundColor DarkGreen -BackgroundColor White
 
 Write-Host " "
 
-Write-Host "Backing up the configurations to GitHub"
+Write-Host "Backing up the configurations to GitHub" `
+    -ForegroundColor DarkMagenta -BackgroundColor White
 Invoke-Expression "git add $RootDirectory; git commit -am ':truck: Backup config files to GitHub'; git push"
 
 Write-Host " "
 
-Write-Host "Done!"
+Write-Host "Done!" -ForegroundColor DarkBlue
