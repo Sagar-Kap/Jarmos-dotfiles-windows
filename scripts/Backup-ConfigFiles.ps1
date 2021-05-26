@@ -41,4 +41,4 @@ Invoke-Expression "git add $RootDirectory; git commit -am ':truck: Backup config
 
 Write-Host " "
 
-Write-Host "Done!" -ForegroundColor DarkBlue
+Write-Host "Done!" -ForegroundColor DarkBlue -BackgroundColor White
