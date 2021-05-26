@@ -1,4 +1,4 @@
-$RootDirectory = Resolve-Path -Path "..\dotfiles"
+$RootDirectory = Resolve-Path -Path "..\dotfiles\config_files"
 $WindowsPackages = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages"
 
 $WTConfigurations = Resolve-Path -Path "$WindowsPackages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
