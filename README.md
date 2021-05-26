@@ -41,12 +41,12 @@ As for the rest of the software, execute the `.\Dotfiles\Windows\Instal-Software
 
 You can find some of the configurations I use in the list below. Don note, each of the folders containing the config files has an accompanying `README` with further instructions to follow. So, do read them thoroughly before copying any of the configurations;
 
-- [Windows Terminal](./windows-terminal)
-- [Windows PowerShell](./windows-powershell)
-- [Neovim](./neovim)
-- [Git](./git)
-- [Starship](./starship)
-- [Winget](./winget) (TODO) Configuration documentation is available [here](https://github.com/microsoft/winget-cli/blob/master/doc/Settings.md).
+- [Windows Terminal](./configurations/windows-terminal)
+- [Windows PowerShell](./configurations/windows-powershell)
+- [Neovim](./configurations/neovim)
+- [Git](./configurations/git)
+- [Starship](./configurations/starship)
+- [Winget](./configurations/winget)
 
 <!-- Reference Links -->
 [Windows Terminal]: https://github.com/microsoft/terminal
