@@ -15,7 +15,7 @@ Copy-Item -Path $WTConfigurations -Destination "$RootDirectory\windows-terminal"
 Write-Host "Copying configurations for Starship at: $StarshipConfigurations"
 Copy-Item -Path $StarshipConfigurations -Destination "$RootDirectory\starship"
 
-Write-Host "Copying configurations for Git at: $GitConfigurations"
+Write-Host "Copying configurations for Git at: $GitConfigurations" -Seperator ", "
 Copy-Item -Path $GitConfigurations -Destination "$RootDirectory\git"
 
 Write-Host "Copying configurations for Windows PowerShell at: $PROFILE"
