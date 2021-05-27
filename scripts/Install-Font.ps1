@@ -30,12 +30,7 @@ For now it's URI is hardcoded but it might be advisable to dynamically download 
 
 TODO:
     ? Copy only the relevant fonts to the C:\Windows\Fonts folder as well as the Registry.
-    ? Add Progress Bar while downloading the zipped file.
-    ? Use variables & Environment variables instead of hard coding. For e.g the $output variable.
-    ? Refactor code into proper functions & what not. It should confer to good coding practices & best practices.
 #>
-# Following URL might be more apt:
-# https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/FiraCode/Bold/complete/Fira%20Code%20Bold%20Nerd%20Font%20Complete%20Windows%20Compatible.ttf
 
 $PatchedFont = "FiraCode"
 $Uri = "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$PatchedFont.zip"
@@ -46,9 +41,6 @@ Write-Host "Downloading the zipped file..." -ForegroundColor Magenta
 Invoke-WebRequest -Uri $Uri -OutFile $OutputFilename
 
 # Extract & then deletes the zipped file
-Write-Host "Extracting the zipped file..."
-Expand-Archive -Path $output -DestinationPath "C:\Users\Space\Downloads\FiraCode" -Force
-Write-Host "Extraction complete..."
-Write-Host "Deleting the redundant zipped file..."
-Remove-Item $output
-Write-Host "Redundant zipped file removed..."
+Expand-Archive -Path $OutputFilename -DestinationPath "$ENV:USERPROFILE\Downloads\$PatchedFont" -Force
+Remove-Item $OutputFilename
+Write-Host "Redundant zipped file removed..." -ForegroundColor DarkCyan
