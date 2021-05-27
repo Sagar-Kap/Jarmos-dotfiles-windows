@@ -1,10 +1,4 @@
 <#
-This script is for downloading the fonts & installing them.
-
-To conform with with proper coding standards & conventions, following resources might prove useful.
-https://techdocs.ed-fi.org/display/ETKB/PowerShell+Coding+Standards
-https://poshcode.gitbook.io/powershell-practice-and-style/style-guide/readability
-
 ? Additional resources
 * Nerd Fonts Homepage: https://www.nerdfonts.com/font-downloads
 
@@ -13,34 +7,21 @@ https://poshcode.gitbook.io/powershell-practice-and-style/style-guide/readabilit
 * https://gist.github.com/anthonyeden/0088b07de8951403a643a8485af2709b
 * https://powers-hell.com/2020/06/09/installing-fonts-with-powershell-intune/
 * https://stackoverflow.com/questions/24987542/is-there-a-link-to-github-for-downloading-a-file-in-the-latest-release-of-a-repo/54836319#54836319
-
-Specific to this script, it downloads the FiraCode Nerd Font available at: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip.
-For now it's URI is hardcoded but it might be advisable to dynamically download the latest version as & when required.
-
-? The Idea Behind the Script:
-
-* -> Downloads the zipped file the extracts the contents locally.
-* -> Filter out files based on these conditions:
-*        => Are .ttf files
-*        => Is Windows Compatible, Mono
-*        => Are Bold, Light, Medium & Regular
-* -> Copy the fonts into "C:\Windows\Fonts"
-* -> Make a Registry entry at "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Fonts"
-* -> Then delete the extracted files as well as the zipped file.
-
-TODO:
-    ? Copy only the relevant fonts to the C:\Windows\Fonts folder as well as the Registry.
 #>
 
-$PatchedFont = "FiraCode"
-$Uri = "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$PatchedFont.zip"
-$OutputFilename = "$ENV:USERPROFILE\Downloads\$PatchedFont.zip"
-
 # Downloads the zipped file
+$Uri = "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip"
+$OutputFilename = "$ENV:USERPROFILE\Downloads\FiraCode.zip"
 Write-Host "Downloading the zipped file..." -ForegroundColor Magenta
 Invoke-WebRequest -Uri $Uri -OutFile $OutputFilename
 
 # Extract & then deletes the zipped file
-Expand-Archive -Path $OutputFilename -DestinationPath "$ENV:USERPROFILE\Downloads\$PatchedFont" -Force
+$DestinationPath = "$ENV:USERPROFILE\Downloads\FiraCode"
+Expand-Archive -Path $OutputFilename -DestinationPath $DestinationPath -Force
 Remove-Item $OutputFilename
 Write-Host "Redundant zipped file removed..." -ForegroundColor DarkCyan
+
+# Can't install fonts automatically yet. There's always some awkward error involved.
+# Copy "Fira Code Bold Nerd Font Complete Windows Compatible.tff" to "$ENV:WINDIR\Fonts"
+
+# Make Registry entry at "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Fonts"
