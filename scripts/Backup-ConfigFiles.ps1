@@ -7,8 +7,7 @@ $StarshipConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.starship\starshi
 $GitConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.git*"
 $NeovimConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\nvim\*"
 
-Write-Host "The config files will be copied to $RootDirectory..." `
-    -ForegroundColor DarkGreen -BackgroundColor White
+Write-Host "The config files will be copied to $RootDirectory..." -ForegroundColor DarkGreen
 
 Write-Host "Copying configurations for Windows Terminal at: $WTConfigurations" -ForegroundColor Cyan
 Copy-Item -Path $WTConfigurations -Destination "$RootDirectory\windows-terminal"
@@ -30,8 +29,7 @@ Copy-Item -Path $WingetConfigurations -Destination "$RootDirectory\winget"
 
 Write-Host " "
 
-Write-Host "All config files copied to local repository!" `
-    -ForegroundColor DarkGreen -BackgroundColor White
+Write-Host "All config files copied to local repository!" -ForegroundColor DarkGreen
 
 Write-Host " "
 
