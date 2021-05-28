@@ -21,6 +21,7 @@ This directory holds all the scripts, config files & among other stuff. These ar
 - [Transmission Bittorent Client][Transmission]
 - [VLC Media Player][VLC]
 - [ShareX][ShareX]
+- [Mozilla Thunderbird][Mozilla Thunderbird]
 
 **Others**:
 
@@ -66,3 +67,4 @@ You can find some of the configurations I use in the list below. Don note, each 
 [MongoDB]: https://www.mongodb.com/
 [Winget Issue #874]: https://github.com/microsoft/winget-cli/issues/874
 [GPG]: https://gnupg.org/
+[Mozilla Thunderbird]: https://www.thunderbird.net/en-US/
