@@ -59,9 +59,11 @@ So, if it piqued your interests now, read ahead. In this README you'll find all 
 
 ## Automate the Process
 
-**TODO: Work-in-Progress! Please check back later for any new updates**
+TODO <!-- TODO: Share ways to automate it using PowerShell & Unix tools like wget/curl -->
 
-<!-- TODO: Share ways to automate it using PowerShell & Unix tools like wget/curl -->
+## Notes to Remember
+
+TODO <!-- TODO: Add notes on customizing the prompt like using custom Fira Code Nerd Fonts -->
 
 <!-- Reference Links -->
 [Starship]: https://starship.rs/
