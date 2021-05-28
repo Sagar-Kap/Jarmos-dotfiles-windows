@@ -5,4 +5,4 @@ Invoke-Expression (&starship init powershell)
 $ENV:STARSHIP_CACHE = Resolve-Path -Path $ENV:TEMP
 
 # Path to the Starship configuration file
-$ENV:STARSHIP_CONFIG = Resolve-Path -Path "$ENV:USERPROFILE\.starship\starship.toml
+$ENV:STARSHIP_CONFIG = Resolve-Path -Path "$ENV:USERPROFILE\.starship\starship.toml"

@@ -24,10 +24,12 @@
 [difftool "nvimdiff"]                               # Uses Neovim as a Git difftool
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [merge]
-	tool = nvimdiff                                  # Uses Vim for fixing merge conflicts.
+	tool = nvimdiff                                 # Uses Vim for fixing merge conflicts.
 	conflictstyle = diff3                           # Is supposed to do something I'm not aware of.
 [mergetool]
-    keepBackup = false
+    keepBackup = false                              # Configures Git to not create "*.orig" files while resolving merge conflicts
+    prompt = false                                  # Configures Git to not prompt for confirmation while resolving merge conflicts
+    keepTemporaries = false                         # Removes temporary files creating while resolving merge conflicts
 [mergetool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c 'wincmd w' -c 'wincmd J'"
 [help]
