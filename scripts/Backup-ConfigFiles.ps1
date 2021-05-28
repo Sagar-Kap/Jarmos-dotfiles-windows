@@ -7,7 +7,7 @@ $StarshipConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.starship\starshi
 $GitConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.git*"
 $NeovimConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\nvim\*"
 
-Write-Host "The config files will be copied to $RootDirectory..." -ForegroundColor DarkGreen
+Write-Host "The config files will be copied to $RootDirectory..." -ForegroundColor DarkMagenta 
 
 Write-Host "Copying configurations for Windows Terminal at: $WTConfigurations" -ForegroundColor Cyan
 Copy-Item -Path $WTConfigurations -Destination "$RootDirectory\windows-terminal"
@@ -29,14 +29,13 @@ Copy-Item -Path $WingetConfigurations -Destination "$RootDirectory\winget"
 
 Write-Host " "
 
-Write-Host "All config files copied to local repository!" -ForegroundColor DarkGreen
+Write-Host "All config files copied to local repository!" -ForegroundColor DarkMagenta 
 
 Write-Host " "
 
-Write-Host "Backing up the configurations to GitHub" `
-    -ForegroundColor DarkGreen -BackgroundColor White
+Write-Host "Backing up the configurations to GitHub" -ForegroundColor DarkMagenta 
 Invoke-Expression "git add $RootDirectory; git commit -am ':truck: Backup config files to GitHub'; git push"
 
 Write-Host " "
 
-Write-Host "Done!" -ForegroundColor DarkGreen -BackgroundColor White
+Write-Host "Done!" -ForegroundColor DarkMagenta 
