@@ -1,8 +1,7 @@
-" Markdown settings. It might be better to use a ftplugin instead.
-" Autocommand group for Markdown files to wrap long texts.
-" More info available at:
-" https://blog.lourenci.com/how-to-wrap-long-lines-when-writing-markdown-on-vim/
+" The Markdown plugin can be further configured. The plugin docs are available at: 
+" https://github.com/plasticboy/vim-markdown#options
+
 augroup Markdown
     autocmd!
-    autocmd Filetype markdown set wrap
+    autocmd Filetype markdown set wrap                  " Enables text wrapping for Markdown files
 augroup END
