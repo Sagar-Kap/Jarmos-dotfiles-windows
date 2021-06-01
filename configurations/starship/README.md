@@ -84,9 +84,12 @@ New-Item -ItemType "File" -Path "$ENV:USERPROFILE\.starship\starship.toml"
 
 ## Notes to Remember
 
-Do note, I'm using the patched version of Fira Code. It's available at [Nerd Fonts][Nerd Fonts], so do check it out if you want a similar experience.
+Do note, I'm using the patched version of Fira Code. It's available at [Nerd Fonts][Nerd Fonts], so do check it out if you want a similar experience. Also, by default Starship uses emojis in the prompt which I dislike. Hence, I replaced them with Nerd Font icons!
+
+So, if you want to customize your Starship prompt according to your needs, definitely refer to the official [configuration docs][Starship Configurations].
 
 <!-- Reference Links -->
 [Starship]: https://starship.rs/
 [Starship Binaries]: https://github.com/starship/starship/releases
 [Nerd Fonts]: https://www.nerdfonts.com/
+[Starship Configurations]: https://starship.rs/config/
