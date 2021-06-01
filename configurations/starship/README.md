@@ -77,6 +77,8 @@ New-Item -ItemType "File" -Path "$ENV:USERPROFILE\.starship\starship.toml"
 # TODO: Add content to the $PROFILE
 
 # TODO: Add content to the $ENV:USERPROFILE\.starship\starship.toml file
+$StarshipConfigs = https://raw.githubusercontent.com/Jarmos-san/dotfiles-windows/master/configurations/starship/starship.toml
+Set-Content -Path "$ENV:USERPROFILE\.starship\starship.toml" -Value (Invoke-WebRequest -Uri $StarshipConfigs).Content
 
 # Reload your current PowerShell session
 . $Profile
