@@ -74,11 +74,11 @@ New-Item -ItemType "File" -Path "$ENV:USERPROFILE\.starship\starship.toml"
 
 # TODO: Add the Starship binary to System Path 
 
-# TODO: Add content to the $PROFILE
+# Add content to the $PROFILE
 $PowerShellConfigs = https://raw.githubusercontent.com/Jarmos-san/dotfiles-windows/master/configurations/windows-powershell/Microsoft.PowerShell_profile.ps1
 Set-Content -Path $PROFILE -Value (Invoke-WebRequest -Uri $PowerShellConfigs).Content
 
-# TODO: Add content to the $ENV:USERPROFILE\.starship\starship.toml file
+# Add content to the $ENV:USERPROFILE\.starship\starship.toml file
 $StarshipConfigs = https://raw.githubusercontent.com/Jarmos-san/dotfiles-windows/master/configurations/starship/starship.toml
 Set-Content -Path "$ENV:USERPROFILE\.starship\starship.toml" -Value (Invoke-WebRequest -Uri $StarshipConfigs).Content
 
