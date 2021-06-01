@@ -64,11 +64,16 @@ It's possible & actually recommended to use PowerShell Cmdlets to quicky set up 
 That said, add the following commands to a PowerShell session. And here's a tip for you, use [Windows Terminal](../windows-terminal).
 
 ```powershell
+$StarshipConfigDirectory = Resolve-Path -Path "$ENV:USERPROFILE\.starship"
+$StarshipConfig = Resolve-Path -Path $StarshipConfigDirectory\starship.toml
+$PowerShellConfigs = "https://raw.githubusercontent.com/Jarmos-san/dotfiles-windows/master/configurations/windows-powershell/Microsoft.PowerShell_profile.ps1"
+$RemoteStarshipConfigs = "https://raw.githubusercontent.com/Jarmos-san/dotfiles-windows/master/configurations/starship/starship.toml"
+
 # Create the necessary folders first
-New-Item -ItemType "Directory" -Path "$ENV:HOMEDRIVE\Tools", "$ENV:USERPROFILE\.starship" -Force
+New-Item -ItemType "Directory" -Path "$ENV:HOMEDRIVE\Tools", $StarshipConfigDirectory -Force
 
 # Create the Starship configuration file
-New-Item -ItemType "File" -Path "$ENV:USERPROFILE\.starship\starship.toml"
+New-Item -ItemType "File" -Path $StarshipConfig
 
 # TODO: Download the Starship binary
 
@@ -76,12 +81,10 @@ New-Item -ItemType "File" -Path "$ENV:USERPROFILE\.starship\starship.toml"
 # Refer to: https://codingbee.net/powershell/powershell-make-a-permanent-change-to-the-path-environment-variable
 
 # Add content to the $PROFILE
-$PowerShellConfigs = https://raw.githubusercontent.com/Jarmos-san/dotfiles-windows/master/configurations/windows-powershell/Microsoft.PowerShell_profile.ps1
 Set-Content -Path $PROFILE -Value (Invoke-WebRequest -Uri $PowerShellConfigs).Content
 
-# Add content to the $ENV:USERPROFILE\.starship\starship.toml file
-$StarshipConfigs = https://raw.githubusercontent.com/Jarmos-san/dotfiles-windows/master/configurations/starship/starship.toml
-Set-Content -Path "$ENV:USERPROFILE\.starship\starship.toml" -Value (Invoke-WebRequest -Uri $StarshipConfigs).Content
+# Add content to the %USERPROFILE%\.starship\starship.toml file
+Set-Content -Path $StarshipConfig -Value (Invoke-WebRequest -Uri $RemoteStarshipConfigs).Content
 
 # Reload your current PowerShell session
 . $Profile
