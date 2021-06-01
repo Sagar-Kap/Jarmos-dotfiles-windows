@@ -73,6 +73,7 @@ New-Item -ItemType "File" -Path "$ENV:USERPROFILE\.starship\starship.toml"
 # TODO: Download the Starship binary
 
 # TODO: Add the Starship binary to System Path 
+# Refer to: https://codingbee.net/powershell/powershell-make-a-permanent-change-to-the-path-environment-variable
 
 # Add content to the $PROFILE
 $PowerShellConfigs = https://raw.githubusercontent.com/Jarmos-san/dotfiles-windows/master/configurations/windows-powershell/Microsoft.PowerShell_profile.ps1
