@@ -2,6 +2,7 @@
 " https://github.com/plasticboy/vim-markdown#options
 
 augroup Markdown
+" Enables text wrapping for Markdown files
     autocmd!
-    autocmd Filetype markdown set wrap                  " Enables text wrapping for Markdown files
+    autocmd Filetype markdown set wrap
 augroup END
