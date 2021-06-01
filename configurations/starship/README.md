@@ -59,7 +59,7 @@ So, if it piqued your interests now, read ahead. In this README you'll find all 
 
 ## Quick Setup Using PowerShell Command
 
-It's possible & actually recommended to use PowerShell Cmdlets to quicky set up the environment. You should do it moreso if you it's only Starship that you want & not everything else I use here.
+It's possible & actually recommended to use PowerShell Cmdlets to quicky set up the environment. You should do it moreso if it's only Starship that you want & not everything else I use here.
 
 That said, add the following commands to a PowerShell session. And here's a tip for you, use [Windows Terminal](../windows-terminal).
 
