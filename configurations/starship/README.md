@@ -57,14 +57,36 @@ So, if it piqued your interests now, read ahead. In this README you'll find all 
 7. Then run the `. $Profile` to reload the PowerShell profile.
 8. Enjoy & share a screenshot of your terminal with the rest of the world!
 
-## Automate the Process
+## Quick Setup Using PowerShell Command
 
-TODO <!-- TODO: Share ways to automate it using PowerShell & Unix tools like wget/curl -->
+It's possible & actually recommended to use PowerShell Cmdlets to quicky set up the environment. You should do it moreso if you it's only Starship that you want & not everything else I use here.
+
+That said, add the following commands to a PowerShell session. And here's a tip for you, use [Windows Terminal](../windows-terminal).
+
+```powershell
+# Create the necessary folders first
+New-Item -ItemType "Directory" -Path "$ENV:HOMEDRIVE\Tools", "$ENV:USERPROFILE\.starship" -Force
+
+# Create the Starship configuration file
+New-Item -ItemType "File" -Path "$ENV:USERPROFILE\.starship\starship.toml"
+
+# TODO: Download the Starship binary
+
+# TODO: Add the Starship binary to System Path 
+
+# TODO: Add content to the $PROFILE
+
+# TODO: Add content to the $ENV:USERPROFILE\.starship\starship.toml file
+
+# Reload your current PowerShell session
+. $Profile
+```
 
 ## Notes to Remember
 
-TODO <!-- TODO: Add notes on customizing the prompt like using custom Fira Code Nerd Fonts -->
+Do note, I'm using the patched version of Fira Code. It's available at [Nerd Fonts][Nerd Fonts], so do check it out if you want a similar experience.
 
 <!-- Reference Links -->
 [Starship]: https://starship.rs/
 [Starship Binaries]: https://github.com/starship/starship/releases
+[Nerd Fonts]: https://www.nerdfonts.com/
