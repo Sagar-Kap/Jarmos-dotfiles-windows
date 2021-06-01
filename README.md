@@ -12,6 +12,7 @@ This directory holds all the scripts, config files & among other stuff. These ar
 - [NodeJS][NodeJS]
 - [MongoDB][MongoDB] (can't automate it's installation because of this: [Winget Issue #874][Winget Issue #874])
 - [GNU Privacy Guard][GPG]
+- [Poetry][Python-Poetry]
 <!-- - [Docker][Docker] -->
 
 **Miscellaneous software** (can't be configured progamatically):
@@ -68,3 +69,4 @@ You can find some of the configurations I use in the list below. Don note, each 
 [Winget Issue #874]: https://github.com/microsoft/winget-cli/issues/874
 [GPG]: https://gnupg.org/
 [Mozilla Thunderbird]: https://www.thunderbird.net/en-US/
+[Python-Poetry]: https://github.com/python-poetry/poetry
