@@ -60,6 +60,8 @@
     remoteBranch = red bold
 [url "git@github.com:"]                             # URL shorthand for the SSH address while cloning a remote repo.
     insteadof = "gh:"                               # Use case: "git clone gh:<user-name>/<repo-name>
+[url "git@gist.github.com/"]                        # URL shorthand for SSH addresses of the GitHub Gists
+    insteadof = "gist:"                             # Use case: "git clone gist:<user-name>/<gist-id>
 [url "git@github.com:Jarmos-san/"]                  # URL shorthand for personal repositories.
     insteadof = "Jarmos:"                           # Use case: "git clone Jarmos:<repo-name>"
 [status]
