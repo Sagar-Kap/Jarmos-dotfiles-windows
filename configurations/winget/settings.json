@@ -1,26 +1,28 @@
 {
     "$schema": "https://aka.ms/winget-settings.schema.json",
-    // For documentation on these settings, see: https://aka.ms/winget-settings
+    // For documentation on these settings, see: https: //aka.ms/winget-settings
     "source": {
-        "autoUpdateIntervalInMinutes": 300
+        "autoUpdateIntervalInMinutes": 300 // Updates winget ever 5 hours
     },
     "installBehavior": {
         "preferences": {
-            "scope" : "machine"
+            "scope": "machine" // Installs software for all the Users in a machine
         },
-        "locale": [ "en-US" ]
+        "locale": [
+            "en-US" // Configures the language settings for winget
+        ]
     },
     "telemetry": {
-        "disable": true
+        "disable": true // Disables winget to send any user information to Microsoft
     },
     "visual": {
-        "progressBar": "rainbow"
+        "progressBar": "rainbow" // Enables winget to use a colourful progress-bar instead of a broing single-coloured one
     },
     "experimentalFeatures": {
-        "experimentalMSStore": true,
-        "list": true,
-        "upgrade": true,
-        "uninstall": true,
-        "restSource": true
+        "experimentalMSStore": true, // Enables winget to also download software from the MS Store
+        "list": true, // Enables an experimental feature to list all installed software
+        "upgrade": true, // Enables winget to upgrade all installed software
+        "uninstall": true, // Enable winget to remove/uninstall an installed software
+        "restSource": true // Not required but it enables winget to use the ReST API winget.run website
     }
 }
