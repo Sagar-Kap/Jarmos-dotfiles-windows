@@ -1,6 +1,6 @@
 # Windows Package Manager
 
-With Windows 10 version 1809 & later, [`winget`][Winget] comes pre-installed. It can be used just like `chocolatey` and/or scoop for Windows machines. As of the last commit to this README, Winget just got it's v1.x release. So, it's under heavy testing & user-feedback. So, expect the contents of this repository to change rapidly.
+With Windows 10 version 1809 & later, [`winget`][Winget] comes pre-installed. It can be used just like `chocolatey` and/or `scoop` for Windows machines. As of the last commit to this README, Winget just got it's v1.x release. So, it's under heavy testing & user-feedback. So, expect the contents of this repository to change rapidly.
 
 More specifically, this directory contains all the required files for winget to operate properly. And as of now it contains `packages.json` & `settings.json`. More on them later but here's the gist; the former is used by Winget to parse & install the necessary software while the later is for configuring Winget itself.
 
@@ -44,8 +44,13 @@ But in case you need some guidance on how to configure it, you can take a look a
 So, if my Winget settings suit your needs, you can configure it real quick with the following PowerShell commands;
 
 ```powershell
+# Your local Winget configurations
 $LocalWingetConfig = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json"
+
+# My Winget configurations
 $RemoteWingetConfig = "https://raw.githubusercontent.com/Jarmos-san/dotfiles-windows/master/configurations/winget/settings.json"
+
+# Copy my Winget configurations to your local Winget settings
 Set-Content -Path $LocalWingetConfig -Value (Invoke-WebRequest -Uri $RemoteWingetConfig).Content
 ```
 
@@ -53,7 +58,7 @@ And that should be it! Now go ahead & install whatever software you need with th
 
 ## Some Useful Winget Commands/Options
 
-Winget is basically a CLI tool, hence it comes with a couple of handy _commands_ & "_options_" you can pass to the tool. You can see the while list of available commands & options by running;
+Winget is basically a CLI tool, hence it comes with a couple of handy _commands_ & "_options_" you can pass to the tool. You can find the whole list of available commands & options by running;
 
 ```powershell
 winget --help
@@ -89,12 +94,14 @@ winget --help
 # More help can be found at: https://aka.ms/winget-command-help
 ```
 
-And as you can see there's also an official help documentation if you need further information on a specific command/option. So, do check it out
+And as you can see there's also an official help documentation if you need further information on a specific command/option. So, do check it out!
 
-But, two easily overlooked feature of Winget are the `export` & `import` command. Remember the `packages.json` file mentioned earlier? It was generated using the `export` command. So, running the command below will generate a JSON file for you which Winget can later use to install those software.
+But, two easily overlooked feature of Winget are the `export` & `import` command.
+
+Remember the `packages.json` file mentioned earlier? It was generated using the `export` command. So, running the command below will generate a JSON file for you which Winget can later use to install those software.
 
 ```powershell
-# Include the --include-versions option if you want to pin
+# Include the "--include-versions" option if you want to pin
 # the software you use to specific versions.
 winget export --output <PATH-TO-THE-FILE>
 
@@ -104,8 +111,11 @@ winget export --output <PATH-TO-THE-FILE>
 
 Do note, it doesn't always export all the software in your system. So, you might've to edit & include some of the missing software in the `packages.json` file.
 
-With the `packages.json` file exported, you can port it to some other Windows 10 machine. And run the `winget import --import-file <PATH-TO-THE-FILE>` command to install all the software at a go.
+With the `packages.json` file exported, you can port it to some other Windows 10 machine. And run the `winget import --import-file <PATH-TO-THE-FILE>` command to install all the software at one go.
+
+And with all these knowledge, you can go ahead & configure Winget as per your requirements! So, what're you waitin for?! Go ahead & install some software. But if you need some help, don't forget to check out their [official repository][Winget Repo] or the [official documentations][Winget].
 
 <!-- Reference Links -->
+[Winget Repo]: https://github.com/microsoft/winget-cli
 [Winget]: https://docs.microsoft.com/en-us/windows/package-manager/
 [Winget CLI Settings]: https://aka.ms/winget-settings
