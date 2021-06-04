@@ -1,8 +1,7 @@
 $RootDirectory = Resolve-Path -Path "..\dotfiles\configurations"
-$WindowsPackages = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages"
 
-$WTConfigurations = Resolve-Path -Path "$WindowsPackages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
-$WingetConfigurations = Resolve-Path -Path "$WindowsPackages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json"
+$WTConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+$WingetConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json"
 $StarshipConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.starship\starship.toml"
 $GitConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.git*"
 $NeovimConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\nvim\*"
@@ -43,3 +42,8 @@ Invoke-Expression "git add $RootDirectory; git commit -am ':truck: Backup config
 Write-Host " "
 
 Write-Host "Done!" -ForegroundColor DarkMagenta
+
+# TODO: Refactor the script
+#* Resources are available at:
+#? https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-one-liners-collections-hashtables-arrays-and-strings
+#?
