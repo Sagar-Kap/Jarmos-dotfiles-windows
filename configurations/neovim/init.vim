@@ -63,7 +63,6 @@ let g:lightline = {'colorscheme': 'gruvbox'}                " Colour scheme for 
 let g:gruvbox_contrast_dark='hard'                          " Increases the dark contrast of the gruvbox colorscheme
 let g:vim_markdown_folding_disabled=1                       " Disable Vim Markdown folding
 let g:vim_markdown_frontmatter=1                            " Enables syntax highlighting for Markdown contents
-let g:vim_markdown_no_extensions_in_markdown=1              " No need for '.md' extensions for Markdown files
 let g:vim_markdown_edit_url_in='tab'                        " Open file in a new tab when following a link to a new Markdown file
 highlight Normal guibg=NONE ctermbg=NONE                    " Makes Neovim background transparent
 

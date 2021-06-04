@@ -20,9 +20,5 @@
     },
     "experimentalFeatures": {
         "experimentalMSStore": true, // Enables winget to also download software from the MS Store
-        "list": true, // Enables an experimental feature to list all installed software
-        "upgrade": true, // Enables winget to upgrade all installed software
-        "uninstall": true, // Enable winget to remove/uninstall an installed software
-        "restSource": true // Not required but it enables winget to use the ReST API winget.run website
     }
 }
