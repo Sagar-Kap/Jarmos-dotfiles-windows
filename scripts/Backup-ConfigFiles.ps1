@@ -6,8 +6,9 @@ $WingetConfigurations = Resolve-Path -Path "$WindowsPackages\Microsoft.DesktopAp
 $StarshipConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.starship\starship.toml"
 $GitConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.git*"
 $NeovimConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\nvim\*"
+$NpmConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.npmrc"
 
-Write-Host "The config files will be copied to $RootDirectory..." -ForegroundColor DarkMagenta 
+Write-Host "The config files will be copied to $RootDirectory..." -ForegroundColor DarkMagenta
 
 Write-Host "Copying configurations for Windows Terminal at: $WTConfigurations" -ForegroundColor Cyan
 Copy-Item -Path $WTConfigurations -Destination "$RootDirectory\windows-terminal"
@@ -27,15 +28,18 @@ Copy-Item -Path $NeovimConfigurations -Recurse -Force -Destination "$RootDirecto
 Write-Host "Copying configurations for Winget at: $WingetConfigurations" -ForegroundColor Cyan
 Copy-Item -Path $WingetConfigurations -Destination "$RootDirectory\winget"
 
+Write-Host "Copying configurations for NPM at: $NpmConfigurations" -ForegroundColor Cyan
+Copy-Item -Path $NpmConfigurations -Destination "$RootDirectory\npm"
+
 Write-Host " "
 
-Write-Host "All config files copied to local repository!" -ForegroundColor DarkMagenta 
+Write-Host "All config files copied to local repository!" -ForegroundColor DarkMagenta
 
 Write-Host " "
 
-Write-Host "Backing up the configurations to GitHub" -ForegroundColor DarkMagenta 
+Write-Host "Backing up the configurations to GitHub" -ForegroundColor DarkMagenta
 Invoke-Expression "git add $RootDirectory; git commit -am ':truck: Backup config files to GitHub'; git push"
 
 Write-Host " "
 
-Write-Host "Done!" -ForegroundColor DarkMagenta 
+Write-Host "Done!" -ForegroundColor DarkMagenta
