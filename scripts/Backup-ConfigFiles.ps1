@@ -45,5 +45,11 @@ Write-Host "Done!" -ForegroundColor DarkMagenta
 
 # TODO: Refactor the script
 #* Resources are available at:
-#? https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-one-liners-collections-hashtables-arrays-and-strings
-#?
+# https://adamtheautomator.com/powershell-foreach/
+# https://arcanecode.com/2020/12/14/iterate-over-a-hashtable-in-powershell/
+# https://4sysops.com/archives/read-all-items-in-a-powershell-hash-table-with-a-loop/
+# https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-one-liners-collections-hashtables-arrays-and-strings
+
+#* How to Refactor?
+# - Create a hashtable with the name of the software as the "key" & it's path to the config file as the "value".
+# - Pipe the hashtable through a ForEach-Object cmdlet. The ForEach-Object cmdlet should iterate through the hastable.
