@@ -8,9 +8,6 @@
           "PackageIdentifier": "Discord.Discord"
         },
         {
-          "PackageIdentifier": "Google.Chrome"
-        },
-        {
           "PackageIdentifier": "Microsoft.Edge"
         },
         {
@@ -35,9 +32,6 @@
           "PackageIdentifier": "VideoLAN.VLC"
         },
         {
-          "PackageIdentifier": "RARLab.WinRAR"
-        },
-        {
           "PackageIdentifier": "Insomnia.Insomnia"
         },
         {
@@ -51,25 +45,24 @@
         },
         {
           "PackageIdentifier": "Microsoft.VisualStudioCode"
+        },
+        {
+          "PackageIdentifier": "Python.Python"
+        },
+        {
+          "PackageIdentifier": "GnuPG.GnuPG"
+        },
+        {
+          "PackageIdentifier": "Google.BackupAndSync"
+        },
+        {
+          "PackageIdentifier": "ShareX.ShareX"
         }
       ],
       "SourceDetails": {
         "Argument": "https://winget.azureedge.net/cache",
         "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
         "Name": "winget",
-        "Type": "Microsoft.PreIndexed.Package"
-      }
-    },
-    {
-      "Packages": [
-        {
-          "PackageIdentifier": "Microsoft.Whiteboard"
-        }
-      ],
-      "SourceDetails": {
-        "Argument": "https://winget.azureedge.net/msstore",
-        "Identifier": "Microsoft.Winget.MSStore.Source_8wekyb3d8bbwe",
-        "Name": "msstore",
         "Type": "Microsoft.PreIndexed.Package"
       }
     }
