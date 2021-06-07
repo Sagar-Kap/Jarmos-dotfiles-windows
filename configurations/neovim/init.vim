@@ -1,5 +1,5 @@
-" Required & minimal options
-set number relativenumber                               " Enables relative numbering on the left-hand side of the editor.
+" Required & minimal option
+set number relativenumber numberwidth=1                 " Enables & adjusts the relative numbering on the left-hand side of the editor.
 set clipboard=unnamedplus                               " Enables clipboard on Vim.
 set hidden                                              " Hides the buffer & makes editing on Vim much faster.
 set nowrap                                              " Doesn't let Vim wrap the texts & move it to the next line.
@@ -62,12 +62,17 @@ let g:loaded_ruby_provider=0                                " Disables loading R
 let g:lightline = {'colorscheme': 'gruvbox'}                " Colour scheme for the Lightline plugin
 let g:gruvbox_contrast_dark='hard'                          " Increases the dark contrast of the gruvbox colorscheme
 let g:vim_markdown_folding_disabled=1                       " Disable Vim Markdown folding
-let g:vim_markdown_frontmatter=1                            " Enables syntax highlighting for Markdown contents
-let g:vim_markdown_edit_url_in='tab'                        " Open file in a new tab when following a link to a new Markdown file
 highlight Normal guibg=NONE ctermbg=NONE                    " Makes Neovim background transparent
 
 " =======================================================
 " Resources to learn Neomvim (or Vim in general)
 " =======================================================
-" 1. https://danielmiessler.com/study/vim/
-" 2. https://github.com/iggredible/Learn-Vim
+" 1. https://danielmiessler.com/study/vim
+" https://learnvimscriptthehardway.stevelosh.com
+
+" Practice sessions
+" Chapter 1:
+echo ">^.^< --> Hello Jarmos, welcome back!"
+
+" Chapter 2:
+" Done
