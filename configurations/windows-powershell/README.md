@@ -48,7 +48,7 @@ So, as you can see, it's fairly simple & it was intentional.
 There's more to customizing your PowerShell experience, so following are some resources you might find useful while doing so. But keep customizing your `Profile` at the minimal as much as possible. Failing to do so can mean increased loading times which can be infuriating at times.
 
 - [About Profiles][About Profiles]
-- [Understanding the Six PowerShell Profiles][About PowerShell rofiles]
+- [Understanding the Six PowerShell Profiles][About PowerShell Profiles]
 
 <!-- Reference Links: -->
 [Windows PowerShell]: https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-5.1
