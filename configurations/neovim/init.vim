@@ -72,7 +72,7 @@ highlight Normal guibg=NONE ctermbg=NONE                    " Makes Neovim backg
 
 " Practice sessions
 " Chapter 1:
-echo ">^.^< --> Hello Jarmos, welcome back!"
+" echo '>^.^< --> Hello Jarmos, welcome back!'
 
 " Chapter 2:
 " Done

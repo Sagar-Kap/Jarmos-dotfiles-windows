@@ -79,5 +79,5 @@
     pu = push                                       # Equivalent to "git push"
     cl = clone                                      # Equivalent to "git clone"
     vb = branch -vv                                 # Equivalent to "git branch -vv"
-    rm = remote -v                                  # Equivalent to "git remote -v"
+    rv = remote -v                                  # Equivalent to "git remote -v"
     ra = remote add                                 # Equivalent to "git remote add"
