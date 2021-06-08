@@ -27,9 +27,6 @@ Copy-Item -Path $NeovimConfigurations -Recurse -Force -Destination "$RootDirecto
 Write-Host "Copying configurations for Winget at: $WingetConfigurations" -ForegroundColor Cyan
 Copy-Item -Path $WingetConfigurations -Destination "$RootDirectory\winget"
 
-Write-Host "Copying configurations for NPM at: $NpmConfigurations" -ForegroundColor Cyan
-Copy-Item -Path $NpmConfigurations -Destination "$RootDirectory\npm"
-
 Write-Host " "
 
 Write-Host "All config files copied to local repository!" -ForegroundColor DarkMagenta
