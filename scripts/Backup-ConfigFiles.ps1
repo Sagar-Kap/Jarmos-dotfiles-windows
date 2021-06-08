@@ -5,7 +5,6 @@ $WingetConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft
 $StarshipConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.starship\starship.toml"
 $GitConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.git*"
 $NeovimConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\nvim\*"
-$NpmConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.npmrc"
 
 Write-Host "The config files will be copied to $RootDirectory..." -ForegroundColor DarkMagenta
 
