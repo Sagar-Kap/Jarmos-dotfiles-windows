@@ -1,6 +1,8 @@
 # Dotfiles (supposed) for My Windows Development Environments
 
-This directory holds all the scripts, config files & among other stuff. These are stuff which are required to setup my development environment on a Windows machine. As of the latest commit, the directory contains configurations for the following software(s) among other stuff like font(s) & scripts for automatic installations.
+This directory holds all the scripts, config files & among other stuff. I use these are stuff to setup my development environment on a Windows machine. And as of the latest commit, the directory contains configurations for the software(s) and other stuff like font(s) & scripts for automation.
+
+Following is a list of everything you can find in this repo:
 
 **Software Development needs**:
 
@@ -31,13 +33,7 @@ This directory holds all the scripts, config files & among other stuff. These ar
 
 ## Setup Instructions
 
-As of right now, you'll need to install each group of stuff through seperate scripts (_I plan on automating them at some point of time_). So, to install the [Fira Code Nerd Font][Fira Code Nerd Font], execute the `.\Dotfiles\Windows\Install-Font` script.
-
-**DO NOTE:** The `Install-Font.ps1` script is still work-in-progress. **DO NOT use it yet!**
-
-As for the rest of the software, execute the `.\Dotfiles\Windows\Instal-Software` script. You can find more information on what each of those software does.
-
-**DO NOTE:** The `Install-Software.ps1` script is still work-in-progress & is subject to change, but can be used. So, before executing it, its **RECOMMENDED** you read through it first.
+TODO: Write a bootstrap script to install all the necessities & so on.
 
 ## Configuration Files
 
