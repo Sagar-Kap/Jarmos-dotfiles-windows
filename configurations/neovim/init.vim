@@ -28,6 +28,7 @@ endif
 " Add plugins
 " ======================================================
 call plug#begin(stdpath('data') . '/plugged')
+Plug 'pprovost/vim-ps1'                                 " Plugin for PowerShell scripting
 Plug 'itchyny/lightline.vim'
 " Plug 'godlygeek/tabular'                                " Formats tables
 Plug 'morhetz/gruvbox'                                    " A warmer retro colorscheme with a lot of yellow contrast in it

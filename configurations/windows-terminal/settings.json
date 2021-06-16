@@ -1,110 +1,113 @@
 {
-    "$schema": "https://aka.ms/terminal-profiles-schema",
-    "copyFormatting": "none",
-    "copyOnSelect": false,
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-    "disabledProfileSources": [
-        "Windows.Terminal.Azure",
-        "Windows.Terminal.Wsl"
-    ],
-    "launchMode": "maximized",
-    "tabWidthMode": "equal",
-    "theme": "dark",
-    "profiles": {
-        "defaults": {
-            "acrylicOpacity": 0.75,
-            "backgroundImage": "%USERPROFILE%\\Pictures\\Saved Pictures\\312629.jpg",
-            "backgroundImageOpacity": 0.18,
-            "colorScheme": "Gruvbox Dark",
-            "cursorColor": "#ffffff",
-            "cursorShape": "filledBox",
-            "fontFace": "FiraCode NF",
-            "fontSize": 11,
-            "padding": "20, 8, 8, 3",
-            "startingDirectory": "E:\\Projects",
-            "useAcrylic": true
-        },
-        "list": [
-            {
-                "commandline": "powershell.exe",
-                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "hidden": false,
-                "name": "Windows PowerShell"
-            },
-            {
-                "commandline": "cmd.exe",
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": true,
-                "name": "Command Prompt"
-            },
-            {
-                "guid": "{905ee199-8709-449b-b0f1-5ac7ea8638b9}",
-                "commandline": "py.exe",
-                "icon": "%PROGRAMFILES(x86)%\\Python38-32\\python.png",
-                "name": "Python3"
-            }
-        ]
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+  "disabledProfileSources": ["Windows.Terminal.Azure", "Windows.Terminal.Wsl"],
+  "launchMode": "maximized",
+  "tabWidthMode": "equal",
+  "theme": "dark",
+  "profiles": {
+    "defaults": {
+      "acrylicOpacity": 0.75,
+      "backgroundImage": "%USERPROFILE%\\Pictures\\Saved Pictures\\312629.jpg",
+      "backgroundImageOpacity": 0.18,
+      "colorScheme": "Gruvbox Dark",
+      "cursorColor": "#ffffff",
+      "cursorShape": "filledBox",
+      "fontFace": "FiraCode NF",
+      "fontSize": 11,
+      "padding": "20, 8, 8, 3",
+      "startingDirectory": "E:\\Projects",
+      "useAcrylic": true
     },
-    "schemes": [
-        {
-            "name": "Gruvbox Dark",
-            "black": "#1e1e1e",
-            "red": "#be0f17",
-            "green": "#868715",
-            "yellow": "#cc881a",
-            "blue": "#377375",
-            "purple": "#a04b73",
-            "cyan": "#578e57",
-            "white": "#978771",
-            "brightBlack": "#7f7061",
-            "brightRed": "#f73028",
-            "brightGreen": "#aab01e",
-            "brightYellow": "#f7b125",
-            "brightBlue": "#719586",
-            "brightPurple": "#c77089",
-            "brightCyan": "#7db669",
-            "brightWhite": "#e6d4a3",
-            "background": "#1e1e1e",
-            "foreground": "#e6d4a3",
-            "selectionBackground": "#e6d4a3",
-            "cursorColor": "#ffffff"
-        }
-    ],
-    "actions": [
-        {
-            "command": {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+c"
-        },
-        {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        {
-            "command": {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
-        },
-        {
-            "command": "closeTab",
-            "keys": "ctrl+w"
-        },
-        {
-            "command": "closeOtherTabs",
-            "keys": "ctrl+t"
-        },
-        {
-            "command": "closePane",
-            "keys": "ctrl+shift+w"
-        }
+    "list": [
+      {
+        "commandline": "powershell.exe",
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "hidden": false,
+        "name": "Windows PowerShell"
+      },
+      {
+        "commandline": "cmd.exe",
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "hidden": true,
+        "name": "Command Prompt"
+      },
+      {
+        "guid": "{905ee199-8709-449b-b0f1-5ac7ea8638b9}",
+        "commandline": "py.exe",
+        "icon": "%PROGRAMFILES(x86)%\\Python38-32\\python.png",
+        "name": "Python3"
+      },
+      {
+        "commandline": "$ENV:USERPROFILE\\Downloads\\spotify-tui-windows\\spt.exe",
+        "guid": "{25fef035-d6c1-47aa-a743-2569a8e5c114}",
+        // "icon": "%PROGRAMFILES(x86)%\\Python38-32\\python.png",
+        "name": "Spotify"
+      }
     ]
+  },
+  "schemes": [
+    {
+      "name": "Gruvbox Dark",
+      "black": "#1e1e1e",
+      "red": "#be0f17",
+      "green": "#868715",
+      "yellow": "#cc881a",
+      "blue": "#377375",
+      "purple": "#a04b73",
+      "cyan": "#578e57",
+      "white": "#978771",
+      "brightBlack": "#7f7061",
+      "brightRed": "#f73028",
+      "brightGreen": "#aab01e",
+      "brightYellow": "#f7b125",
+      "brightBlue": "#719586",
+      "brightPurple": "#c77089",
+      "brightCyan": "#7db669",
+      "brightWhite": "#e6d4a3",
+      "background": "#1e1e1e",
+      "foreground": "#e6d4a3",
+      "selectionBackground": "#e6d4a3",
+      "cursorColor": "#ffffff"
+    }
+  ],
+  "actions": [
+    {
+      "command": {
+        "action": "copy",
+        "singleLine": false
+      },
+      "keys": "ctrl+c"
+    },
+    {
+      "command": "paste",
+      "keys": "ctrl+v"
+    },
+    {
+      "command": "find",
+      "keys": "ctrl+shift+f"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "splitMode": "duplicate"
+      },
+      "keys": "alt+shift+d"
+    },
+    {
+      "command": "closeTab",
+      "keys": "ctrl+w"
+    },
+    {
+      "command": "closeOtherTabs",
+      "keys": "ctrl+t"
+    },
+    {
+      "command": "closePane",
+      "keys": "ctrl+shift+w"
+    }
+  ]
 }
