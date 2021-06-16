@@ -8,6 +8,28 @@ That said, this directory holds everything that I use to configure my Neovim env
 
 **Note**: I've only recently started using Neo(vim) & hence my current settings are very crude. They're subject to constant change, so be wary of what you copy. So, if you're curious about something or just plain confused, then reach out to me.
 
+## Plugins Used
+
+I try to keep my `init.vim` file as minimal as possible, hence my list of plugins are quite limited too.
+
+That said, following are the list of plugins I currently use with my Neovim setup:
+
+- [PProvost/vim-ps1][Vim-PowerShell]
+- [Neoclide/coc.nvim][CoC-Neovim]
+- [itchyny/lightline][Lightline]
+- [morhertz/gruvbox][Gruvbox]
+- [preservim/nerdtree][NerdTree]
+
+## Keymapping Used
+
+TODO: Add & explain the keymapping used in my dev environment
+
 <!-- Reference links -->
+[Lightline]: https://github.com/itchyny/lightline.vim
+[Gruvbox]: https://github.com/morhertz/gruvbox
+[NerdTree]: https://github.com/preservim/nerdtree
+[Vim-Markdown]: https://github.com/plasticboy/vim-markdown
+[CoC-Neovim]: https://github.com/neoclide/coc.nvim
+[Vim-PowerShell]: https://github.com/PProvost/vim-ps1
 [Neovim]: http://neovim.io/
 [Vim]: https://www.vim.org/
