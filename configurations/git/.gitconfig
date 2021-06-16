@@ -1,19 +1,19 @@
 # Git configuration reference available at: https://git-scm.com/docs/git-config
 # Example gitconfig is avaialable at: http://michaelwales.com/articles/make-gitconfig-work-for-you/
 [user]                                              # Basic user info like email & name.
-	email = somraj.mle@gmail.com                    # More info with regards to this section is available at:
-	name = Jarmos-san                               # https://git-scm.com/docs/git-config#Documentation/git-config.txt-username
-	signingkey = 7AF6097D41B9FA3E                   # GPG Signing key used to sign commits & annotated tags.
+    email = somraj.mle@gmail.com                    # More info with regards to this section is available at:
+    name = Jarmos-san                               # https://git-scm.com/docs/git-config#Documentation/git-config.txt-username
+    signingkey = 7AF6097D41B9FA3E                   # GPG Signing key used to sign commits & annotated tags.
 [commit]
-	gpgsign = true                                  # Ensures all commits are signed.
+    gpgsign = true                                  # Ensures all commits are signed.
 [core]
     excludesfile = ~/.gitignore_global              # Global .gitignore file at $HOME/.git
     attributesfile = ~/.gitattributes_global        # Global .gitattributes file at $HOME/.git
     untrackedcache = true                           # Speeds up commands involving untracked files. More info available at: https://git-scm.com/docs/git-update-index#_untracked_cache
-	autocrlf = input                                # Ensures files in the remote repo has LF line endings but CRLF in the local repo.
+    autocrlf = input                                # Ensures files in the remote repo has LF line endings but CRLF in the local repo.
     longpaths = true                                # Circumvents the Windows limitation of 260 characters.
     whitespace=fix                                  # Fixes whitespace errors introduced by editors.
-	editor = nvim                                   # Uses Vim as the text editor for editing needs like commit messages & such.
+    editor = nvim                                   # Uses Vim as the text editor for editing needs like commit messages & such.
 #   pager = delta                                     More info on this is available on https://github.com/dandavison/delta
     pager = ""                                      # Defaults to Less but it doesn't ship with Windows. Need to look further into it.
 [diff]
@@ -23,8 +23,8 @@
 [difftool "nvimdiff"]                               # Uses Neovim as a Git difftool
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [merge]
-	tool = nvimdiff                                 # Uses Vim for fixing merge conflicts.
-	conflictstyle = diff3                           # Is supposed to do something I'm not aware of.
+    tool = nvimdiff                                 # Uses Vim for fixing merge conflicts.
+    conflictstyle = diff3                           # Is supposed to do something I'm not aware of.
 [mergetool]
     keepBackup = false                              # Configures Git to not create "*.orig" files while resolving merge conflicts
     prompt = false                                  # Configures Git to not prompt for confirmation while resolving merge conflicts
@@ -32,7 +32,7 @@
 [mergetool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c 'wincmd w' -c 'wincmd J'"
 [help]
-	autocorrect = 1                                 # Enables autocorrecting wrong Git commands.
+    autocorrect = 1                                 # Enables autocorrecting wrong Git commands.
 [color]
 # The colour format is like this: <FOREGROUND> <BACKGROUND> <ATTRIBUTE>.
     ui = auto                                       # Default value is "auto" & it takes care of colouring issues.
@@ -70,10 +70,10 @@
     forceSignAnnotated = true                       # Forces all annotated tags to be signed.
     gpgSign = true                                  # Ensure all tags are GPG signed.
 [init]
-	defaultBranch = dev
+    defaultBranch = dev
 # List of all aliases for Git commands are as follows:
 [alias]
-	st = status -sb                                 # Equivalent to "git status -sb"
+    st = status -sb                                 # Equivalent to "git status -sb"
     ci = commit -m                                  # Equivalent to "git commit -m"
     ca = commit -am                                 # Equivalent to "git commit -am"
     pl = pull --rebase                              # Equivalent to "git pull --rebase"
