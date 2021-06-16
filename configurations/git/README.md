@@ -8,9 +8,11 @@ So, combined with "git aliases" & the above mentioned URL aliases, you could inv
 
 That said, you can configure all of the above & much more through the `.gitconfig` plain-text file. This file is placed under in `%USERPROFILE%` for Windows system. Place it anywhere else & `git` doesn't appear to recognise it.
 
+## About the Config Files
+
 Additionally, you might notice, there're a few more files other than the `.gitconfig` file. They're all plain-text files as well & each servce a specific purpose. More details on their use is provided as follows:
 
-- `.gitconfig`: The "main" file which configures Git according to the user's preferences. More info is available at: https://git-scm.com/docs/git-config
+- `.gitconfig`: The "main" file which configures Git according to the user's preferences. More info is available at: [gitconfig][Gitconfig].
 - `.gitattributes_global`: Is used to specify particular attributes of files in the pathname. It's recommended to add repository-specific `.gitattribute` file for better collaboration. More information is available at: [`gitattributes`][Gitattributes].
 - `.gitignore_global`: A global `.gitignore` so that Git doesn't commit unecessary files to VCS by accident. More info is available at: [`gitignore`][Gitignore].
 
@@ -25,3 +27,4 @@ TODO: Will be updated soon enough. Come back when I've detailed this section.
 [GitHub]: https://github.com
 [Gitattributes]: https://git-scm.com/docs/gitattributes
 [Gitignore]: https://git-scm.com/docs/gitignore
+[Gitconfig]: https://git-scm.com/docs/git-config
