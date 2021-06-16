@@ -18,6 +18,7 @@ PS> E:\Dotfiles\Scripts\Download-Binaries
 Before executing the script, do take at what it does on your system. You can find the source code at: https://github.com/Jarmos-san/dotfiles-windows
 
 #>
+
 # TODO: Write script to download binaries like Hugo, Git, etc & add them to $PATH
 
 $Urls = @{
