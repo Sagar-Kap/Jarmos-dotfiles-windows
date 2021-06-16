@@ -1,3 +1,23 @@
+<#
+.SYNOPSIS
+
+Backup all the config files (or dotfiles) to the local & remote repository.
+
+.DESCRIPTION
+
+This script does a backup of the configurations (or dotfiles as they're commonly known as). It copies all the dotfiles like ".gitconfig", ".vimrc (or init.vim for Neovim)" & so on to the local repository & the remote repository.
+
+The backup is done locally first i.e to the local repository first & then they're pushed to the remote repository for version-control. So, ensure to fork this repository before locally cloning the forked repository.
+
+.EXAMPLE
+
+PS> E:\Dotfiles\Scripts\Backup-ConfigFiles
+
+.NOTES
+
+Know what & how-to use these script at: https://github.com/Jarmos-san/dotfiles-windows before using them locally.
+#>
+
 $RootDirectory = Resolve-Path -Path "..\dotfiles\configurations"
 
 $WTConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
