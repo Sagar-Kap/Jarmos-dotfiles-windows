@@ -75,6 +75,7 @@
 [alias]
 	st = status -sb                                 # Equivalent to "git status -sb"
     ci = commit -m                                  # Equivalent to "git commit -m"
+    ca = commit -am                                 # Equivalent to "git commit -am"
     pl = pull --rebase                              # Equivalent to "git pull --rebase"
     pu = push                                       # Equivalent to "git push"
     cl = clone                                      # Equivalent to "git clone"
