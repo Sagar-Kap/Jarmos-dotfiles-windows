@@ -1,0 +1,29 @@
+{
+    "coc.preferences.extenionUpdateCheck": "daily",
+    "coc.preferences.formatOnType": true,
+    "coc.preferences.formatOnSaveFileTypes": [
+        "python",
+        "markdown",
+        "javascript",
+        "typescript",
+        "json",
+        "jsonc"
+    ],
+    "diagnostic.format": "%message [%source]",
+    "eslint.autoFixOnSave": true,
+    "eslint.format.enable": true,
+    "eslint.packageManager": "yarn",
+    "markdownlint.config": {
+        "default": true,
+        "line-length": false
+    },
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true,
+    "python.analysis.diagnosticMode": "workspace",
+    "python.linting.pylintEnabled": true,
+    "typescript.format.semicolons": "insert",
+    "typescript.autoClosingTags": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true,
+    "languageserver": {
+    }
+}

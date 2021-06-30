@@ -7,7 +7,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'                                  " A warmer retro colorscheme with a lot of yellow contrast in it
 Plug 'preservim/nerdtree'                               " A better file explorer for Neovim.
 Plug 'plasticboy/vim-markdown'                          " Markdown syntax highlighting
-Plug 'neoclide/coc.nvim', {'branch': elease'}           " Code completion & LSP support like VSCode
+Plug 'neoclide/coc.nvim', {'branch': 'release'}         " Code completion & LSP support like VSCode
 call plug#end()
 
 " More colour schemes are available at: https://github.com/flazz/vim-colorschemes
@@ -38,7 +38,7 @@ nnoremap <C-b> :NERDTreeToggle<CR>
 let g:netrw_menu=0                                       " Disable Netrw built-in plugin for Neovim File Explorer
 let g:loaded_python_provider=0                           " Disables loading Python 2
 let g:loaded_ruby_provider=0                             " Disables loading Ruby
-let g:lightline = {'colorscheme': 'grox'}                " Colour scheme for the Lightline plugin
+"let g:lightline = {'colorscheme': 'murphy'}                " Colour scheme for the Lightline plugin
 let g:gruvbox_contrast_dark='hard'                       " Increases the dark contrast of the gruvbox colorscheme
 let g:vim_markdown_folding_disabled=1                    " List of files And/or directories NERDTree will ignore
 let NERDTreeAutoCenterThreshold = 6                      " Ensures the cursor is sufficiently centered in a NERDTree window
