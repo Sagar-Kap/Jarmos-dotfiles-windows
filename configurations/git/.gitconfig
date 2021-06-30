@@ -81,4 +81,4 @@
     cl = clone                                      # Equivalent to "git clone"
     vb = branch -vv                                 # Equivalent to "git branch -vv"
     rv = remote -v                                  # Equivalent to "git remote -v"
-    ra = remote add                                 # Equivalent to "git remote add"
+    ra = remote add origin                          # Equivalent to "git remote add"
