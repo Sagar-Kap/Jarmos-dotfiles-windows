@@ -1,62 +1,3 @@
-" ======================================================
-" Add plugins
-" ======================================================
-call plug#begin(stdpath('data') . '/plugged')
-Plug 'pprovost/vim-ps1'                                 " Plugin for PowerShell scripting
-Plug 'itchyny/lightline.vim'
-Plug 'morhetz/gruvbox'                                  " A warmer retro colorscheme with a lot of yellow contrast in it
-Plug 'preservim/nerdtree'                               " A better file explorer for Neovim.
-Plug 'plasticboy/vim-markdown'                          " Markdown syntax highlighting
-Plug 'neoclide/coc.nvim', {'branch': 'release'}         " Code completion & LSP support like VSCode
-call plug#end()
-
-" More colour schemes are available at: https://github.com/flazz/vim-colorschemes
-colorscheme gruvbox                                     " A warm & retro colorscheme perfect for Neovim
-
-" ======================================================
-" Key mappings
-" ======================================================
-" Disables Arrow Keys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-
-" Key mappings for easier editing & sourcing of .vimrc file
-nnoremap <silent> \ev :e $MYVIMRC<CR>
-nnoremap <silent> \sv :so $MYVIMRC<CR>
-
-" Toggles NERDTree File Explorer with Ctrl + b similar to VSCode
-nnoremap <C-b> :NERDTreeToggle<CR>
-
-" Uppercase a word
-" nnoremap <C-U> vwU<Esc>
-
-" =======================================================
-" Some global configurations
-" =======================================================
-let g:netrw_menu=0                                       " Disable Netrw built-in plugin for Neovim File Explorer
-let g:loaded_python_provider=0                           " Disables loading Python 2
-let g:loaded_ruby_provider=0                             " Disables loading Ruby
-"let g:lightline = {'colorscheme': 'murphy'}                " Colour scheme for the Lightline plugin
-let g:gruvbox_contrast_dark='hard'                       " Increases the dark contrast of the gruvbox colorscheme
-let g:vim_markdown_folding_disabled=1                    " List of files And/or directories NERDTree will ignore
-let NERDTreeAutoCenterThreshold = 6                      " Ensures the cursor is sufficiently centered in a NERDTree window
-let NERDTreeNaturalSort = 1                              " Ensures NERDTree nodes are sorted properly
-let NERDTreeQuitOnOpen = 3                               " Closes the NERDTree window after opening a file or a bookmark
-let NERDTreeWinPos = 'right'                             " Opens the NERDTree window on the right side for convenience
-let NERDTreeCascadeSingleChildDir = 0                    " Enables to NERDTree to show directories with single child as well
-let NERDTreeAutoDeleteBuffer = 1                         " Automatically closes a buffer when a file is deleted
-
-" Enables a transparent background within Neovim
-highlight Normal guibg=NONE ctermbg=NONE
-
-" =======================================================
-" RESOURCES To learn NEOMVIM (or Vim in general)
-" =======================================================
-" 1. https://danielmiessler.com/study/vim
-" https://learnvimscriptthehardway.stevelosh.com
-
 " Some minimal & required settings
 set number relativenumber numberwidth=1                 " Enables & adjusts the column number on the left side
 set nowrap                                              " Disable wordwrap globally
@@ -81,5 +22,88 @@ set textwidth=0                                         " Disables Neovim to mak
 filetype plugin indent on                               " Enables some configuration based on the filetype like 4 <Space> indent for Python files & so on.
 
 if !exists("g:syntax_on")                               " Is supposed to enable Syntax highlighting but not sure what it does.
-syntax enable
+    syntax enable
 endif
+
+"======================================================
+" Add plugins
+" ======================================================
+call plug#begin(stdpath('data') . '/plugged')
+Plug 'pprovost/vim-ps1'                                 " Plugin for PowerShell scripting
+Plug 'itchyny/lightline.vim'
+Plug 'morhetz/gruvbox'                                  " A warmer retro colorscheme with a lot of yellow contrast in it
+Plug 'preservim/nerdtree'                               " A better file explorer for Neovim.
+Plug 'plasticboy/vim-markdown'                          " Markdown syntax highlighting
+call plug#end()
+
+" =======================================================
+" Some global configurations
+" =======================================================
+let g:netrw_menu=0                                       " Disable Netrw built-in plugin for Neovim File Explorer
+let mapleader = ','                                      " Map <Leader> key to ',' for easier access & remembering
+let maplocalleader = '\\'                                " Map <localleader> key too '\\' for specific filetypes
+let g:loaded_python_provider=0                           " Disables loading Python 2
+let g:loaded_ruby_provider=0                             " Disables loading Ruby
+"let g:lightline = {'colorscheme': 'murphy'}             " Colour scheme for the Lightline plugin
+let g:gruvbox_contrast_dark='hard'                       " Increases the dark contrast of the gruvbox colorscheme
+let g:vim_markdown_folding_disabled=1                    " List of files And/or directories NERDTree will ignore
+let NERDTreeAutoCenterThreshold = 6                      " Ensures the cursor is sufficiently centered in a NERDTree window
+let NERDTreeNaturalSort = 1                              " Ensures NERDTree nodes are sorted properly
+let NERDTreeQuitOnOpen = 3                               " Closes the NERDTree window after opening a file or a bookmark
+let NERDTreeWinPos = 'right'                             " Opens the NERDTree window on the right side for convenience
+let NERDTreeCascadeSingleChildDir = 0                    " Enables to NERDTree to show directories with single child as well
+let NERDTreeAutoDeleteBuffer = 1                         " Automatically closes a buffer when a file is deleted
+
+" More colour schemes are available at: https://github.com/flazz/vim-colorschemes
+colorscheme gruvbox                                     " A warm & retro colorscheme perfect for Neovim
+
+" =======================================================
+" RESOURCES To learn NEOMVIM (or Vim in general)
+" =======================================================
+" 1. https://danielmiessler.com/study/vim
+" https://learnvimscriptthehardway.stevelosh.com
+
+" ======================================================
+" Key mappings
+" ======================================================
+" Disables Arrow Keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+
+" Disable <Esc> in Insert mode to memorise a better remap
+inoremap <Esc> <NOP>
+
+" Some useful remaps for easier navigation around texts
+" Remap the function of <Esc> for better ergonomics
+inoremap jk <Esc>
+" Press H (capital h) to move the start of a line
+nnoremap H 0
+" Press L (capital l) to move to the end of the line
+nnoremap L $
+" TODO: Press 'sq' in Visual Mode to surround the selected contents inside double quotes
+" vnoremap sq
+
+" Key mappings for easier navigation between Vim windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Key mappings for easier editing & sourcing of .vimrc file
+nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
+
+" Toggles NERDTree File Explorer with Ctrl + b similar to VSCode
+nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+
+" Uppercase a word
+" nnoremap <C-U> vwU<Esc>
+
+" Enables a transparent background within Neovim
+highlight Normal guibg=NONE ctermbg=NONE

@@ -39,12 +39,6 @@
         "commandline": "py.exe",
         "icon": "%PROGRAMFILES(x86)%\\Python38-32\\python.png",
         "name": "Python3"
-      },
-      {
-        "commandline": "$ENV:USERPROFILE\\Downloads\\spotify-tui-windows\\spt.exe",
-        "guid": "{25fef035-d6c1-47aa-a743-2569a8e5c114}",
-        // "icon": "%PROGRAMFILES(x86)%\\Python38-32\\python.png",
-        "name": "Spotify"
       }
     ]
   },
@@ -96,10 +90,6 @@
         "splitMode": "duplicate"
       },
       "keys": "alt+shift+d"
-    },
-    {
-      "command": "closeTab",
-      "keys": "ctrl+w"
     },
     {
       "command": "closeOtherTabs",
