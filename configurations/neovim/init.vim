@@ -30,7 +30,7 @@ endif
 " ======================================================
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'pprovost/vim-ps1'                                 " Plugin for PowerShell scripting
-Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'                            " Plugin for the statusline but subject to replacement if it can be self-customized
 Plug 'morhetz/gruvbox'                                  " A warmer retro colorscheme with a lot of yellow contrast in it
 Plug 'preservim/nerdtree'                               " A better file explorer for Neovim.
 Plug 'plasticboy/vim-markdown'                          " Markdown syntax highlighting
@@ -41,7 +41,7 @@ call plug#end()
 " =======================================================
 let g:netrw_menu=0                                       " Disable Netrw built-in plugin for Neovim File Explorer
 let mapleader = ','                                      " Map <Leader> key to ',' for easier access & remembering
-let maplocalleader = '\\'                                " Map <localleader> key too '\\' for specific filetypes
+let maplocalleader = '.'                                 " Map <Localleader> key to '.' for specific filetypes
 let g:loaded_python_provider=0                           " Disables loading Python 2
 let g:loaded_ruby_provider=0                             " Disables loading Ruby
 "let g:lightline = {'colorscheme': 'murphy'}             " Colour scheme for the Lightline plugin
@@ -86,8 +86,6 @@ inoremap jk <Esc>
 nnoremap H 0
 " Press L (capital l) to move to the end of the line
 nnoremap L $
-" TODO: Press 'sq' in Visual Mode to surround the selected contents inside double quotes
-" vnoremap sq
 
 " Key mappings for easier navigation between Vim windows
 nnoremap <C-h> <C-w>h
@@ -107,3 +105,17 @@ nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
 " Enables a transparent background within Neovim
 highlight Normal guibg=NONE ctermbg=NONE
+
+" TODO: Some stuff that requires further attention & a possible refactor
+" Comments out a very specific line in JavaScript files
+autocmd FileType javascript nnoremap <buffer> <Localleader>c I//<ESC>
+" Does something
+autocmd FileType javascript :iabbrev <buffer> iff if ()<LEFT>
+" Comments out a very specific line in Python files
+autocmd FileType python     nnoremap <buffer> <Localleader>c I#<ESC>
+" Does something
+autocmd FileType python     :iabbrev <buffer> iff if:
+" Some sort of snippet abbreviations. These should be refactored later on
+autocmd FileType html       :iabbrev <buffer> & &amp;
+" Useful & comprehensive info on Vim Abbreviations are available at:
+" https://aavtech.site/2020/07/vim-abbreviations/
