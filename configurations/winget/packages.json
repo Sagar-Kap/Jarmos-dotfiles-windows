@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2021-07-05T14:37:52.566-00:00",
+	"CreationDate" : "2021-07-06T14:46:25.262-00:00",
 	"Sources" : 
 	[
 		{
@@ -55,6 +55,9 @@
 					"PackageIdentifier" : "Insomnia.Insomnia"
 				},
 				{
+					"PackageIdentifier" : "Python.Python.3"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VC++2010Redist-x64"
 				},
 				{
@@ -62,9 +65,6 @@
 				},
 				{
 					"PackageIdentifier" : "Google.BackupAndSync"
-				},
-				{
-					"PackageIdentifier" : "OpenJS.NodeJS"
 				},
 				{
 					"PackageIdentifier" : "Transmission.Transmission"
