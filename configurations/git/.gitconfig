@@ -14,8 +14,7 @@
     longpaths = true                                # Circumvents the Windows limitation of 260 characters.
     whitespace=fix                                  # Fixes whitespace errors introduced by editors.
     editor = nvim                                   # Uses Vim as the text editor for editing needs like commit messages & such.
-#   pager = delta                                     More info on this is available on https://github.com/dandavison/delta
-    pager = ""                                      # Defaults to Less but it doesn't ship with Windows. Need to look further into it.
+    pager = delta                                   # More info on this is available on https://github.com/dandavison/delta
 [diff]
     tool = nvimdiff                                 # Uses Vim for viewing Git diffs.
 [difftool]
