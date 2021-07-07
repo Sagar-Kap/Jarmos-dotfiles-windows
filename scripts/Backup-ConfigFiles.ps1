@@ -25,6 +25,7 @@ $WingetConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft
 $StarshipConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.starship\starship.toml"
 $GitConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.git*"
 $NeovimConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\nvim\*"
+$BatConfigurations = Resolve-Path -Path "$ENV:APPDATA\bat\config"
 
 Write-Host "The config files will be copied to $RootDirectory..." -ForegroundColor DarkMagenta
 
@@ -45,6 +46,9 @@ Copy-Item -Path $NeovimConfigurations -Recurse -Force -Destination "$RootDirecto
 
 Write-Host "Copying configurations for Winget at: $WingetConfigurations" -ForegroundColor Cyan
 Copy-Item -Path $WingetConfigurations -Destination "$RootDirectory\winget"
+
+Write-Host "Copying configurations for bat at: $BatConfigurations" -ForegroundColor Cyan
+Copy-Item -Path $BatConfigurations -Destination "$RootDirectory\bat"
 
 Write-Host " "
 
