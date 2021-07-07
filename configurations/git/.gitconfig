@@ -1,5 +1,7 @@
 # Git configuration reference available at: https://git-scm.com/docs/git-config
 # Example gitconfig is avaialable at: http://michaelwales.com/articles/make-gitconfig-work-for-you/
+[include]
+    path = $home/themes.gitconfig                   # Themes file for configuring Delta
 [user]                                              # Basic user info like email & name.
     email = somraj.mle@gmail.com                    # More info with regards to this section is available at:
     name = Jarmos-san                               # https://git-scm.com/docs/git-config#Documentation/git-config.txt-username
@@ -81,3 +83,6 @@
     vb = branch -vv                                 # Equivalent to "git branch -vv"
     rv = remote -v                                  # Equivalent to "git remote -v"
     ra = remote add origin                          # Equivalent to "git remote add"
+# Configurations for Delta (this are subject to change & voracious refactors)
+[delta]
+    features = collared-trogon
