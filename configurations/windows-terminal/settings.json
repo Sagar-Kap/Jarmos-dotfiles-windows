@@ -9,17 +9,13 @@
   "theme": "dark",
   "profiles": {
     "defaults": {
-      "acrylicOpacity": 0.75,
-      "backgroundImage": "%USERPROFILE%\\Pictures\\Saved Pictures\\312629.jpg",
-      "backgroundImageOpacity": 0.18,
       "colorScheme": "Gruvbox Dark",
       "cursorColor": "#ffffff",
       "cursorShape": "filledBox",
       "fontFace": "FiraCode NF",
       "fontSize": 11,
       "padding": "20, 8, 8, 3",
-      "startingDirectory": "E:\\Projects",
-      "useAcrylic": true
+      "startingDirectory": "E:\\Projects"
     },
     "list": [
       {
