@@ -61,4 +61,9 @@ tags
 .history
 .ionide
 
+# User-defined stuffs
+**/init.vim
+**/coc-settings.json
+**/settings/**/*.vim
+
 # End of https://www.toptal.com/developers/gitignore/api/powershell,visualstudiocode,vim,git
