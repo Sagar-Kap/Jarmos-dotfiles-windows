@@ -34,3 +34,20 @@ go.writebackup = false                  -- Neovim won't write backup copies of t
 go.termguicolors = true                 -- Enables GUI colors from the terminal
 go.visualbell = true                    -- Is supposed to enable some kind of error bells, need to research more on it
 go.foldlevelstart = 0                   -- Opens Neovim buffers with all folds closed
+
+-- Global Configurations related to plugins
+vim.g.gruvbox_contrast_dark = "hard"    -- Increases the dark contrast of the Gruvbox colorscheme
+vim.g.loaded_python_provider = 0        -- Disables loading Python 2
+vim.g.loaded_ruby_provider = 0          -- Disables loading Ruby
+vim.g.loaded_perl_provider = 0          -- Disables loading Perl
+
+-- Miscellaneous Vim Commands --
+-- Some VimScript syntax doesn't work natively using Lua yet.
+-- There's some work-in-progress stuff, so check them out if interested.
+-- For starters; Syntax Highlighting stuff can be tracked over here;
+-- https://github.com/nanotee/nvim-lua-guide#defining-syntaxhighlights
+-- Enables a retro colorscheme for use within Neovim
+-- TODO: Use native Lua code configure colorscheme & highlighting concerns
+cmd [[ colorscheme gruvbox ]]
+-- Enables transparent background within Neovim
+cmd [[ highlight Normal guibg=NONE ctermbg=NONE ]]
