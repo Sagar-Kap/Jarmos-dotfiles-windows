@@ -65,6 +65,6 @@ tags
 **/init.vim
 **/coc-settings.json
 **/settings/**/*.vim
-**/Neovim/plugin/*.lua
+**/neovim/plugin/*.lua
 
 # End of https://www.toptal.com/developers/gitignore/api/powershell,visualstudiocode,vim,git
