@@ -18,5 +18,5 @@ return require('packer').startup(function(use)
   -- More info is available in the official repository at:
   -- https://github.com/wbthomason/packer.nvim#quickstart
   use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+  use {"neovim/nvim-lspconfig"}
 end)
-

@@ -49,5 +49,6 @@ vim.g.loaded_perl_provider = 0          -- Disables loading Perl
 -- Enables a retro colorscheme for use within Neovim
 -- TODO: Use native Lua code configure colorscheme & highlighting concerns
 cmd [[ colorscheme gruvbox ]]
+-- cmd [[ colorscheme desert ]]
 -- Enables transparent background within Neovim
 cmd [[ highlight Normal guibg=NONE ctermbg=NONE ]]
