@@ -1,12 +1,37 @@
 # Neovim Configurations
 
-[Neovim][Neovim] is a fork of the original [Vim][Vim]. If you are on an Unix-like system, chances are, it already comes pre-packaged with it. But for Windows, you need to resot to other means. But do note, even though Vim is available on Windows, it's not as user-friendly as it is on Unix-like systems. It's too buggy & configuring it can be a struggle as well.
+[Neovim][Neovim] is a fork of the original [Vim][Vim]. If you are on an Unix-like system, chances are, it already comes pre-packaged with it.
 
-To tackle with the issues Vim poses on Windows platforms, Neovim comes in as a viable alternative. It's not as buggy as it's vanilla alternative. And is pretty easy to configure as well due to it's sensible default settings. And if you need help learning more about Neovim, do check out their official documentations.
+But it's a different case with Windows users. While a GUI variant of Vim called GVim is available for Windows users, it's not as user-friendly as it is on Unix-like systems. And besides, Vim on Windows is way too buggy to be useful. Coupled with a buggy interface & unecessary configuration, it can be a bit of a struggle as well.
 
-That said, this directory holds everything that I use to configure my Neovim environment.
+On a brighter note though, Neovim comes in as a viable alternative for Windows users. It's not as buggy as it's vanilla counterpart & comes pre-packaged with certain sensible default configuration settings as well. So, if you prefer  reading up more about it, the official documentations at [neovim.io](https://neovim.io) is a great place to start with.
 
-**Note**: I've only recently started using Neo(vim) & hence my current settings are very crude. They're subject to constant change, so be wary of what you copy. So, if you're curious about something or just plain confused, then reach out to me.
+But if you're already aware of Neovim & it's capabilities, and perhaps you're looking for some inspiration to configure your Neovim environment, this repo might benefit you in some ways.
+
+But before you start with that, do note, Neovim can be configured with Lua right now. And since Neovim 0.5 which comes with an in-built Language Server Provider (LSP). The only caveat though, configuring LSP requires a bit of Lua scripting. With that in mind, you might notice I'm in the middle of migrating most of my Vim configurations from VimScript to LuaScript. Instead if you want to figure out how I had Neovim configured with VimScript, head over to [Jarmos-san/myvimconfig](https://github.com/Jarmos-san/myvimconfig). It's a backup of my older `init.vim` kept only for future reference.
+
+## How to Configure Neovim with Lua
+
+The best eye-catching feature of Neovim is it's embedded Lua scripting environment. You can call Lua code within VimScript with the `lua` keyword or write Lua code directly to configure Neovim. If you need more info on how to migrate from using VimScript to Lua, do check out `:h lua.txt` as a great starting point.
+
+But briefly put, the `runtimepath` previously used within Neo(vim) hasn't changed. So, if you had scripts in there previously, they'll still work. Also, similar to `init.vim` you should leave an `init.lua` at it's usual place as well. So, for Windows users, you should leave the `init.lua` file at `%LOCALAPPDATA%\nvim`.
+
+Additionally, while it's not a necessity, all Lua scripts should be placed inside a folder aptly named `lua`. These scripts are considered Lua modules & all scripts here is automatically "sourced". So, assuming there's a `settings.lua` script under the `lua` directory, you can call this script inside `init.lua` with the `require('settings')` syntax. For more information, refer to the `:h lua.txt` documentation.
+
+That said, I've setup my Lua directory as follows:
+
+```console
+%LOCALAPPDATA%/
+├─ nvim/
+│  ├─ after/
+│  │  ├─ ftplugin/
+│  ├─ lua/
+│  │  ├─ settings.lua
+│  │  ├─ plugins.lua
+│  │  ├─ lsp_config.lua
+│  │  ├─ keymaps.lua
+│  ├─ init.lua
+```
 
 ## Plugins Used
 
