@@ -20,41 +20,51 @@ Additionally, while it's not a necessity, all Lua scripts should be placed insid
 
 That said, I've setup my Lua directory as follows:
 
-```console
+```powershell
 %LOCALAPPDATA%/
 ├─ nvim/
 │  ├─ after/
-│  │  ├─ ftplugin/
-│  ├─ lua/
-│  │  ├─ settings.lua
-│  │  ├─ plugins.lua
-│  │  ├─ lsp_config.lua
-│  │  ├─ keymaps.lua
-│  ├─ init.lua
+│  ├─ lua/                      # Contains all Lua modules for configuring Neovim with
+│  │  ├─ keymaps.lua            # Module for configuring Vim keymaps
+│  │  ├─ lsp_config.lua         # Module for configuring the native in-built LSP
+│  │  ├─ plugins.lua            # Module for "installing" & configuring plugins for Neovim
+│  │  ├─ settings.lua           # Module for configuring all Neovim options
+│  │  ├─ statusline.lua         # Module for install & configuring the Statusline
+│  ├─ init.lua                  # Notice the .lua extension instead of the usual .vim extensions
 ```
+
+As you can see, configuring Neovim with Lua is pretty straightforward. It's almost like developing a product with an arbitrary programming language. Now you longer have to maintain a huge `.vimrc` file with 100s of lines of code.
+
+As usual, refer to `h: lua.txt` for more info on configuring Neovim with Lua instead of VimScript.
+
+## My Neovim Configurations Explained
+
+As mentioned earlier, I configure Neovim with Lua instead of VimScript. It's much more flexible, is easily extensible & is easier to maintain. That said, I keep all user-defined customizations is Lua modules inside the `lua` directory. And import these modules using `require` statements in the `init.lua` file.
+
+Also, do note, the `init.lua` should be placed under `%LOCALAPPDATA%\nvim` & not under `lua\` like the other modules. Besides that, the order of importing the modules should also be taken care of. So, in my case, the `init.lua` file contains the following lines of code:
+
+```lua
+require('settings')
+require('plugins')
+require('lsp_config')
+require('statusline')
+```
+
+**NOTE**: Notice the lack of `.lua` extensions. Neovim knows to look inside the `lua` directory when importing the modules mentioned in the `init.lua`. So, when loading my `init.lua`, Neovim will first import the `settings.lua` followed by the `plugins.lua` & so on.
 
 ## Plugins Used
 
-I try to keep my `init.vim` file as minimal as possible, hence my list of plugins are quite limited too.
+I try to keep my `init.lua` file as minimal as possible, hence my list of plugins are quite limited as well. Some of the plugins are an absolute necessity for me & are one which I can't live without.
 
 That said, following are the list of plugins I currently use with my Neovim setup:
 
-- [PProvost/vim-ps1][Vim-PowerShell]
-- [Neoclide/coc.nvim][CoC-Neovim]
-- [itchyny/lightline][Lightline]
-- [morhertz/gruvbox][Gruvbox]
-- [preservim/nerdtree][NerdTree]
+- [npxbr/gruvbox.nvim](https://github.com/npxbr/gruvbox.nvim) for a retro colorscheme which is quite warm & nicer on the eyes.
+- [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) for configuring the built-in LSP in Neovim.
+- [ojroques/hardline](https://github.com/ojroques/hardline) for a nice & sleek statusline which also supports the Gruvbox colorscheme out-of-the-box. This plugin is subject to removal when I can write my own statusline later on.
+
+More plugins like `telescope.nvim`, `nvim-treesitter` & such are yet to be configured later on.
 
 ## Keymapping Used
 
-TODO: Add & explain the keymapping used in my dev environment
+TODO: Configure & share the reasons for doing so
 
-<!-- Reference links -->
-[Lightline]: https://github.com/itchyny/lightline.vim
-[Gruvbox]: https://github.com/morhertz/gruvbox
-[NerdTree]: https://github.com/preservim/nerdtree
-[Vim-Markdown]: https://github.com/plasticboy/vim-markdown
-[CoC-Neovim]: https://github.com/neoclide/coc.nvim
-[Vim-PowerShell]: https://github.com/PProvost/vim-ps1
-[Neovim]: http://neovim.io/
-[Vim]: https://www.vim.org/
