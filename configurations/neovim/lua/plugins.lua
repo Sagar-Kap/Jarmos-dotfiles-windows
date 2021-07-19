@@ -19,4 +19,12 @@ return require('packer').startup(function(use)
   -- https://github.com/wbthomason/packer.nvim#quickstart
   use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
   use {"neovim/nvim-lspconfig"}
+  use {"itchyny/lightline.vim"}
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+        {'nvim-lua/popup.nvim'}, 
+        {'nvim-lua/plenary.nvim'}
+    }
+}
 end)

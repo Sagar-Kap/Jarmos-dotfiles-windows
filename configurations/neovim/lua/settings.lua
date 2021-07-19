@@ -30,6 +30,7 @@ wo.wrap = false                         -- Disables text wrapping globally
 
 -- Global Options --
 go.backup = false                       -- Disables creating backup copy of the file before overwriting it
+go.showmode = false                     -- Disables showing what mode it is during Insert, Replace & Visual modes
 go.writebackup = false                  -- Neovim won't write backup copies of the edited file anymore
 go.termguicolors = true                 -- Enables GUI colors from the terminal
 go.visualbell = true                    -- Is supposed to enable some kind of error bells, need to research more on it

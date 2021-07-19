@@ -1,0 +1,3 @@
+-- Module for creating and/or configuring the statusline
+-- For now I'm using a plugin to customize the statusline
+-- TODO: Write my own Statusline & publish it as a plugin

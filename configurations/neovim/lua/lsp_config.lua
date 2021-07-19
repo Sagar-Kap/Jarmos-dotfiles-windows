@@ -20,6 +20,7 @@ lspconfig.jsonls.setup{
 
 -- HTML/CSS language server --
 -- TODO: Configure & setup snippet plugin like LuaSnips or UltiSnips
+-- Refer to https://github.com/neovim/nvim-lspconfig/issues/490
 lspconfig.html.setup{}
 
 -- YAML language server --
