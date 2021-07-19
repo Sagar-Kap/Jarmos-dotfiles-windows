@@ -1,4 +1,4 @@
-[[ ----------------------------------------------------------------------------
+--[[
 Yes, this is how I configure my Neovim environment! More info right below:
 
 First off, yes it might look confusing & weird but that's also the beauty of
@@ -13,7 +13,8 @@ were written in a "./lua/settings.lua" file, you should import it into your
 And don't forget to source your "init.lua" file after editing it.
 
 For more info, refer to https://github.com/nanotee/nvim-lua-guide
----------------------------------------------------------------------------- ]]
+]]
+
 require('settings')
 require('plugins')
 require('lsp_config')
