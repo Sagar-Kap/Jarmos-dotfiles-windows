@@ -39,6 +39,7 @@ go.foldlevelstart = 0                   -- Opens Neovim buffers with all folds c
 
 -- Global Configurations related to plugins
 vim.g.gruvbox_contrast_dark = "hard"    -- Increases the dark contrast of the Gruvbox colorscheme
+vim.g.mapleader = " "			        -- Sets <SPACE> as the leader key
 vim.g.loaded_python_provider = 0        -- Disables loading Python 2
 vim.g.loaded_ruby_provider = 0          -- Disables loading Ruby
 vim.g.loaded_perl_provider = 0          -- Disables loading Perl
