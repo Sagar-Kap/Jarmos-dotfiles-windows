@@ -43,6 +43,7 @@ vim.g.mapleader = " "			        -- Sets <SPACE> as the leader key
 vim.g.loaded_python_provider = 0        -- Disables loading Python 2
 vim.g.loaded_ruby_provider = 0          -- Disables loading Ruby
 vim.g.loaded_perl_provider = 0          -- Disables loading Perl
+vim.g.netrw_menu = 0                    -- Disables the Netrw banner & menu. Doesn't appear to work though (it's Netrw anyway)
 
 -- Miscellaneous Vim Commands --
 -- Some VimScript syntax doesn't work natively using Lua yet.

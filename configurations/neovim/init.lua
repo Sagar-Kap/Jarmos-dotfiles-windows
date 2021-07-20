@@ -21,3 +21,8 @@ require('lsp_config')
 require('statusline')
 require('keymaps')
 
+--[[
+Use resources for future references:
+- https://icyphox.sh/blog/nvim-lua/
+- https://rishabhrd.github.io/jekyll/update/2020/09/19/nvim_lsp_config.html
+]]
