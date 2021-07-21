@@ -17,10 +17,10 @@ For more info, refer to https://github.com/nanotee/nvim-lua-guide
 
 require('settings')
 require('plugins')
-require('lsp_config')
+require('lspconfigs')
 require('statusline')
 require('keymaps')
-require('completion')
+require('autocomplete')
 
 --[[
 Use resources for future references:
