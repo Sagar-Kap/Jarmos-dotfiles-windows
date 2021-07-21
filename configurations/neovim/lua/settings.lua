@@ -23,7 +23,7 @@ bo.swapfile = false                     -- Disables creating Swapfile for Neovim
 bo.undofile = false                     -- Disables creating Undofile while editing a file
 
 -- Window-local Options --
-wo.cursorline = true			        -- Enables the cursorline to make it easier to see where the cursor is located
+wo.cursorline = true			-- Enables the cursorline to make it easier to see where the cursor is located
 wo.number = true                        -- Enables the number column on the left side of the editor
 wo.relativenumber = true                -- Shows the cursor position relative the number column on the left
 wo.numberwidth = 1                      -- Defines the size of the number column on the left
@@ -31,6 +31,7 @@ wo.wrap = false                         -- Disables text wrapping globally
 
 -- Global Options --
 go.backup = false                       -- Disables creating backup copy of the file before overwriting it
+go.completeopt = "menuone,noselect"     -- Necessary options for configuring "hrsh7th/nvim-compe" plugin
 go.showmode = false                     -- Disables showing what mode it is during Insert, Replace & Visual modes
 go.writebackup = false                  -- Neovim won't write backup copies of the edited file anymore
 go.termguicolors = true                 -- Enables GUI colors from the terminal

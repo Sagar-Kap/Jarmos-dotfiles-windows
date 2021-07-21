@@ -24,10 +24,8 @@ map("i", "<LEFT>", "<NOP>")
 map("i", "<RIGHT>", "<NOP>")
 
 -- Disable <ESC> when in Insert mode
-map("i", "<ESC>", "<NOP>")          -- CAREFUL! Ensure <ESC> is remapped to something else 
 
 -- Essential remaps for better quality-of-life
-map("i", "jk", "<ESC>")             -- Remap <ESC> to "jk" instead when in Insert mode
 map("n", "H", "0")                  -- Press capital H to move to the start of a line
 map("n", "L", "$")                  -- Press capital L to move to the end of a line
 
@@ -39,6 +37,8 @@ vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })      -- Move cursor to one window below of the current one
 vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })      -- Move cursor to one window above of the current one
 vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })      -- Move cursor to one window right of the current one
+
+vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true, silent = true })		-- Remap "jk" to <ESC> to quite out of Insert mode
 
 -- Opens a File Explorer within Telescope
 map("n", "<Leader>ff", ":Telescope find_files<CR>")
