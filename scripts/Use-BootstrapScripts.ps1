@@ -25,11 +25,19 @@ $Packages = Resolve-Path -Path "..\configurations\winget\packages.json"
 
 Invoke-Expression -Command "winget import --import-file $Packages --ignore-unavailable"
 
-# TODO: Script for installing the patched Fira Code Nerd Fonts
+# TODO: Use Scoop to install Fira Code NF
+# Need to add the bucket to the system first downloading a font using Scoop.
+# More info on how to do so is available at https://github.com/matthewjberger/scoop-nerd-fonts
 
-# TODO: Download software distributed as binaries & add them to $PATH
-# ? More info are available at:
-# * https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Archive/Expand-Archive?view=powershell-7.2
-# * https://stackoverflow.com/questions/41895772/powershell-script-to-download-a-zip-file-and-unzip-it
+# Will be using it till WinGet is mature & is capable enough to install much more software
+Write-Host "Installing Scoop Package Manager"
+
+# Installs Scoop package manager.
+Invoke-WebRequest -Uri "https://get.scoop.sh" | Invoke-Expression
+
+Write-Host "Installing software not available through WinGet"
+
+# Scoop makes it easier to install some software which are generally distributed through binaries
+Invoke-Expression -Command "scoop install neovim less bat mingit hugo starship"
 
 # TODO: Cleanup system bloatware
