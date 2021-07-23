@@ -1,13 +1,24 @@
 <#
 .SYNOPSIS
 
-Execute this script to install necessary software
+Execute this script to install necessary software & remove bloatware
 
 .DESCRIPTION
 
-This script uses the Windows Package Manager (or "winget") to install all the necessary software(s) for the system. Winget can export the list of already installed software in a JSON file for later use. This same JSON file is later used by Winget to install the software(s) in the new system.
+This script is used for bootstrapping a brand new Windows machine for downloading necessary software & possibly removing bloatware from it.
 
-For my use, I've exported the list of software in a "package.json" file. You can take a look at the file at: "https://github.com/Jarmos-san/dotfiles-windows/blob/master/configurations/winget/packages.json".
+It use the new Windows Package Manager (called "winget") & Scoop (which is also
+downloaded programmatically) to install all necessary software for the system.
+If you're wondering why install Scoop beside Winget as well? Then you're not
+wrong to think about it that way either. Winget still has a long way to go &
+it's repository still doesn't host every installable software. And to brige that
+gap, Scoop is there to the rescue.
+
+Winget allows the user to export all installed software (only those available in
+it's repositories) onto a JSON file. This JSON file can then be used to
+reinstall the software in another brand new machine. Feel free to take a look at
+the JSON file I created for my use cases. It's available at:
+https://github.com/Jarmos-san/dotfiles-windows/blob/master/configurations/winget/packages.json
 
 .EXAMPLE
 
@@ -19,6 +30,7 @@ The exact design of the script is subject to change, so use at your own risk. Bu
 
 https://github.com/Jarmos-san/dotfiles-windows
 https://github.com/microsoft/winget-cli
+https://github.com/lukesampson/scoop
 #>
 
 $Packages = Resolve-Path -Path "..\configurations\winget\packages.json"
