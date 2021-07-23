@@ -11,7 +11,7 @@ That said, you can have a look at the `starship.toml` files & see it's pretty mi
 So, if it piqued your interests, keeping reading ahead. In this README you'll find all the instructions to properly set up Starship on your Windows machine as well.
 
 ## Setting Up Starship
-<!-- TODO: Recommend the automated install script -->
+
 1. Download the [Starship Binary][Starship Binary] either from GitHub or through Scoop (__which is the recommended way to get it__).
 2. Ensure the binary is available on `$PATH` (Scoop takes care of it for you automatically though).
 3. Add the following lines to your `$PROFILE` file with the following lines:
