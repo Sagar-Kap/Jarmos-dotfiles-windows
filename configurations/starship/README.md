@@ -1,6 +1,6 @@
 # Starship
 
-[Starship][Starship] is a cross-platform customizable prompt which was written in Rust & is **super-fast**. Also, unlike most other prompt customization tools, Starship requires close to none customizations. It just works pretty well (_and beautifully_) right out of the box!
+[Starship][Starship] is a cross-platform customizable prompt which was written in Rust & is **super-fast**. Also, unlike most other prompt customization tools, Starship requires close to no user configuration. It just works pretty well (_and beautifully_) right out of the box!
 
 That said, you can have a look at the `starship.toml` files & see it's pretty minimal. But don't be fooled with the minimal configurations! Take a look & see for yourself what this minimally configured prompt looks like on Windows Terminal:
 
@@ -8,14 +8,13 @@ That said, you can have a look at the `starship.toml` files & see it's pretty mi
 
 **NOTE**: _The areas marked with red boxes are the shell prompts._
 
-So, if it piqued your interests now, read ahead. In this README you'll find all the instructions to properly set up Starship on your Windows machine as well.
+So, if it piqued your interests, keeping reading ahead. In this README you'll find all the instructions to properly set up Starship on your Windows machine as well.
 
 ## Setting Up Starship
 <!-- TODO: Recommend the automated install script -->
-1. First off, download the required binary from GitHub: [Starship Binaries][Starship Binaries]
-2. Extract the zipped files to `%SYSTEMDRIVE%\Tools`.
-3. Ensure the above path is added to System Path using the Environment Variable `$PATH`.
-4. Add the following lines to your `$PROFILE` file with the following lines:
+1. Download the [Starship Binary][Starship Binary] either from GitHub or through Scoop (__which is the recommended way to get it__).
+2. Ensure the binary is available on `$PATH` (Scoop takes care of it for you automatically though).
+3. Add the following lines to your `$PROFILE` file with the following lines:
 
     ```powershell
     # Loads the Starship prompt for PowerShell
@@ -28,12 +27,15 @@ So, if it piqued your interests now, read ahead. In this README you'll find all 
     $ENV:STARSHIP_CONFIG = Resolve-Path -Path "$ENV:USERPROFILE\.starship\starship.toml
     ```
 
-5. Then create a `.starship` directory at `%USERPROFILE%`. The `starship.toml` file will go inside the `.starship` folder.
-6. Copy of the contents of [starship.toml](starship.toml) in this repository to the file you just created.
+4. Then create a `.starship` directory at `%USERPROFILE%`. The `starship.toml` file will go inside the `.starship` folder.
+5. Copy of the contents of [starship.toml](starship.toml) in this repository to the file you just created.
 
     Contents of the [starship.toml](starship.toml) file in this repo:
 
     ```toml
+    # Increase the default timeout duration for long-running operations
+    command_timeout = 2000
+
     [character]
     success_symbol = "[->](bold green)"
 
@@ -48,20 +50,18 @@ So, if it piqued your interests now, read ahead. In this README you'll find all 
 
     [git_branch]
     symbol = " "
-    remote_branch = "main"
-    remote_name = "github"
     ```
 
     **NOTE**: Some contents has been removed from the [starship.toml](starship.toml) file. Refer to the hyperlink for a better reference.
 
-7. Then run the `. $Profile` to reload the PowerShell profile.
-8. Enjoy & share a screenshot of your terminal with the rest of the world!
+6. Then run the `. $Profile` to reload the PowerShell profile.
+7. Enjoy & share a screenshot of your terminal with the rest of the world!
 
 ## Quick Setup Using PowerShell Command
 
 It's possible & actually recommended to use PowerShell Cmdlets to quicky set up the environment. You should do it moreso if it's only Starship that you want & not everything else I use here.
 
-That said, add the following commands to a PowerShell session. And here's a tip for you, use [Windows Terminal](../windows-terminal).
+That said, add the following commands to a PowerShell session. And here's a tip for you, use [Windows Terminal](../windows-terminal) for all your command-line requirements.
 
 ```powershell
 $StarshipConfigDirectory = Resolve-Path -Path "$ENV:USERPROFILE\.starship"
@@ -75,10 +75,8 @@ New-Item -ItemType "Directory" -Path "$ENV:HOMEDRIVE\Tools", $StarshipConfigDire
 # Create the Starship configuration file
 New-Item -ItemType "File" -Path $StarshipConfig
 
-# TODO: Download the Starship binary
-
-# TODO: Add the Starship binary to System Path 
-# Refer to: https://codingbee.net/powershell/powershell-make-a-permanent-change-to-the-path-environment-variable
+# Use Scoop to download Starship
+Invoke-Expression -Command "scoop install starship"
 
 # Add content to the $PROFILE
 Set-Content -Path $PROFILE -Value (Invoke-WebRequest -Uri $PowerShellConfigs).Content
@@ -92,7 +90,7 @@ Set-Content -Path $StarshipConfig -Value (Invoke-WebRequest -Uri $RemoteStarship
 
 ## Notes to Remember
 
-Do note, I'm using the patched version of Fira Code. It's available at [Nerd Fonts][Nerd Fonts], so do check it out if you want a similar experience. Also, by default Starship uses emojis in the prompt which I dislike. Hence, I replaced them with Nerd Font icons!
+Do note, I'm using the patched version of Fira Code. It's available at [Nerd Fonts][Nerd Fonts], so do check it out if you want a similar experience. Also, by default Starship uses emojis in the prompt which I dislike. Hence, I replaced them with Nerd Font icons instead :grinning_face_with_smiling_eyes:
 
 So, if you want to customize your Starship prompt according to your needs, definitely refer to the official [configuration docs][Starship Configurations].
 
