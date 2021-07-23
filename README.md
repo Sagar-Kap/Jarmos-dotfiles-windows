@@ -1,5 +1,7 @@
 # Dotfiles (supposed) for My Windows Development Environments
 
+![GitHub repo size](https://img.shields.io/github/repo-size/Jarmos-san/dotfiles-windows?label=Repository%20Size&logo=github&style=flat-square) ![GitHub repo file count](https://img.shields.io/github/directory-file-count/Jarmos-san/dotfiles-windows?label=%23%20of%20Files&logo=github&style=flat-square) ![GitHub](https://img.shields.io/github/license/Jarmos-san/dotfiles-windows?label=Licensed%20Under&logo=github&style=flat-square) ![Twitter Follow](https://img.shields.io/twitter/follow/Jarmosan?style=social)
+
 This directory holds all the scripts, config files & among other stuff. I use these are stuff to setup my development environment on a Windows machine. And as of the latest commit, the directory contains configurations for the software(s) and other stuff like font(s) & scripts for automation.
 
 Following is a list of everything you can find in this repo:
