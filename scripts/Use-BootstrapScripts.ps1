@@ -59,3 +59,7 @@ Invoke-Expression -Command "scoop install neovim less bat mingit hugo starship"
 # While "npm" will be used to download language servers for Neovim's LSP
 
 # TODO: Cleanup system bloatware
+
+# TODO: Enable WSL2 on the system
+# NOTE: The system requires a restart after enabling WSL2. So, I still need to figure a way to install
+# Ubuntu through this script
