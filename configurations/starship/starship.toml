@@ -1,3 +1,6 @@
+# Global/prompt-wide configurations
+command_timeout = 2000                  # Increase the default timeout duration for long-running applications
+
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                             # The name of the module we are configuring is "character"
 success_symbol = "[->](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
@@ -20,5 +23,3 @@ symbol = " "                           # Replaces the defailt emoji "🐍 "
 # Prompt customization for Version Control info with Git
 [git_branch]
 symbol = " "                           # Replaces the default emoji " "
-remote_branch = "main"                  # Renames the default remote branch to "main" in compliance with GitHub's latest change
-remote_name = "github"                  # Renames the remote name to "github" instead of "origin" just to make more sense

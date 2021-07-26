@@ -21,6 +21,7 @@ require('lspconfigs')
 require('statusline')
 require('keymaps')
 require('autocomplete')
+require('treesitter')
 
 --[[
 Use resources for future references:

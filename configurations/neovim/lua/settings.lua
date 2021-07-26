@@ -1,7 +1,6 @@
 -- Aliases --
--- TODO: Reconsider moving all aliases into a Lua module instead.
--- That way they can be "required" across each specific file when necessary
 local o = vim.o                         -- The variable "o" will now behave like ":set"
+local eval = vim.api.nvim_eval          -- Hopefully used for evaluating Vim expressions in Lua code
 local wo = vim.wo                       -- The variable "wo" now behaves like ":setlocal" for window-local options
 local bo = vim.bo                       -- The variable "bo" now behaves like ":setlocal" for buffer-local options
 local go = vim.go                       -- The variable "go" now behaves like ":setglobal"
@@ -23,7 +22,9 @@ bo.swapfile = false                     -- Disables creating Swapfile for Neovim
 bo.undofile = false                     -- Disables creating Undofile while editing a file
 
 -- Window-local Options --
-wo.cursorline = true			-- Enables the cursorline to make it easier to see where the cursor is located
+wo.cursorline = true			        -- Enables the cursorline to make it easier to see where the cursor is located
+wo.foldmethod = "expr"                   -- Enables folding method based on Treesitter functions
+wo.foldexpr = eval('nvim_treesitter#foldexpr()')    -- Hopefully enables the folding expression for Neovim
 wo.number = true                        -- Enables the number column on the left side of the editor
 wo.relativenumber = true                -- Shows the cursor position relative the number column on the left
 wo.numberwidth = 1                      -- Defines the size of the number column on the left

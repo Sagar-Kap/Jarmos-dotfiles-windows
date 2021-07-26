@@ -17,9 +17,10 @@ return require('packer').startup(function(use)
   -- use the "<repo>/<plugin-name>" format to install them
   -- More info is available in the official repository at:
   -- https://github.com/wbthomason/packer.nvim#quickstart
-  use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
-  use {"neovim/nvim-lspconfig"}
-  use {"itchyny/lightline.vim"}
-  use {"nvim-telescope/telescope.nvim", requires = { {'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'} } }
-  use {"hrsh7th/nvim-compe"}
+  use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
+  use { "neovim/nvim-lspconfig" }
+  use { "itchyny/lightline.vim" }
+  use { "nvim-telescope/telescope.nvim", requires = { {'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'} } }
+  use { "hrsh7th/nvim-compe" }
+  use { "nvim-treesitter/nvim-treesitter", branch = "0.5-compat", run = "TSUpdate" }
 end)

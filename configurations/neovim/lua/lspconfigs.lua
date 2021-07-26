@@ -5,6 +5,8 @@
 -- refer to the CONFIG.md file in the plugin's repo which is also available at:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
 
+-- TODO: Refactor the module
+--       Use a table to loop through for creating the servers
 local lspconfig = require('lspconfig')
 
 -- Pyright Language Server for Python files
@@ -15,6 +17,8 @@ lspconfig.tsserver.setup{}
 
 -- JSON language server --
 -- TODO: Configure it further based on info available in the documentations
+-- TODO: Refer to this comment:
+--      https://github.com/neovim/nvim-lspconfig/issues/490#issuecomment-753624074
 lspconfig.jsonls.setup{
     commands = {
         Format = {
