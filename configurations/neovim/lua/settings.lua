@@ -1,11 +1,14 @@
 -- Aliases --
 local o = vim.o                         -- The variable "o" will now behave like ":set"
-local eval = vim.api.nvim_eval          -- Hopefully used for evaluating Vim expressions in Lua code
 local wo = vim.wo                       -- The variable "wo" now behaves like ":setlocal" for window-local options
 local bo = vim.bo                       -- The variable "bo" now behaves like ":setlocal" for buffer-local options
 local go = vim.go                       -- The variable "go" now behaves like ":setglobal"
 local cmd = vim.cmd                     -- "cmd" will behave like "<cmd>" now
 local fn = vim.fn                       -- "fn" is an simpler function for calling Vim-specific functions
+
+local eval = vim.api.nvim_exec          -- Hopefully used for evaluating Vim expressions in Lua code
+
+-- TODO: Figure out how to fold using treesitter
 
 -- Options --
 o.hlsearch = false                      -- Disables highlighting searched word/phrase(s)
@@ -23,8 +26,7 @@ bo.undofile = false                     -- Disables creating Undofile while edit
 
 -- Window-local Options --
 wo.cursorline = true			        -- Enables the cursorline to make it easier to see where the cursor is located
-wo.foldmethod = "expr"                   -- Enables folding method based on Treesitter functions
-wo.foldexpr = eval('nvim_treesitter#foldexpr()')    -- Hopefully enables the folding expression for Neovim
+wo.foldmethod = "indent"                -- Enables folding method based on Treesitter functions
 wo.number = true                        -- Enables the number column on the left side of the editor
 wo.relativenumber = true                -- Shows the cursor position relative the number column on the left
 wo.numberwidth = 1                      -- Defines the size of the number column on the left

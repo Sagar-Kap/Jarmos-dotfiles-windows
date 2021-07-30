@@ -1,41 +1,30 @@
 -- Module for configuring Neovim's native LSP --
+
 -- The in-built LSP is configured through a plugin named: neovim/lspconfig
 -- But each Language Servers has to be configured seperately.
 -- For more information on how-to configure the individual language servers,
 -- refer to the CONFIG.md file in the plugin's repo which is also available at:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
 
--- TODO: Refactor the module
---       Use a table to loop through for creating the servers
-local lspconfig = require('lspconfig')
+local nvim_lsp = require('lspconfig')
 
--- Pyright Language Server for Python files
-lspconfig.pyright.setup{}
+-- Creates a new ClientCapabilities object for Neovim
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 
--- TypeScript and/or JavaScript language server
-lspconfig.tsserver.setup{}                              
+-- Support Snippets completion through the LSP
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
--- JSON language server --
--- TODO: Configure it further based on info available in the documentations
--- TODO: Refer to this comment:
---      https://github.com/neovim/nvim-lspconfig/issues/490#issuecomment-753624074
-lspconfig.jsonls.setup{
-    commands = {
-        Format = {
-            function()
-                vim.lsp.buf.range_formatting({}, {0,0}, {vim.fn.line("$"), 0})
-            end
-        }
+local servers = { "tsserver", "pyright", "jsonls", "html", "yamlls" }
+
+for _, lsp in ipairs(servers) do
+    nvim_lsp[lsp].setup {
+        -- Need more info on the "on_attach" function.
+        -- A good place to start is at:
+        -- https://github.com/mjlbach/defaults.nvim/blob/73d4b205be5711b681ef2df9d171b1c55040803b/init.lua#L146
+        -- on_attach = on_attach,
+        capabilities = capabilities,
     }
-}
-
--- HTML/CSS language server --
--- TODO: Configure & setup snippet plugin like LuaSnips or UltiSnips
--- Refer to https://github.com/neovim/nvim-lspconfig/issues/490
-lspconfig.html.setup{}
-
--- YAML language server --
-lspconfig.yamlls.setup{}
+end
 
 -- EFM language server --
 -- TODO: Install the efm-language-server for working with linters & other
