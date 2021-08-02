@@ -14,33 +14,29 @@ end
 
 -- Install plugins using "packer.nvim" over here
 return require('packer').startup(function(use)
-  -- Include whichever plugins her following this format:
-  -- use the "<repo>/<plugin-name>" format to install them
   -- More info is available in the official repository at:
   -- https://github.com/wbthomason/packer.nvim#quickstart
-  use {
+  use { -- Gruvbox colorscheme
     "npxbr/gruvbox.nvim",
     requires = {"rktjmp/lush.nvim"}
     }
-  use {
-    "neovim/nvim-lspconfig"
-  }
-  use {
+  use { -- Lightline statusline
     "itchyny/lightline.vim"
   }
-  use {
+  use { -- Neovim Telescope for fuzzy-finding & file exploration
     "nvim-telescope/telescope.nvim",
     requires = {
       {'nvim-lua/popup.nvim'},
       {'nvim-lua/plenary.nvim'}
     }
   }
-  use {
-    "hrsh7th/nvim-compe"
-  }
-  use {
+  use { -- Neovim Tressitter runtime for syntax highlighting & other stuff
     "nvim-treesitter/nvim-treesitter",
     branch = "0.5-compat",
     run = "TSUpdate"
+  }
+  use { -- CoC plugin for Autocompletion & Snippets support
+    "neoclide/coc.nvim",
+    branch = "release"
   }
 end)

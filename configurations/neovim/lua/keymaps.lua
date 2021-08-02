@@ -42,13 +42,6 @@ api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true, silent = true })		-- R
 -- Telescope mappings
 map("n", "<Leader>ff", ":Telescope find_files<CR>")                             -- Opens a File Explorer within Telescope
 
--- Nvim-Compe (autocompletion plugin) mappings
-api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})        -- Press "Tab"/"Shift+Tab" to navigate up/down the completion menu
-api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-
--- Doesn't work as expected on Windows-machines due to CRLF issues
--- api.nvim_set_keymap("i", "<CR>", "compe#confirm(<CR>)", {expr = true})          -- Auto-import mappings
-
 -- NOTE: It's best to disable the "<ESC>" at the end else you
 -- would've no way to change modes after a Insert mode session.
 -- Disable <ESC> when in Insert mode
