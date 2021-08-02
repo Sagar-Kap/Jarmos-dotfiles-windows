@@ -66,5 +66,6 @@ tags
 **/settings/**/*.vim
 **/neovim/plugin/*.lua
 **/neovim/parser/*.so
+**/neovim/parsers/*.so
 
 # End of https://www.toptal.com/developers/gitignore/api/powershell,visualstudiocode,vim,git
