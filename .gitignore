@@ -63,7 +63,6 @@ tags
 
 # User-defined stuffs
 **/init.vim
-**/coc-settings.json
 **/settings/**/*.vim
 **/neovim/plugin/*.lua
 **/neovim/parser/*.so
