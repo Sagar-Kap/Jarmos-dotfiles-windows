@@ -29,5 +29,6 @@
     "typescript": "prettier",
     "javascript": "prettier",
     "json": "prettier"
-  }
+  },
+  "snippets.ultisnips.usePythonx": false
 }
