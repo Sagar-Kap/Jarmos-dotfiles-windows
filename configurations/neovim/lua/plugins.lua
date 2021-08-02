@@ -39,4 +39,7 @@ return require('packer').startup(function(use)
     "neoclide/coc.nvim",
     branch = "release"
   }
+  use { -- Plugin for Nerd Font based icons
+    "kyazdani42/nvim-web-devicons"
+  }
 end)
