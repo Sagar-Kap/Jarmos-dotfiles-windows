@@ -21,6 +21,7 @@ require('statusline')
 require('keymaps')
 require('treesitter')
 require('autocomplete')
+require("telescope_config")
 
 --[[
 Use resources for future references:

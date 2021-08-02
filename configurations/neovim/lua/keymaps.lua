@@ -27,6 +27,7 @@ map("i", "<RIGHT>", "<NOP>")
 -- Essential remaps for better quality-of-life
 map("n", "H", "0")                                              -- Press capital H to move to the start of a line
 map("n", "L", "$")                                              -- Press capital L to move to the end of a line
+map("n", "Y", "y$")						-- Press "y" (capital y) to yank a line
 
 -- Keymaps for navigating around split windows
 -- TODO: Create a wrapper function to handle global keymappings like the ones below.
@@ -41,6 +42,8 @@ api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true, silent = true })		-- R
 
 -- Telescope mappings
 map("n", "<Leader>ff", ":Telescope find_files<CR>")                             -- Opens a File Explorer within Telescope
+map("n", "<Leader>fb", ":Telescope buffers<CR>")				-- Telescope shows a list of available buffers
+map("n", "<Leader>fe", ":Telescope file_browser<CR>")				-- Telescope shows a list of available files & directories in the current working directory
 
 -- NOTE: It's best to disable the "<ESC>" at the end else you
 -- would've no way to change modes after a Insert mode session.

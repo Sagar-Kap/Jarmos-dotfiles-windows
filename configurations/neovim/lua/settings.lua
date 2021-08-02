@@ -6,6 +6,14 @@ local go = vim.go                       -- The variable "go" now behaves like ":
 local cmd = vim.cmd                     -- "cmd" will behave like "<cmd>" now
 local fn = vim.fn                       -- "fn" is an simpler function for calling Vim-specific functions
 
+-- Global Configurations related to plugins
+vim.g.mapleader = ","
+vim.g.gruvbox_contrast_dark = "hard"    -- Increases the dark contrast of the Gruvbox colorscheme
+vim.g.loaded_python_provider = 0        -- Disables loading Python 2
+vim.g.loaded_ruby_provider = 0          -- Disables loading Ruby
+vim.g.loaded_perl_provider = 0          -- Disables loading Perl
+vim.g.netrw_menu = 0                    -- Disables the Netrw banner & menu. Doesn't appear to work though (it's Netrw anyway)
+
 -- Options --
 o.hlsearch = false                      -- Disables highlighting searched word/phrase(s)
 o.ignorecase = true                     -- Ignore casing of the searched word(s)/phrase(s)
@@ -32,14 +40,6 @@ go.writebackup = false                  -- Neovim won't write backup copies of t
 go.termguicolors = true                 -- Enables GUI colors from the terminal
 go.visualbell = true                    -- Is supposed to enable some kind of error bells, need to research more on it
 go.foldlevelstart = 0                   -- Opens Neovim buffers with all folds closed
-
--- Global Configurations related to plugins
-vim.g.gruvbox_contrast_dark = "hard"    -- Increases the dark contrast of the Gruvbox colorscheme
-vim.g.mapleader = " "			        -- Sets <SPACE> as the leader key
-vim.g.loaded_python_provider = 0        -- Disables loading Python 2
-vim.g.loaded_ruby_provider = 0          -- Disables loading Ruby
-vim.g.loaded_perl_provider = 0          -- Disables loading Perl
-vim.g.netrw_menu = 0                    -- Disables the Netrw banner & menu. Doesn't appear to work though (it's Netrw anyway)
 
 -- Miscellaneous Vim Commands --
 -- Some VimScript syntax doesn't work natively using Lua yet.
