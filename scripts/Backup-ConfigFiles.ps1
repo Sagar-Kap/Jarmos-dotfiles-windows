@@ -31,25 +31,27 @@ $BatConfigurations = Resolve-Path -Path "$ENV:APPDATA\bat\config"
 
 Write-Host "The config files will be copied to $ConfigDirectory..." -ForegroundColor DarkMagenta
 
-Write-Host "Copying configurations for Windows Terminal at: $WTConfigurations" -ForegroundColor Cyan
+Write-Host "Copying configurations for: `n" -ForegroundColor Cyan
+
+Write-Host "--> Windows Terminal"
 Copy-Item -Path $WTConfigurations -Destination "$ConfigDirectory\windows-terminal"
 
-Write-Host "Copying configurations for Starship at: $StarshipConfigurations" -ForegroundColor Cyan
+Write-Host "--> Starship"
 Copy-Item -Path $StarshipConfigurations -Destination "$ConfigDirectory\starship"
 
-Write-Host "Copying configurations for Git at: $GitConfigurations" -ForegroundColor Cyan
+Write-Host "--> Git"
 Copy-Item -Path $GitConfigurations -Destination "$ConfigDirectory\git"
 
-Write-Host "Copying configurations for Windows PowerShell at: $PROFILE" -ForegroundColor Cyan
+Write-Host "--> Windows PowerShell"
 Copy-Item -Path $PROFILE -Destination "$ConfigDirectory\windows-powershell"
 
-Write-Host "Copying configurations for Neovim at: $NeovimConfigurations" -ForegroundColor Cyan
+Write-Host "--> Neovim"
 Copy-Item -Path $NeovimConfigurations -Recurse -Force -Destination "$ConfigDirectory\neovim"
 
-Write-Host "Copying configurations for Winget at: $WingetConfigurations" -ForegroundColor Cyan
+Write-Host "--> Winget CLI"
 Copy-Item -Path $WingetConfigurations -Destination "$ConfigDirectory\winget"
 
-Write-Host "Copying configurations for bat at: $BatConfigurations `n" -ForegroundColor Cyan
+Write-Host "--> Bat: A `"cat`" with wings!`n"
 Copy-Item -Path $BatConfigurations -Destination "$ConfigDirectory\bat"
 
 Write-Host "All config files copied to local repository! `n" -ForegroundColor DarkMagenta
