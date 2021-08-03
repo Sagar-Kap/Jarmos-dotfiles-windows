@@ -56,12 +56,14 @@ Copy-Item -Path $BatConfigurations -Destination "$ConfigDirectory\bat"
 
 Write-Host "All config files copied to local repository! `n" -ForegroundColor DarkMagenta
 
+# TODO: Refactor the Git backup section of the script to invoke "git" command from anywhere in the file system
+# More info available at: http://antonkallenberg.com/2017/12/02/execute-a-git-command-in-multiple-folders-using-powershell
 Write-Host "Backing up the configurations in $RootDirectory to GitHub" -ForegroundColor DarkMagenta
 Write-Host "NOTE: Current directory will be changed to $RootDirectory `n" -ForegroundColor DarkRed
 Set-Location -Path $RootDirectory
 Invoke-Expression "git add $RootDirectory; git commit -am ':truck: Backup config files to GitHub'; git push"
 
-Write-Host "Done!" -ForegroundColor Green
+Write-Host "`nDone!" -ForegroundColor Green
 
 # TODO: Refactor the script
 #* Resources are available at:
