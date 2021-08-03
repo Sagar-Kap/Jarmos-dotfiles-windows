@@ -54,6 +54,11 @@ Write-Host "Installing software not available through WinGet"
 # Scoop makes it easier to install some software which are generally distributed through binaries
 Invoke-Expression -Command "scoop install neovim less bat mingit hugo starship"
 
+# Add Scoop buckets to install additional software
+Invoke-Expression -Command "scoop bucket add nerd-fonts"
+
+# TODO: Install Fonts
+
 # TODO: Install additional Python & NPM tools like "pipx", "yarn", & so on.
 # "pipx" will be used to download Python CLI tools like "poetry" & such.
 # While "npm" will be used to download language servers for Neovim's LSP
