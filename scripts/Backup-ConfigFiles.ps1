@@ -29,7 +29,7 @@ $GitConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.git*"
 $NeovimConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\nvim\*"
 $BatConfigurations = Resolve-Path -Path "$ENV:APPDATA\bat\config"
 
-Write-Host "The config files will be copied to $ConfigDirectory..." -ForegroundColor DarkMagenta
+Write-Host "The config files will be copied to $ConfigDirectory...`n" -ForegroundColor DarkMagenta
 
 Write-Host "Copying configurations for: `n" -ForegroundColor Cyan
 
