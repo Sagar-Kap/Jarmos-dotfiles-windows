@@ -6,8 +6,10 @@ local telescope = require("telescope")
 
 -- Configure Telescope below
 telescope.setup {
-    prompt_prefix = "->",				-- The prompt prefix
-    file_ignore_patterns = {				-- File patterns Telescope should ignore. Add more of them as & when required
-	".venv", "node_modules", ".next",
+    defaults = {
+	prompt_prefix = "->",				-- The prompt prefix
+	file_ignore_patterns = {				-- File patterns Telescope should ignore. Add more of them as & when required
+	    ".venv", "node_modules", ".next", ".git"
+    	}
     }
 }
