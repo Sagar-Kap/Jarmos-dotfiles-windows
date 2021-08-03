@@ -33,25 +33,25 @@ Write-Host "The config files will be copied to $ConfigDirectory...`n" -Foregroun
 
 Write-Host "Copying configurations for: `n" -ForegroundColor Cyan
 
-Write-Host "--> Windows Terminal"
+Write-Host "--> Windows Terminal" -ForegroundColor Blue
 Copy-Item -Path $WTConfigurations -Destination "$ConfigDirectory\windows-terminal"
 
-Write-Host "--> Starship"
+Write-Host "--> Starship" -ForegroundColor Blue
 Copy-Item -Path $StarshipConfigurations -Destination "$ConfigDirectory\starship"
 
-Write-Host "--> Git"
+Write-Host "--> Git" -ForegroundColor Blue
 Copy-Item -Path $GitConfigurations -Destination "$ConfigDirectory\git"
 
-Write-Host "--> Windows PowerShell"
+Write-Host "--> Windows PowerShell" -ForegroundColor Blue
 Copy-Item -Path $PROFILE -Destination "$ConfigDirectory\windows-powershell"
 
-Write-Host "--> Neovim"
+Write-Host "--> Neovim" -ForegroundColor Blue
 Copy-Item -Path $NeovimConfigurations -Recurse -Force -Destination "$ConfigDirectory\neovim"
 
-Write-Host "--> Winget CLI"
+Write-Host "--> Winget CLI" -ForegroundColor Blue
 Copy-Item -Path $WingetConfigurations -Destination "$ConfigDirectory\winget"
 
-Write-Host "--> Bat: A `"cat`" with wings!`n"
+Write-Host "--> Bat: A `"cat`" with wings!`n" -ForegroundColor Blue
 Copy-Item -Path $BatConfigurations -Destination "$ConfigDirectory\bat"
 
 Write-Host "All config files copied to local repository! `n" -ForegroundColor DarkMagenta
@@ -61,7 +61,7 @@ Write-Host "NOTE: Current directory will be changed to $RootDirectory `n" -Foreg
 Set-Location -Path $RootDirectory
 Invoke-Expression "git add $RootDirectory; git commit -am ':truck: Backup config files to GitHub'; git push"
 
-Write-Host "Done!" -ForegroundColor DarkMagenta
+Write-Host "Done!" -ForegroundColor Green
 
 # TODO: Refactor the script
 #* Resources are available at:
