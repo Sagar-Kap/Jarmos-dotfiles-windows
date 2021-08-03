@@ -49,19 +49,15 @@ Copy-Item -Path $NeovimConfigurations -Recurse -Force -Destination "$ConfigDirec
 Write-Host "Copying configurations for Winget at: $WingetConfigurations" -ForegroundColor Cyan
 Copy-Item -Path $WingetConfigurations -Destination "$ConfigDirectory\winget"
 
-Write-Host "Copying configurations for bat at: $BatConfigurations" -ForegroundColor Cyan
+Write-Host "Copying configurations for bat at: $BatConfigurations `n" -ForegroundColor Cyan
 Copy-Item -Path $BatConfigurations -Destination "$ConfigDirectory\bat"
 
-Write-Host " "
+Write-Host "All config files copied to local repository! `n" -ForegroundColor DarkMagenta
 
-Write-Host "All config files copied to local repository!" -ForegroundColor DarkMagenta
-
-Write-Host " "
-
-Write-Host "Backing up the configurations to GitHub" -ForegroundColor DarkMagenta
+Write-Host "Backing up the configurations in $RootDirectory to GitHub" -ForegroundColor DarkMagenta
+Write-Host "NOTE: Current directory will be changed to $RootDirectory `n" -ForegroundColor DarkRed
+Set-Location -Path $RootDirectory
 Invoke-Expression "git add $RootDirectory; git commit -am ':truck: Backup config files to GitHub'; git push"
-
-Write-Host " "
 
 Write-Host "Done!" -ForegroundColor DarkMagenta
 
