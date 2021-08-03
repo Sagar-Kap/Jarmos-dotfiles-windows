@@ -18,7 +18,9 @@ PS> E:\Dotfiles\Scripts\Backup-ConfigFiles
 Know what & how-to use these script at: https://github.com/Jarmos-san/dotfiles-windows before using them locally.
 #>
 
-$RootDirectory = Resolve-Path -Path "..\dotfiles\configurations"
+# Resolve path to the dotfiles directory
+$RootDirectory = "E:\Projects\dotfiles"
+$ConfigDirectory = Resolve-Path -Path "$RootDirectory\configurations"
 
 $WTConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 $WingetConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json"
@@ -27,28 +29,28 @@ $GitConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.git*"
 $NeovimConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\nvim\*"
 $BatConfigurations = Resolve-Path -Path "$ENV:APPDATA\bat\config"
 
-Write-Host "The config files will be copied to $RootDirectory..." -ForegroundColor DarkMagenta
+Write-Host "The config files will be copied to $ConfigDirectory..." -ForegroundColor DarkMagenta
 
 Write-Host "Copying configurations for Windows Terminal at: $WTConfigurations" -ForegroundColor Cyan
-Copy-Item -Path $WTConfigurations -Destination "$RootDirectory\windows-terminal"
+Copy-Item -Path $WTConfigurations -Destination "$ConfigDirectory\windows-terminal"
 
 Write-Host "Copying configurations for Starship at: $StarshipConfigurations" -ForegroundColor Cyan
-Copy-Item -Path $StarshipConfigurations -Destination "$RootDirectory\starship"
+Copy-Item -Path $StarshipConfigurations -Destination "$ConfigDirectory\starship"
 
 Write-Host "Copying configurations for Git at: $GitConfigurations" -ForegroundColor Cyan
-Copy-Item -Path $GitConfigurations -Destination "$RootDirectory\git"
+Copy-Item -Path $GitConfigurations -Destination "$ConfigDirectory\git"
 
 Write-Host "Copying configurations for Windows PowerShell at: $PROFILE" -ForegroundColor Cyan
-Copy-Item -Path $PROFILE -Destination "$RootDirectory\windows-powershell"
+Copy-Item -Path $PROFILE -Destination "$ConfigDirectory\windows-powershell"
 
 Write-Host "Copying configurations for Neovim at: $NeovimConfigurations" -ForegroundColor Cyan
-Copy-Item -Path $NeovimConfigurations -Recurse -Force -Destination "$RootDirectory\neovim"
+Copy-Item -Path $NeovimConfigurations -Recurse -Force -Destination "$ConfigDirectory\neovim"
 
 Write-Host "Copying configurations for Winget at: $WingetConfigurations" -ForegroundColor Cyan
-Copy-Item -Path $WingetConfigurations -Destination "$RootDirectory\winget"
+Copy-Item -Path $WingetConfigurations -Destination "$ConfigDirectory\winget"
 
 Write-Host "Copying configurations for bat at: $BatConfigurations" -ForegroundColor Cyan
-Copy-Item -Path $BatConfigurations -Destination "$RootDirectory\bat"
+Copy-Item -Path $BatConfigurations -Destination "$ConfigDirectory\bat"
 
 Write-Host " "
 
