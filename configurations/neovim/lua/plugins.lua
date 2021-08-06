@@ -1,5 +1,4 @@
 local fn = vim.fn
-
 local execute = vim.api.nvim_command
 
 -- "packer.nvim" installation path
@@ -9,7 +8,8 @@ local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 -- when Neovim starts for the first time
 if fn.empty(fn.glob(install_path)) > 0 then
   fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-  execute 'packadd packer.nvim'
+  execute "packadd packer.nvim"
+  execute "PackerSync"
 end
 
 -- Install plugins using "packer.nvim" over here
@@ -41,5 +41,14 @@ return require('packer').startup(function(use)
   }
   use { -- Plugin for Nerd Font based icons
     "kyazdani42/nvim-web-devicons"
+  }
+  use { -- Telescope extension: Cheatsheet.nvim
+    "sudormrfbin/cheatsheet.nvim"
+  }
+  use { -- Telescope extension: Telescope-coc.nvim
+    "fannheyward/telescope-coc.nvim"
+  }
+  use { -- Telescope extension: Telescope-heading.nvim for navigating around Markdown headings
+    "crispgm/telescope-heading.nvim"
   }
 end)
