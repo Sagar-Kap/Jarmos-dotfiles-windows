@@ -27,7 +27,7 @@ bo.undofile = false                     -- Disables creating Undofile while edit
 -- Window-local Options --
 wo.foldmethod = "expr"                  -- Enables setting a function for folding code
 wo.foldexpr = fn["nvim_treesitter#foldexpr"]()
-wo.cursorline = true			        -- Enables the cursorline to make it easier to see where the cursor is located
+wo.cursorline = true                    -- Enables the cursorline to make it easier to see where the cursor is located
 wo.number = true                        -- Enables the number column on the left side of the editor
 wo.relativenumber = true                -- Shows the cursor position relative the number column on the left
 wo.numberwidth = 1                      -- Defines the size of the number column on the left
