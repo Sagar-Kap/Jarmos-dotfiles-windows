@@ -51,4 +51,7 @@ return require('packer').startup(function(use)
   use { -- Telescope extension: Telescope-heading.nvim for navigating around Markdown headings
     "crispgm/telescope-heading.nvim"
   }
+  use { -- Plugin for visualising blankline characters like white-space, indents & so on
+    "lukas-reineke//indent-blankline.nvim"
+  }
 end)
