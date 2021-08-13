@@ -59,11 +59,15 @@ Invoke-Expression -Command "scoop bucket add nerd-fonts"
 
 Write-Host "Installing Fira Code NF"
 
+# Install Fira Code using Scoop
 Invoke-Expression -Command "scoop install firacode"
 
-# TODO: Install additional Python & NPM tools like "pipx", "yarn", & so on.
-# "pipx" will be used to download Python CLI tools like "poetry" & such.
-# While "npm" will be used to download language servers for Neovim's LSP
+Write-Host "Installing `"pipx`" `- A tool for installing Python CLI tools!"
+# Install pipx - A CLI tool for installing Python CLI tools!
+Invoke-Expression -Command "py -m pip install --upgrade pipx"
+
+Write-Host "Installing `"yarn`" `- An alternate package manager for frontend projects!"
+Invoke-Expression -Command "npm install --global yarn"
 
 # TODO: Cleanup system bloatware
 
