@@ -45,8 +45,6 @@ Invoke-Expression -Command "winget import --import-file $Packages --ignore-unava
 
 # Will be using it till WinGet is mature & is capable enough to install much more software
 Write-Host "Installing Scoop Package Manager"
-
-# Installs Scoop package manager.
 Invoke-WebRequest -Uri "https://get.scoop.sh" | Invoke-Expression
 
 Write-Host "Installing software not available through WinGet"
@@ -58,12 +56,9 @@ Invoke-Expression -Command "scoop install neovim less bat hugo starship"
 Invoke-Expression -Command "scoop bucket add nerd-fonts"
 
 Write-Host "Installing Fira Code NF"
-
-# Install Fira Code using Scoop
 Invoke-Expression -Command "scoop install firacode"
 
 Write-Host "Installing `"pipx`" `- A tool for installing Python CLI tools!"
-# Install pipx - A CLI tool for installing Python CLI tools!
 Invoke-Expression -Command "py -m pip install --upgrade pipx"
 
 Write-Host "Installing `"yarn`" `- An alternate package manager for frontend projects!"
@@ -74,3 +69,10 @@ Invoke-Expression -Command "npm install --global yarn"
 # TODO: Enable WSL2 on the system
 # NOTE: The system requires a restart after enabling WSL2. So, I still need to figure a way to install
 # Ubuntu through this script
+
+# Download dotfiles & restore them to their respective config locations
+# TODO: Save location is hard-coded, it might be better to ask for user feedback & store that value to
+# a variable instead
+Write-Host "Downloading dotfiles!"
+Invoke-Expression -Command "git clone git@github.com:Jarmos-san/dotfiles-windows.git E:\Projects\dotfiles"
+
