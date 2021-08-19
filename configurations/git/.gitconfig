@@ -1,4 +1,4 @@
-# Git configuration reference available at: https://git-scm.com/docs/git-config
+# Git configuration reference available at: https://git-scm.com/docs/git-config 
 # Example gitconfig is avaialable at: http://michaelwales.com/articles/make-gitconfig-work-for-you/
 [include]
     path = $home/themes.gitconfig                   # Themes file for configuring Delta
@@ -16,13 +16,6 @@
     longpaths = true                                # Circumvents the Windows limitation of 260 characters.
     whitespace=fix                                  # Fixes whitespace errors introduced by editors.
     editor = nvim                                   # Uses Vim as the text editor for editing needs like commit messages & such.
-    pager = delta                                   # More info on this is available on https://github.com/dandavison/delta
-[diff]
-    tool = nvimdiff                                 # Uses Vim for viewing Git diffs.
-[difftool]
-    prompt = false                                  # Ensures Git doesn't prompt before starting vimdiff.
-[difftool "nvimdiff"]                               # Uses Neovim as a Git difftool
-    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [merge]
     tool = nvimdiff                                 # Uses Vim for fixing merge conflicts.
     conflictstyle = diff3                           # Is supposed to do something I'm not aware of.
@@ -87,4 +80,25 @@
     ra = remote add origin                          # Equivalent to "git remote add"
 # Configurations for Delta (this are subject to change & voracious refactors)
 [delta]
-    features = collared-trogon
+    features = decorations
+    syntax-theme = gruvbox-dark
+    line-numbers = true
+#    side-by-side = true
+    keep-plus-minus-markers = true
+[pager]
+    diff = delta                                   # More info on this is available on https://github.com/dandavison/delta
+    log = delta
+    reflog = delta
+    show = delta
+[interactive]
+    difffilter = delta --color-only --features=interactive
+[delta "interactive"]
+    keep-plus-minus-markers = false
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
