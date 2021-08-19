@@ -50,7 +50,7 @@ Invoke-WebRequest -Uri "https://get.scoop.sh" | Invoke-Expression
 Write-Host "Installing software not available through WinGet"
 
 # Scoop makes it easier to install some software which are generally distributed through binaries
-Invoke-Expression -Command "scoop install neovim less bat hugo starship"
+Invoke-Expression -Command "scoop install neovim less bat hugo starship delta"
 
 # Add Scoop buckets to install additional software
 Invoke-Expression -Command "scoop bucket add nerd-fonts"
