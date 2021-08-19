@@ -58,6 +58,8 @@
 # The following variables are used when "git st" is invoked.
     localBranch = cyan bold
     remoteBranch = red bold
+[gpg]
+    program = C:Program Files (x86)\\gnupg\\bin\\gpg# Explicitly specifies which GPG binary to use
 [url "git@github.com:"]                             # URL shorthand for the SSH address while cloning a remote repo.
     insteadof = "gh:"                               # Use case: "git clone gh:<user-name>/<repo-name>
 [url "git@gist.github.com/"]                        # URL shorthand for SSH addresses of the GitHub Gists

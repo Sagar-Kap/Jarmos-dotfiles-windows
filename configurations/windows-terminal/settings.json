@@ -35,6 +35,14 @@
         "commandline": "py.exe",
         "icon": "%PROGRAMFILES(x86)%\\Python38-32\\python.png",
         "name": "Python3"
+      },
+      {
+        "guid": "{c945ee96-c0de-4703-af1e-eade65e1727c}",
+        "commandline": "%PROGRAMFILES%\\git\\usr\\bin\\bash.exe --login",
+        "icon": "%PROGRAMFILES%\\git\\mingw64\\share\\git\\git-for-windows.ico",
+        "name": "Git Bash",
+        "tabTitle": "Git Bash",
+        "suppressApplicationTitle": true
       }
     ]
   },
