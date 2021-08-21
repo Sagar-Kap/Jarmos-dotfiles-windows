@@ -1,5 +1,5 @@
 # Global/prompt-wide configurations
-command_timeout = 2000                  # Increase the default timeout duration for long-running applications
+command_timeout = 20000                 # Increase the default timeout duration for long-running applications
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                             # The name of the module we are configuring is "character"
