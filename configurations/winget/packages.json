@@ -1,13 +1,19 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2021-07-06T14:46:25.262-00:00",
+	"CreationDate" : "2021-08-21T16:07:47.223-00:00",
 	"Sources" : 
 	[
 		{
 			"Packages" : 
 			[
 				{
+					"PackageIdentifier" : "Microsoft.VisualStudio.2019.BuildTools"
+				},
+				{
 					"PackageIdentifier" : "Discord.Discord"
+				},
+				{
+					"PackageIdentifier" : "Git.Git"
 				},
 				{
 					"PackageIdentifier" : "GnuPG.GnuPG"
@@ -16,7 +22,7 @@
 					"PackageIdentifier" : "Google.Chrome"
 				},
 				{
-					"PackageIdentifier" : "gnupg.Gpg4win"
+					"PackageIdentifier" : "GnuPG.Gpg4win"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.Edge"
@@ -29,12 +35,6 @@
 				},
 				{
 					"PackageIdentifier" : "Mozilla.Thunderbird"
-				},
-				{
-					"PackageIdentifier" : "OBSProject.OBSStudio"
-				},
-				{
-					"PackageIdentifier" : "Parsec.Parsec"
 				},
 				{
 					"PackageIdentifier" : "Spotify.Spotify"
@@ -52,7 +52,7 @@
 					"PackageIdentifier" : "RARLab.WinRAR"
 				},
 				{
-					"PackageIdentifier" : "Insomnia.Insomnia"
+					"PackageIdentifier" : "Balena.Etcher"
 				},
 				{
 					"PackageIdentifier" : "Python.Python.3"
@@ -64,10 +64,19 @@
 					"PackageIdentifier" : "Microsoft.VC++2012Redist-x86"
 				},
 				{
-					"PackageIdentifier" : "Google.BackupAndSync"
+					"PackageIdentifier" : "Telegram.TelegramDesktop"
+				},
+				{
+					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
+				},
+				{
+					"PackageIdentifier" : "OpenJS.NodeJS"
 				},
 				{
 					"PackageIdentifier" : "Transmission.Transmission"
+				},
+				{
+					"PackageIdentifier" : "Google.BackupAndSync"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.UpdateAssistant"
@@ -80,9 +89,6 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VC++2012Redist-x64"
-				},
-				{
-					"PackageIdentifier" : "Python.Python.3"
 				}
 			],
 			"SourceDetails" : 
