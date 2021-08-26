@@ -49,20 +49,6 @@ map("i", "<DOWN>", "<NOP>")
 map("i", "<LEFT>", "<NOP>")
 map("i", "<RIGHT>", "<NOP>")
 
--- Essential remaps for better quality-of-life
-map("n", "H", "0")                                              -- Press capital H to move to the start of a line
-map("n", "L", "$")                                              -- Press capital L to move to the end of a line
-map("n", "Y", "y$")                                             -- Press "y" (capital y) to yank a line
-
--- Keymaps for navigating around split windows
--- TODO: Create a wrapper function to handle global keymappings like the ones below.
--- The issue with the current map() function is it only handle buffer-local keymaps
--- which doesn't work as intended when working with split windows.
-api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })      -- Move cursor to one window left of the current one
-api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })      -- Move cursor to one window below of the current one
-api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })      -- Move cursor to one window above of the current one
-api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })      -- Move cursor to one window right of the current one
-
 api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true, silent = true })          -- Remap "jk" to <ESC> to quite out of Insert mode
 
 -- Telescope mappings

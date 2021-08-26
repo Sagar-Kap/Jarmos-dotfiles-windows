@@ -81,4 +81,3 @@
 [delta]
     syntax-theme = gruvbox-dark
     line-numbers = true
-#    side-by-side = true

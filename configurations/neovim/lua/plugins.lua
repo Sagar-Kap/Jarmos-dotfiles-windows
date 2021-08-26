@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
     requires = {"rktjmp/lush.nvim"}
     }
   use { -- Lightline statusline
+    -- This will be eventually replaced with Galaxyline
     "itchyny/lightline.vim"
   }
   use { -- Neovim Telescope for fuzzy-finding & file exploration
