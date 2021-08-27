@@ -67,20 +67,33 @@ More plugins like `nvim-treesitter`, `nvim-completion` & such are yet to be conf
 
 ## Keymapping Used
 
-You can find my keymaps in the `./lua/keymaps.lua` file which are then imported into the `init.lua` for initialization. Do note, these are keymaps which work for me perfectly. Try not to copy them for your use case, instead take inspiration & customize your Neovim experience as per you specific needs.
+The keymaps I use with my Neovim configurations are constantly evolving over
+time. So, do keep an out for potential changes in the future!
 
-That said, a little bit mapping keys in Neovim using Lua;
+That said, mappings keys in Neovim has never been easier & more intuitive than
+ever before! With the optional Lua runtime, you can write a function over the
+"_keymap_" function & use it conveniently for the remaps.
 
-1. You configure mappings globally with the `vim.api.nvim_set_keymap()` function.
-2. Or configure buffer-local mappings with the `vim.api.nvim_buf_set_keymap()` function.
-3. Confusing them can lead to weird issues that might be hard to debug initially. I learned this the hard way & wasted a couple of hours trying to figure out what went wrong.
+Need a refresher on how to remap keys using Lua? Check out the "_Defining
+Mappings_" section of the [Neovim Lua
+Guide](https://github.com/nanotee/nvim-lua-guide#defining-mappings). Go through
+that reference & once you do, come back to check out how I use my remaps below:
 
-For more info, refer to `:h vim.api.*_keymap()` & or a well-written comprehensive guide at: [nanotree/nvim-lua-guide](https://github.com/nanotree/nvim-lua-guide#defining-mappings).
+- First off remap the `<Leader>` key to `<Space>` with `vim.g.mapleader = ' '`
+  for easier accessibility. How accessible you might wonder? You'll see soon!
 
-But, if you're impatient & want to figure out how I configured my keymaps, here's what I did:
+- When using Neovim switching between Buffers should be second-nature. So,
+  `map('n', '<Leader><Leader>', ':b#<CR>')` allows me to switch buffers by
+  pressing `<Space>` twice in quick succession. I'm pretty sure there might be a
+  better way to switch buffers, so do let me know if you're aware of it.
 
-1. Defined a Lua function called `map()` which wraps `vim.api.nvim_set_keymap()`. The `map()` function accepts a couple of parameters to pass to the `vim.api.nvim_set_keymap()` instead.
-2. The positional parameters to pass to `vim.api.nvim_set_keymap()` are: "__buffer number__", "__the key to map to__", "__the current key maps__", "__a dictionary of optionals__".
-3. The use the wrapper function `map()` to set the keymappings everywhere.
+- The next set of key mappings is meant for navigating between split windows.
+  So, you should be able to navigate to the bottom most windows by pressing
+  `<C-j>` easily. Here's how to enable Neovim to do so `map('n', '<C-j>',
+  '<C-w>j', { noremap = false })`. You can use the remaining Vim navigation keys
+  (`h`, `k`, `l`) to achieve the remaining navigations as well.
 
-**NOTE**: The `map()` function is subject to refactor, checkout `./lua/keymaps.lua` for more info on the specific reasons for doing so.
+- Similar to navigating between split windows, resizing of the windows can be
+  achieved as well.
+
+**TODO**: Figure out a better way to explain how to configure the keymaps.
