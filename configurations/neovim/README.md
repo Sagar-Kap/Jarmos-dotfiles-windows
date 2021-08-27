@@ -1,10 +1,10 @@
 # Neovim Configurations
 
-[Neovim][Neovim] is a fork of the original [Vim][Vim]. If you are on an Unix-like system, chances are, it already comes pre-packaged with it.
+[Neovim](https://neovim.io) is a fork of the original [Vim](https://www.vim.org). If you are on an Unix-like system, chances are, it already comes pre-packaged with it.
 
 But it's a different case with Windows users. While a GUI variant of Vim called GVim is available for Windows users, it's not as user-friendly as it is on Unix-like systems. And besides, Vim on Windows is way too buggy to be useful. Coupled with a buggy interface & unecessary configuration, it can be a bit of a struggle as well.
 
-On a brighter note though, Neovim comes in as a viable alternative for Windows users. It's not as buggy as it's vanilla counterpart & comes pre-packaged with certain sensible default configuration settings as well. So, if you prefer  reading up more about it, the official documentations at [neovim.io](https://neovim.io) is a great place to start with.
+On a brighter note though, Neovim comes in as a viable alternative for Windows users. It's not as buggy as it's vanilla counterpart & comes pre-packaged with certain sensible default configuration settings as well. So, if you prefer  reading up more about it, the official documentations at [neovim.io](https://neovim.io/doc/general/) is a great place to start with.
 
 But if you're already aware of Neovim & it's capabilities, and perhaps you're looking for some inspiration to configure your Neovim environment, this repo might benefit you in some ways.
 
