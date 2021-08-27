@@ -49,7 +49,3 @@ go.foldlevelstart = 0                   -- Opens Neovim buffers with all folds c
 -- https://github.com/nanotee/nvim-lua-guide#defining-syntaxhighlights
 -- Enables a retro colorscheme for use within Neovim
 -- TODO: Use native Lua code configure colorscheme & highlighting concerns
-cmd [[ colorscheme gruvbox ]]
--- cmd [[ colorscheme desert ]]
--- Enables transparent background within Neovim
-cmd [[ highlight Normal guibg=NONE ctermbg=NONE ]]

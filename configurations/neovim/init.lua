@@ -1,10 +1,17 @@
-require('settings')
 require('plugins')
 require('statusline')
-require('keymaps')
 require('treesitter')
 require('autocomplete')
 require("telescope_config")
+
+--[[
+-- NOTE: Not sure why but it's always best to include the Keymaps first
+-- followed by other configurations like "options" & such. Else certain
+-- Neo(vim) functionality breaks somehow
+--]]
+
+local opt = vim.opt     -- Alias to setup Neovim options
+local cmd = vim.cmd     -- Alias for vim.cmd
 
 -----------------------------------------------------------------------------//
 -- Keymappings {{{1
@@ -36,9 +43,9 @@ map('n', '<M-h>', '<Cmd>vertical resize -2<CR>')
 map('n', '<M-l>', '<Cmd>vertical resize +2<CR>')
 
 -- Improved "quality of life" when navigating around a single line
-map('n', 'H', '<Home>') -- Press H (capital) to move to the start of the line
-map('n', 'L', '<End>') -- Press L (capital) to move to the end of the line
-map('n', 'Y', 'y$') -- Press Y (capital) to copy the entire line
+map('n', 'H', '<Home>')     -- Press H (capital) to move to the start of the line
+map('n', 'L', '<End>')      -- Press L (capital) to move to the end of the line
+map('n', 'Y', 'y$')         -- Press Y (capital) to copy the entire line
 
 -- Navigating around while in "Insert" mode
 map('i', '<C-j>', '<Down>')
@@ -50,21 +57,104 @@ map('i', '<C-l>', '<Right>')
 map('v', '<', '<gv')
 map('v', '>', '>gv')
 
--- Move selected line(s) in Visual mode
--- Refer to this line of code here at:
--- https://github.com/disrupted/dotfiles/blob/6afc3296513d9765c8295436c8e4f72148c3a663/.config/nvim/init.lua#L660
-
 -- Press "Ctrl + a" to select everything in a buffer
 map('n', '<C-a>', '<Esc>ggVG<CR>')
 
 -- Some sensible defaults
-map('', 'Q', '') -- Disable Ex mode as I can't think of any ways to use it
-map('n', 'x', '"_x') -- Delete characters w/o yanking it
-map('x', 'x', '"_x') -- Delete visual selection w/o yanking
+map('', 'Q', '<NOP>')       -- Disable Ex mode as I can't think of any ways to use it
+map('n', 'x', '"_x')        -- Delete characters w/o yanking it
+map('x', 'x', '"_x')        -- Delete visual selection w/o yanking
+
+-- Disable arrow keys for learning Vim movements
+map('', '<Up>', '<NOP>')
+map('', '<Down>', '<NOP>')
+map('', '<Left>', '<NOP>')
+map('', '<Right>', '<NOP>')
+
+-- Disable arrow keys in Insert mode as well
+map('i', '<Up>', '<NOP>')
+map('i', '<Down>', '<NOP>')
+map('i', '<Left>', '<NOP>')
+map('i', '<Right>', '<NOP>')
+
+-- Remap "jk" to "<Esc>" to change into Normal mode
+map('i', 'jk', '<Esc>')
 
 -- Edit & source the "init.lua" file more intuitively
-map('n', ',v', ':edit $MYVIMRC<CR>')
-map('n', ',s', ':luafile $MYVIMRC<CR>')
+map('n', '<Leader>v', ':edit $MYVIMRC<CR>')
+map('n', '<Leader>s', ':luafile $MYVIMRC<CR>')
+
+-----------------------------------------------------------------------------//
+-- Generic Neovim Configurations {{{1
+-----------------------------------------------------------------------------//
+-- Global Configurations related to plugins {{{2
+vim.g.gruvbox_contrast_dark = "hard"    -- Increases the dark contrast of the Gruvbox colorscheme
+vim.g.loaded_python_provider = 0        -- Disables loading Python 2
+vim.g.loaded_ruby_provider = 0          -- Disables loading Ruby
+vim.g.loaded_perl_provider = 0          -- Disables loading Perl
+vim.g.netrw_menu = 0                    -- Disables the Netrw banner & menu. Doesn't appear to work though (it's Netrw anyway)
+
+-- Indentation configs {{{2
+opt.expandtab = true    -- Use Spaces instead of tabs when <Tab> is pressed
+opt.shiftwidth = 4      -- Size of an indent
+opt.smartindent = true  -- Insert indents automatically
+opt.tabstop = 4         -- Number of spaces press a single <Tab> counts for
+opt.softtabstop = 4
+opt.shiftround = true   -- Round indent
+
+-- Display & Improved Quality of Life {{{2
+opt.hlsearch = false
+opt.ignorecase = true
+opt.smartcase = true
+opt.scrolloff = 6
+opt.number = true
+opt.relativenumber = true
+opt.termguicolors = true
+opt.numberwidth = 2
+opt.cursorline = true
+opt.wrap = false                -- Disables wrapping text globally
+opt.showmode = false
+opt.lazyredraw = true
+opt.emoji = false
+opt.list = true                 -- Show invisible characters
+opt.listchars = {
+    eol = ' ',
+    tab = '→ ',
+    extends = '…',
+    precedes = '…',
+    trail = '·',
+}
+opt.shortmess:append 'I'    -- Disables the startup screen & info
+opt.iskeyword:prepend { '-' }   -- Treat dash-separated words as a single word textobject
+
+-- Backup configs {{{2
+opt.swapfile = false
+opt.backup = false
+opt.writebackup = false
+opt.undofile = false
+opt.confirm = true          -- Ask for confirmation before any destructive actions
+
+-- Window Splitting & Buffer management {{{2
+opt.hidden = true
+opt.splitbelow = true
+opt.splitright = true
+opt.fillchars = {
+    vert = '│',
+    fold = ' ',
+    diff = '-', -- alternatives: ⣿ ░
+    msgsep = '‾',
+    foldopen = '▾',
+    foldsep = '│',
+    foldclose = '▸',
+}
+
+-- Wild & File-globbing patterns {{{2
+opt.pumblend = 7    -- Make popup window transclucent
+opt.pumheight = 20  -- Limit the number of autocomplete items shown
+
+-- Miscellaneous Neovim stuff that cant be programmed with native Lua code yet {{{2
+cmd [[ colorscheme gruvbox ]]
+cmd [[ highlight Normal guibg=NONE ctermbg=NONE ]]
 
 --[[
 Use resources for future references:

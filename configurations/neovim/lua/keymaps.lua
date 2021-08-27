@@ -36,30 +36,10 @@ _G.tab_complete = function()
   end
 end
 
--- Disabling the following keys helps to learn the Vim motions better & more efficiently
--- Disable Arrow keys
-map("", "<UP>", "<NOP>")
-map("", "<DOWN>", "<NOP>")
-map("", "<LEFT>", "<NOP>")
-map("", "<RIGHT>", "<NOP>")
-
--- Disables Arrow keys in Insert Mode as well
-map("i", "<UP>", "<NOP>")
-map("i", "<DOWN>", "<NOP>")
-map("i", "<LEFT>", "<NOP>")
-map("i", "<RIGHT>", "<NOP>")
-
-api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true, silent = true })          -- Remap "jk" to <ESC> to quite out of Insert mode
-
 -- Telescope mappings
 map("n", "<Leader>ff", ":Telescope find_files<CR>")                                  -- Opens a File Explorer within Telescope
 map("n", "<Leader>fb", ":Telescope buffers<CR>")                                     -- Telescope shows a list of available buffers
 map("n", "<Leader>fe", ":Telescope file_browser<CR>")                                -- Telescope shows a list of available files & directories in the current working directory
-
--- NOTE: It's best to disable the "<ESC>" at the end else you
--- would've no way to change modes after a Insert mode session.
--- Disable <ESC> when in Insert mode
-map("i", "<ESC>", "<NOP>")
 
 -- Tab completion for coc.nvim
 vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true, silent = true})
