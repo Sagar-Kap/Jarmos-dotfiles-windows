@@ -1,17 +1,60 @@
-require('plugins')
-require('statusline')
-require('treesitter')
-require('autocomplete')
-require("telescope_config")
-
 --[[
 -- NOTE: Not sure why but it's always best to include the Keymaps first
 -- followed by other configurations like "options" & such. Else certain
 -- Neo(vim) functionality breaks somehow
 --]]
 
+local fn = vim.fn       -- Alias to execute Neovim-specific functions
 local opt = vim.opt     -- Alias to setup Neovim options
 local cmd = vim.cmd     -- Alias for vim.cmd
+
+local execute = vim.api.nvim_command
+
+-----------------------------------------------------------------------------//
+-- Plugins {{{1
+-----------------------------------------------------------------------------//
+-- "packer.nvim" installation path
+local install_path = fn.stdpath 'data' .. '/site/pack/packer/opt/packer.nvim'
+
+-- Ensure a local clone of "packer.nvim" exists
+if fn.empty(fn.glob(install_path)) > 0 then
+    execute(
+        '!git clone https://github.com/wbthomason/packer.nvim'
+            .. ' '
+            .. install_path
+    )
+end
+
+-- Install "packer.nvim" through the local cloned repository
+cmd [[ packadd packer.nvim ]]
+
+local packer = require 'packer'
+local use = packer.use
+
+-- Install rest of the plugins for later use
+packer.startup(function()
+
+    use { -- Install packer.nvim
+        'wbthomason/packer.nvim',
+        opt = true
+    }
+
+    use { -- Gruvbox colorscheme
+        'npxbr/gruvbox.nvim',
+        requires = { 'rktjmp/lush.nvim' }
+    }
+
+    use { -- Galaxyline statusline
+        'glepnir/galaxyline.nvim',
+        opt = true,
+        branch = 'main',
+        event = { 'VimEnter' },
+        -- config = function ()
+        --     require 'config.statusline'
+        -- end,
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+end)
 
 -----------------------------------------------------------------------------//
 -- Keymappings {{{1
@@ -88,7 +131,7 @@ map('n', '<Leader>s', ':luafile $MYVIMRC<CR>')
 -- Generic Neovim Configurations {{{1
 -----------------------------------------------------------------------------//
 -- Global Configurations related to plugins {{{2
-vim.g.gruvbox_contrast_dark = "hard"    -- Increases the dark contrast of the Gruvbox colorscheme
+-- vim.g.gruvbox_contrast_dark = "hard"    -- Increases the dark contrast of the Gruvbox colorscheme
 vim.g.loaded_python_provider = 0        -- Disables loading Python 2
 vim.g.loaded_ruby_provider = 0          -- Disables loading Ruby
 vim.g.loaded_perl_provider = 0          -- Disables loading Perl
@@ -161,4 +204,3 @@ Use resources for future references:
 - https://icyphox.sh/blog/nvim-lua/
 - https://rishabhrd.github.io/jekyll/update/2020/09/19/nvim_lsp_config.html
 ]]
-
