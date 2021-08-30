@@ -39,11 +39,6 @@ packer.startup(function()
         opt = true
     }
 
-    use { -- Gruvbox colorscheme
-        'npxbr/gruvbox.nvim',
-        requires = { 'rktjmp/lush.nvim' }
-    }
-
     use { -- Galaxyline statusline
         'glepnir/galaxyline.nvim',
         opt = true,
