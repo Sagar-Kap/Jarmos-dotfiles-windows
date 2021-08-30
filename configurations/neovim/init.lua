@@ -1,9 +1,3 @@
---[[
--- NOTE: Not sure why but it's always best to include the Keymaps first
--- followed by other configurations like "options" & such. Else certain
--- Neo(vim) functionality breaks somehow
---]]
-
 local fn = vim.fn       -- Alias to execute Neovim-specific functions
 local opt = vim.opt     -- Alias to setup Neovim options
 local cmd = vim.cmd     -- Alias for vim.cmd
@@ -86,7 +80,7 @@ opt.pumheight = 20  -- Limit the number of autocomplete items shown
 -- Plugins {{{1
 -----------------------------------------------------------------------------//
 -- "packer.nvim" installation path
-local install_path = fn.stdpath 'data' .. '/site/pack/packer/opt/packer.nvim'
+local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 
 -- Ensure a local clone of "packer.nvim" exists
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -95,10 +89,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
             .. ' '
             .. install_path
     )
+    execute 'PackerSync'
 end
 
 -- Install "packer.nvim" through the local cloned repository
-cmd [[ packadd packer.nvim ]]
+cmd [[ packadd! packer.nvim ]]
 
 local packer = require 'packer'
 local use = packer.use
