@@ -10,6 +10,78 @@ local cmd = vim.cmd     -- Alias for vim.cmd
 
 local execute = vim.api.nvim_command
 
+-- Miscellaneous Neovim stuff that cant be programmed with native Lua code yet {{{2
+cmd [[ colorscheme gruvbox ]]
+cmd [[ highlight Normal guibg=NONE ctermbg=NONE ]]
+
+-----------------------------------------------------------------------------//
+-- Generic Neovim Configurations {{{1
+-----------------------------------------------------------------------------//
+-- Global Configurations related to plugins {{{2
+-- vim.g.gruvbox_contrast_dark = "hard"    -- Increases the dark contrast of the Gruvbox colorscheme
+vim.g.loaded_python_provider = 0        -- Disables loading Python 2
+vim.g.loaded_ruby_provider = 0          -- Disables loading Ruby
+vim.g.loaded_perl_provider = 0          -- Disables loading Perl
+vim.g.netrw_menu = 0                    -- Disables the Netrw banner & menu. Doesn't appear to work though (it's Netrw anyway)
+
+-- Indentation configs {{{2
+opt.expandtab = true    -- Use Spaces instead of tabs when <Tab> is pressed
+opt.shiftwidth = 4      -- Size of an indent
+opt.smartindent = true  -- Insert indents automatically
+opt.tabstop = 4         -- Number of spaces press a single <Tab> counts for
+opt.softtabstop = 4
+opt.shiftround = true   -- Round indent
+
+-- Display & Improved Quality of Life {{{2
+opt.hlsearch = false
+opt.ignorecase = true
+opt.smartcase = true
+opt.scrolloff = 6
+opt.number = true
+opt.relativenumber = true
+opt.termguicolors = true
+opt.numberwidth = 2
+opt.cursorline = true
+opt.wrap = false                -- Disables wrapping text globally
+opt.showmode = false
+opt.lazyredraw = true
+opt.emoji = false
+opt.list = true                 -- Show invisible characters
+opt.listchars = {
+    eol = ' ',
+    tab = '→ ',
+    extends = '…',
+    precedes = '…',
+    trail = '·',
+}
+opt.shortmess:append 'I'    -- Disables the startup screen & info
+opt.iskeyword:prepend { '-' }   -- Treat dash-separated words as a single word textobject
+
+-- Backup configs {{{2
+opt.swapfile = false
+opt.backup = false
+opt.writebackup = false
+opt.undofile = false
+opt.confirm = true          -- Ask for confirmation before any destructive actions
+
+-- Window Splitting & Buffer management {{{2
+opt.hidden = true
+opt.splitbelow = true
+opt.splitright = true
+opt.fillchars = {
+    vert = '│',
+    fold = ' ',
+    diff = '-', -- alternatives: ⣿ ░
+    msgsep = '‾',
+    foldopen = '▾',
+    foldsep = '│',
+    foldclose = '▸',
+}
+
+-- Wild & File-globbing patterns {{{2
+opt.pumblend = 7    -- Make popup window transclucent
+opt.pumheight = 20  -- Limit the number of autocomplete items shown
+
 -----------------------------------------------------------------------------//
 -- Plugins {{{1
 -----------------------------------------------------------------------------//
@@ -41,12 +113,11 @@ packer.startup(function()
 
     use { -- Galaxyline statusline
         'glepnir/galaxyline.nvim',
-        opt = true,
         branch = 'main',
         event = { 'VimEnter' },
-        -- config = function ()
-        --     require 'config.statusline'
-        -- end,
+        config = function ()
+            require 'config.statusline'
+        end,
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 end)
@@ -121,78 +192,6 @@ map('i', 'jk', '<Esc>')
 -- Edit & source the "init.lua" file more intuitively
 map('n', '<Leader>v', ':edit $MYVIMRC<CR>')
 map('n', '<Leader>s', ':luafile $MYVIMRC<CR>')
-
------------------------------------------------------------------------------//
--- Generic Neovim Configurations {{{1
------------------------------------------------------------------------------//
--- Global Configurations related to plugins {{{2
--- vim.g.gruvbox_contrast_dark = "hard"    -- Increases the dark contrast of the Gruvbox colorscheme
-vim.g.loaded_python_provider = 0        -- Disables loading Python 2
-vim.g.loaded_ruby_provider = 0          -- Disables loading Ruby
-vim.g.loaded_perl_provider = 0          -- Disables loading Perl
-vim.g.netrw_menu = 0                    -- Disables the Netrw banner & menu. Doesn't appear to work though (it's Netrw anyway)
-
--- Indentation configs {{{2
-opt.expandtab = true    -- Use Spaces instead of tabs when <Tab> is pressed
-opt.shiftwidth = 4      -- Size of an indent
-opt.smartindent = true  -- Insert indents automatically
-opt.tabstop = 4         -- Number of spaces press a single <Tab> counts for
-opt.softtabstop = 4
-opt.shiftround = true   -- Round indent
-
--- Display & Improved Quality of Life {{{2
-opt.hlsearch = false
-opt.ignorecase = true
-opt.smartcase = true
-opt.scrolloff = 6
-opt.number = true
-opt.relativenumber = true
-opt.termguicolors = true
-opt.numberwidth = 2
-opt.cursorline = true
-opt.wrap = false                -- Disables wrapping text globally
-opt.showmode = false
-opt.lazyredraw = true
-opt.emoji = false
-opt.list = true                 -- Show invisible characters
-opt.listchars = {
-    eol = ' ',
-    tab = '→ ',
-    extends = '…',
-    precedes = '…',
-    trail = '·',
-}
-opt.shortmess:append 'I'    -- Disables the startup screen & info
-opt.iskeyword:prepend { '-' }   -- Treat dash-separated words as a single word textobject
-
--- Backup configs {{{2
-opt.swapfile = false
-opt.backup = false
-opt.writebackup = false
-opt.undofile = false
-opt.confirm = true          -- Ask for confirmation before any destructive actions
-
--- Window Splitting & Buffer management {{{2
-opt.hidden = true
-opt.splitbelow = true
-opt.splitright = true
-opt.fillchars = {
-    vert = '│',
-    fold = ' ',
-    diff = '-', -- alternatives: ⣿ ░
-    msgsep = '‾',
-    foldopen = '▾',
-    foldsep = '│',
-    foldclose = '▸',
-}
-
--- Wild & File-globbing patterns {{{2
-opt.pumblend = 7    -- Make popup window transclucent
-opt.pumheight = 20  -- Limit the number of autocomplete items shown
-
--- Miscellaneous Neovim stuff that cant be programmed with native Lua code yet {{{2
-cmd [[ colorscheme gruvbox ]]
-cmd [[ highlight Normal guibg=NONE ctermbg=NONE ]]
 
 --[[
 Use resources for future references:
