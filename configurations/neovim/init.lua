@@ -80,7 +80,7 @@ opt.pumheight = 20  -- Limit the number of autocomplete items shown
 -- Plugins {{{1
 -----------------------------------------------------------------------------//
 -- "packer.nvim" installation path
-local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath 'data' .. '/site/pack/packer/opt/packer.nvim'
 
 -- Ensure a local clone of "packer.nvim" exists
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -89,10 +89,9 @@ if fn.empty(fn.glob(install_path)) > 0 then
             .. ' '
             .. install_path
     )
-    execute 'PackerSync'
 end
 
--- Install "packer.nvim" through the local cloned repository
+-- Load "packer.nvim"
 cmd [[ packadd! packer.nvim ]]
 
 local packer = require 'packer'
