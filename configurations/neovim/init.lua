@@ -12,7 +12,7 @@ cmd [[ highlight Normal guibg=NONE ctermbg=NONE ]]
 -- Generic Neovim Configurations {{{1
 -----------------------------------------------------------------------------//
 -- Global Configurations related to plugins {{{2
--- vim.g.gruvbox_contrast_dark = "hard"    -- Increases the dark contrast of the Gruvbox colorscheme
+vim.g.gruvbox_contrast_dark = "hard"    -- Increases the dark contrast of the Gruvbox colorscheme
 vim.g.loaded_python_provider = 0        -- Disables loading Python 2
 vim.g.loaded_ruby_provider = 0          -- Disables loading Ruby
 vim.g.loaded_perl_provider = 0          -- Disables loading Perl
@@ -108,7 +108,6 @@ packer.startup(function()
     use { -- Galaxyline statusline
         'glepnir/galaxyline.nvim',
         branch = 'main',
-        event = { 'VimEnter' },
         config = function ()
             require 'config.statusline'
         end,
