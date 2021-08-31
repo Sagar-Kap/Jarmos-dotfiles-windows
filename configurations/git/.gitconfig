@@ -10,7 +10,8 @@
     excludesfile = ~/.gitignore_global              # Global .gitignore file at $HOME/.git
     attributesfile = ~/.gitattributes_global        # Global .gitattributes file at $HOME/.git
     untrackedcache = true                           # Speeds up commands involving untracked files. More info available at: https://git-scm.com/docs/git-update-index#_untracked_cache
-    autocrlf = input                                # Ensures files in the remote repo has LF line endings but CRLF in the local repo.
+    autocrlf = false                                # Ensures files in the remote repo has LF line endings but CRLF in the local repo.
+    eol = lf                                        # Explicitly specifies the line-endings to append when checking out files to VCS
     longpaths = true                                # Circumvents the Windows limitation of 260 characters.
     whitespace=fix                                  # Fixes whitespace errors introduced by editors.
     editor = nvim                                   # Uses Vim as the text editor for editing needs like commit messages & such.
