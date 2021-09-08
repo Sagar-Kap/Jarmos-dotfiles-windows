@@ -116,16 +116,31 @@ packer.startup(function()
 end)
 
 -----------------------------------------------------------------------------//
--- Keymappings {{{1
+-- Utilitarian functions & Wrappers
 -----------------------------------------------------------------------------//
-local function map(mode, lhs, rhs, opts)
-    local options = { noremap = true }
-    if opts then
-        options = vim.tbl_extend('force', options, opts)
+-- TODO: Refactor this section into separate dirs
+-- Functional wrapper for creating AutoGroups
+local function create_augroups(autocmds, name)
+    cmd('augroup ' .. name)
+    cmd('autocmd!')
+    for _, autocmd in ipairs(autocmds) do
+        cmd('autocmd ' .. table.concat(autocmd, ' '))
     end
-    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+    cmd('augroup END')
 end
 
+-- Functional wrapper for mapping keys
+local function map(mode, lhs, rhs, opts)
+   local options = { noremap = true }
+   if opts then
+       options = vim.tbl_extend('force', options, opts)
+   end
+   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+
+-----------------------------------------------------------------------------//
+-- Keymappings {{{1
+-----------------------------------------------------------------------------//
 -- Set <Leader> to <Space>
 vim.g.mapleader = ' '
 
