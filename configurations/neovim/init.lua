@@ -109,7 +109,7 @@ packer.startup(function()
         'glepnir/galaxyline.nvim',
         branch = 'main',
         config = function ()
-            require 'config.statusline'
+            require 'conf.statusline'
         end,
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
