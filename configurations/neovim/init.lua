@@ -1,8 +1,12 @@
+local utils = require 'conf.utils'      -- Utilitarian wrapper functions
+
 local fn = vim.fn       -- Alias to execute Neovim-specific functions
 local opt = vim.opt     -- Alias to setup Neovim options
 local cmd = vim.cmd     -- Alias for vim.cmd
 
 local execute = vim.api.nvim_command
+
+local map = utils.map       -- Alias for the map() function
 
 -- Miscellaneous Neovim stuff that cant be programmed with native Lua code yet {{{2
 cmd [[ colorscheme gruvbox ]]
@@ -42,7 +46,7 @@ opt.lazyredraw = true
 opt.emoji = false
 opt.list = true                 -- Show invisible characters
 opt.listchars = {
-    eol = ' ',
+    eol = '↲',
     tab = '→ ',
     extends = '…',
     precedes = '…',
@@ -113,30 +117,29 @@ packer.startup(function()
         end,
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+
+    -- use { -- Plugin for toggling comments
+    --     'b3nj5m1n/kommentary',
+    --     event = { 'BufRead', 'BufNewFile' },
+    --     config = require('conf.kommentary').config,
+    -- }
+
+    -- use { -- File explorer plugin
+    --     'kyazdani42/nvim-tree.lua',
+    --     opt = true,
+    --     cmd = { 'NvimTreeOpen', 'NvimTreeToggle' },
+    --     setup = require('conf.nvim_tree').setup,
+    --     config = require('conf.nvim_tree').config,
+    --     requires = { 'kyazdani42/nvim-web-devicons' },
+    -- }
+
+    -- use { -- Visualize indent guide lines
+    --     'lukas-reineke/indent-blankline.nvim',
+    --     event = { 'BufRead' },
+    --     config = require('conf.indentline').config
+    -- }
+
 end)
-
------------------------------------------------------------------------------//
--- Utilitarian functions & Wrappers
------------------------------------------------------------------------------//
--- TODO: Refactor this section into separate dirs
--- Functional wrapper for creating AutoGroups
-local function create_augroups(autocmds, name)
-    cmd('augroup ' .. name)
-    cmd('autocmd!')
-    for _, autocmd in ipairs(autocmds) do
-        cmd('autocmd ' .. table.concat(autocmd, ' '))
-    end
-    cmd('augroup END')
-end
-
--- Functional wrapper for mapping keys
-local function map(mode, lhs, rhs, opts)
-   local options = { noremap = true }
-   if opts then
-       options = vim.tbl_extend('force', options, opts)
-   end
-   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
 
 -----------------------------------------------------------------------------//
 -- Keymappings {{{1
