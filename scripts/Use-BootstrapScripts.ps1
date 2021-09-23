@@ -39,10 +39,6 @@ $Packages = Resolve-Path -Path "..\configurations\winget\packages.json"
 
 Invoke-Expression -Command "winget import --import-file $Packages --ignore-unavailable"
 
-# TODO: Use Scoop to install Fira Code NF
-# Need to add the bucket to the system first downloading a font using Scoop.
-# More info on how to do so is available at https://github.com/matthewjberger/scoop-nerd-fonts
-
 # Will be using it till WinGet is mature & is capable enough to install much more software
 Write-Host "Installing Scoop Package Manager"
 Invoke-WebRequest -Uri "https://get.scoop.sh" | Invoke-Expression
@@ -50,7 +46,7 @@ Invoke-WebRequest -Uri "https://get.scoop.sh" | Invoke-Expression
 Write-Host "Installing software not available through WinGet"
 
 # Scoop makes it easier to install some software which are generally distributed through binaries
-Invoke-Expression -Command "scoop install neovim less bat hugo starship delta"
+Invoke-Expression -Command "scoop install neovim less bat hugo starship delta glow"
 
 # Add Scoop buckets to install additional software
 Invoke-Expression -Command "scoop bucket add nerd-fonts"
