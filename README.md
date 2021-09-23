@@ -34,6 +34,7 @@ Following is a list of everything you can find in this repo:
 - [Windows Package Manager CLI][Winget] (winget)
 - [Scoop - An alternative & mature package manager for Windows][Scoop]
 - [Less-Windows][Less]
+- [Glow][Glow]
 
 ## Setup Instructions
 
@@ -95,3 +96,4 @@ The project & all of it's source code is released under the T&Cs of the GPL-3.0 
 [Python-Poetry]: https://github.com/python-poetry/poetry
 [Scoop]: https://scoop.sh/
 [Less]: https://github.com/jftuga/less-Windows
+[Glow]: https://github.com/charmbracelet/glow
