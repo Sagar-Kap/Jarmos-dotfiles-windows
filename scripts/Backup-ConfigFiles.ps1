@@ -23,6 +23,7 @@ $RootDirectory = "E:\Projects\dotfiles"
 $ConfigDirectory = Resolve-Path -Path "$RootDirectory\configs"
 
 # TODO: Refactor the following section into a proper data structure
+$GlowConfigs = Resolve-Path -Path "$ENV:LOCALAPPDATA\glow\Config\glow.yml"
 $GitBashConfigs = Resolve-Path -Path "$ENV:USERPROFILE\.bashrc"
 $WTConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 $WingetConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json"
@@ -40,6 +41,9 @@ Copy-Item -Path $WTConfigurations -Destination "$ConfigDirectory\windows-termina
 
 Write-Host "--> Starship" -ForegroundColor Blue
 Copy-Item -Path $StarshipConfigurations -Destination "$ConfigDirectory\starship"
+
+Write-Host "--> Glow" -ForegroundColor Blue
+Copy-Item -Path $GlowConfigs -Destination "$ConfigDirectory\glow"
 
 Write-Host "--> Git" -ForegroundColor Blue
 Copy-Item -Path $GitConfigurations -Destination "$ConfigDirectory\git"
