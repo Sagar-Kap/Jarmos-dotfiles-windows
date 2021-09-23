@@ -50,6 +50,7 @@ You can find some of the configs I use in the list below. Don note, each of the 
 - [Starship](./configs/starship)
 - [Bat](./configs/bat)
 - [Winget](./configs/winget)
+- [Git Bash](./configs/git-bash)
 
 ## Support the Project
 
