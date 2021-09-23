@@ -20,7 +20,7 @@ Know what & how-to use these script at: https://github.com/Jarmos-san/dotfiles-w
 
 # Resolve path to the dotfiles directory
 $RootDirectory = "E:\Projects\dotfiles"
-$ConfigDirectory = Resolve-Path -Path "$RootDirectory\configurations"
+$ConfigDirectory = Resolve-Path -Path "$RootDirectory\configs"
 
 $WTConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 $WingetConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json"
