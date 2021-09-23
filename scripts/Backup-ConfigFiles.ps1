@@ -22,6 +22,7 @@ Know what & how-to use these script at: https://github.com/Jarmos-san/dotfiles-w
 $RootDirectory = "E:\Projects\dotfiles"
 $ConfigDirectory = Resolve-Path -Path "$RootDirectory\configs"
 
+# TODO: Refactor the following section into a proper data structure
 $GitBashConfigs = Resolve-Path -Path "$ENV:USERPROFILE\.bashrc"
 $WTConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 $WingetConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json"
