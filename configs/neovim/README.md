@@ -1,99 +1,49 @@
 # Neovim Configurations
 
-[Neovim](https://neovim.io) is a fork of the original [Vim](https://www.vim.org). If you are on an Unix-like system, chances are, it already comes pre-packaged with it.
+[Neovim](https://neovim.io) is a fork of the original [Vim](https://www.vim.org). Check out the official wiki on [how to install Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) for your preferred OS. For those of you who're using Windows 10, Neovim is available for download through [Chocolatey](https://chocolatey.org) and/or [Scoop](https://scoop.sh).
 
-But it's a different case with Windows users. While a GUI variant of Vim called GVim is available for Windows users, it's not as user-friendly as it is on Unix-like systems. And besides, Vim on Windows is way too buggy to be useful. Coupled with a buggy interface & unecessary configuration, it can be a bit of a struggle as well.
+Using Chocolatey:
 
-On a brighter note though, Neovim comes in as a viable alternative for Windows users. It's not as buggy as it's vanilla counterpart & comes pre-packaged with certain sensible default configuration settings as well. So, if you prefer  reading up more about it, the official documentations at [neovim.io](https://neovim.io/doc/general/) is a great place to start with.
+```powershell
+choco install neovim -y
+```
 
-But if you're already aware of Neovim & it's capabilities, and perhaps you're looking for some inspiration to configure your Neovim environment, this repo might benefit you in some ways.
+Using Scoop:
 
-But before you start with that, do note, Neovim can be configured with Lua right now. And since Neovim 0.5 which comes with an in-built Language Server Provider (LSP). The only caveat though, configuring LSP requires a bit of Lua scripting. With that in mind, you might notice I'm in the middle of migrating most of my Vim configurations from VimScript to LuaScript. Instead if you want to figure out how I had Neovim configured with VimScript, head over to [Jarmos-san/myvimconfig](https://github.com/Jarmos-san/myvimconfig). It's a backup of my older `init.vim` kept only for future reference.
+```powershell
+scoop install neovim
+```
+
+If you're wondering why I favor Neovim over Vim, check out this article I wrote - [Vim or Neovim? Here's Why You Should Use the Latter](https://jarmos.netlify.app/posts/vim-vs-neovim/). And if you're just not in a mood to read yet another article about Neovim then here's a TLDR:
+
+- Neovim is way more popular than Vim (subjective opinion?)
+- It's way faster than it's OG Vim version
+- The optional Lua scripting environment for users to ditch VimScript
+- Extended & improved "standard libray"
+- Sensible defaults available right out-of-the-box without requiring any configurations
+
+So, if you're pretty convinced to start using Neovim now, keep reading ahead on how to configure your Neovim environment as well. But before that, you might want to check out [Jarvim](https://github.com/Jarmos-san/Jarvim) which helps you set up a Neovim environment by invoking just one single command! Further, it comes pre-packaged with additional "sensible defaults" & offers an IDE-like experience right within Neovim.
+
+With Jarvim, you won't miss you favourite IDE nor will you have spend hours tinkering around with Vim configs!
 
 ## How to Configure Neovim with Lua
 
-The best eye-catching feature of Neovim is it's embedded Lua scripting environment. You can call Lua code within VimScript with the `lua` keyword or write Lua code directly to configure Neovim. If you need more info on how to migrate from using VimScript to Lua, do check out `:h lua.txt` as a great starting point.
+With Neovim v0.5 & above, the editor comes with improved support for configuring it using Lua. With this killer feature you know longer have to pull out your hair over the cryptic-looking VimL syntax. And the best of it all is, Lua is an optional environment & it's possible to keep your old VimScript configurations. Yet build on top it using Lua code instead.
 
-But briefly put, the `runtimepath` previously used within Neo(vim) hasn't changed. So, if you had scripts in there previously, they'll still work. Also, similar to `init.vim` you should leave an `init.lua` at it's usual place as well. So, for Windows users, you should leave the `init.lua` file at `%LOCALAPPDATA%\nvim`.
+If you need a primer on using Lua for Neovim, do refer to `:h lua.txt` and/or the [`nvim-lua-guide`](https://github.com/nanotee/nvim-lua-guide) repository for a comprehensive overview of the same.
 
-Additionally, while it's not a necessity, all Lua scripts should be placed inside a folder aptly named `lua`. These scripts are considered Lua modules & all scripts here is automatically "sourced". So, assuming there's a `settings.lua` script under the `lua` directory, you can call this script inside `init.lua` with the `require('settings')` syntax. For more information, refer to the `:h lua.txt` documentation.
+Similar to Vim, Neovim is also configured through "`runtimepath` files", so for reference on the same, check out `:h runtimepath`. On Windows, the user config location is available at `%LOCALAPPDATA%\nvim`. So, you should place your configurations at `%LOCALAPPDATA%\nvim\init.lua`.
 
-That said, I've setup my Lua directory as follows:
+Also, while not a necessity, all Lua scripts should be placed inside a folder aptly named `lua`. These scripts are considered Lua modules & all scripts here is automatically "sourced". So, assuming there's a `settings.lua` script under the `lua` directory, you can call this script inside `init.lua` with the `require('settings')` syntax. For more information on the same, refer to the `:h lua-require` documentation.
 
-```console
-%LOCALAPPDATA%/
-├─ nvim/
-│  ├─ after/
-│  ├─ lua/                      # Contains all Lua modules for configuring Neovim with
-│  │  ├─ keymaps.lua            # Module for configuring Vim keymaps
-│  │  ├─ lsp_config.lua         # Module for configuring the native in-built LSP
-│  │  ├─ plugins.lua            # Module for "installing" & configuring plugins for Neovim
-│  │  ├─ settings.lua           # Module for configuring all Neovim options
-│  │  ├─ statusline.lua         # Module for install & configuring the Statusline
-│  ├─ init.lua                  # Notice the .lua extension instead of the usual .vim extensions
-```
+TODO: Share my personal config file structure
 
-As you can see, configuring Neovim with Lua is pretty straightforward. It's almost like developing a product with an arbitrary programming language. Now you longer have to maintain a huge `.vimrc` file with 100s of lines of code.
+With Lua, its not as painful as it used to be once upon a time to configure Vim. Now the experience is very akin to developing a software with some arbitrary programming language itself!
 
 As usual, refer to `h: lua.txt` for more info on configuring Neovim with Lua instead of VimScript.
 
 ## My Neovim Configurations Explained
 
-As mentioned earlier, I configure Neovim with Lua instead of VimScript. It's much more flexible, is easily extensible & is easier to maintain. That said, I keep all user-defined customizations is Lua modules inside the `lua` directory. And import these modules using `require` statements in the `init.lua` file.
+My personal Neovim configuration is very similar to what [Jarvim](https://github.com/Jarmos-san/Jarvim) offers. So, do check it out if you want a comprehensive explanation of everything! But in case you want a overview here's a TLDR:
 
-Also, do note, the `init.lua` should be placed under `%LOCALAPPDATA%\nvim` & not under `lua\` like the other modules. Besides that, the order of importing the modules should also be taken care of. So, in my case, the `init.lua` file contains the following lines of code:
-
-```lua
-require('settings')
-require('plugins')
-require('lsp_config')
-require('statusline')
-```
-
-**NOTE**: Notice the lack of `.lua` extensions. Neovim knows to look inside the `lua` directory when importing the modules mentioned in the `init.lua`. So, when loading my `init.lua`, Neovim will first import the `settings.lua` followed by the `plugins.lua` & so on.
-
-## Plugins Used
-
-I try to keep my `init.lua` file as minimal as possible, hence my list of plugins are quite limited as well. Some of the plugins are an absolute necessity for me & are one which I can't live without.
-
-That said, following are the list of plugins I currently use with my Neovim setup:
-
-- [npxbr/gruvbox.nvim](https://github.com/npxbr/gruvbox.nvim) for a retro colorscheme which is quite warm & nicer on the eyes.
-- [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) for configuring the built-in LSP in Neovim.
-- [itchyny/lightline.vim](https://github.com/itchyny/lightline.vim) for a nice & sleek statusline which also supports the Gruvbox colorscheme out-of-the-box. This plugin is subject to removal when I can write my own statusline later on.
-- [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) which also depends on two other plugins, namely; [nvim-lua/popup.nvim](https://github.com/nvim-lua/popup.nvim) & [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim) which `packer.nvim` will download automatically if configured properly.
-
-More plugins like `nvim-treesitter`, `nvim-completion` & such are yet to be configured later on.
-
-## Keymapping Used
-
-The keymaps I use with my Neovim configurations are constantly evolving over
-time. So, do keep an out for potential changes in the future!
-
-That said, mappings keys in Neovim has never been easier & more intuitive than
-ever before! With the optional Lua runtime, you can write a function over the
-"_keymap_" function & use it conveniently for the remaps.
-
-Need a refresher on how to remap keys using Lua? Check out the "_Defining
-Mappings_" section of the [Neovim Lua
-Guide](https://github.com/nanotee/nvim-lua-guide#defining-mappings). Go through
-that reference & once you do, come back to check out how I use my remaps below:
-
-- First off remap the `<Leader>` key to `<Space>` with `vim.g.mapleader = ' '`
-  for easier accessibility. How accessible you might wonder? You'll see soon!
-
-- When using Neovim switching between Buffers should be second-nature. So,
-  `map('n', '<Leader><Leader>', ':b#<CR>')` allows me to switch buffers by
-  pressing `<Space>` twice in quick succession. I'm pretty sure there might be a
-  better way to switch buffers, so do let me know if you're aware of it.
-
-- The next set of key mappings is meant for navigating between split windows.
-  So, you should be able to navigate to the bottom most windows by pressing
-  `<C-j>` easily. Here's how to enable Neovim to do so `map('n', '<C-j>',
-  '<C-w>j', { noremap = false })`. You can use the remaining Vim navigation keys
-  (`h`, `k`, `l`) to achieve the remaining navigations as well.
-
-- Similar to navigating between split windows, resizing of the windows can be
-  achieved as well.
-
-**TODO**: Figure out a better way to explain how to configure the keymaps.
+TODO: Write a somewhat detailed TLDR about my personal Neovim configurations
