@@ -2,7 +2,7 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Jarmos-san/dotfiles-windows?label=Repository%20Size&logo=github&style=flat-square) ![GitHub repo file count](https://img.shields.io/github/directory-file-count/Jarmos-san/dotfiles-windows?label=%23%20of%20Files&logo=github&style=flat-square) ![GitHub](https://img.shields.io/github/license/Jarmos-san/dotfiles-windows?label=Licensed%20Under&logo=github&style=flat-square) ![Twitter Follow](https://img.shields.io/twitter/follow/Jarmosan?style=social)
 
-This directory holds all the scripts, config files & among other useful stuff I use on a daily basis. I use these are stuff to setup my development environment on a Windows machine. And as of the latest commit, the directory contains configurations for the software(s) and other stuff like font(s) & scripts for automation.
+This directory holds all the scripts, config files & among other useful stuff I use on a daily basis. I use these are stuff to setup my development environment on a Windows machine. And as of the latest commit, the directory contains configs for the software(s) and other stuff like font(s) & scripts for automation.
 
 Following is a list of everything you can find in this repo:
 
@@ -40,14 +40,15 @@ TODO: Write a bootstrap script to install all the necessities & so on.
 
 ## Configuration Files
 
-You can find some of the configurations I use in the list below. Don note, each of the folders containing the config files has an accompanying `README` with further instructions to follow. So, do read them thoroughly before copying any of the configurations;
+You can find some of the configs I use in the list below. Don note, each of the folders containing the config files has an accompanying `README` with further instructions to follow. So, do read them thoroughly before copying any of the configs;
 
-- [Windows Terminal](./configurations/windows-terminal)
-- [Windows PowerShell](./configurations/windows-powershell)
-- [Neovim](./configurations/neovim)
-- [Git](./configurations/git)
-- [Starship](./configurations/starship)
-- [Winget](./configurations/winget)
+- [Windows Terminal](./configs/windows-terminal)
+- [Windows PowerShell](./configs/windows-powershell)
+- [Neovim](./configs/neovim)
+- [Git](./configs/git)
+- [Starship](./configs/starship)
+- [Bat](./configs/bat)
+- [Winget](./configs/winget)
 
 <!-- Reference Links -->
 [Windows Terminal]: https://github.com/microsoft/terminal
