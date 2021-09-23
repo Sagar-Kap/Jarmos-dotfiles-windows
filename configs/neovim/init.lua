@@ -139,6 +139,67 @@ packer.startup(function()
     --     config = require('conf.indentline').config
     -- }
 
+    -- use { -- Neovim native LSP
+    --      'neovim/nvim-lspconfig',
+    --      opt = true,
+    --      event = { 'BufRead' },
+    --      setup = require(conf.lsp).setup,
+    --      config = require(conf.lsp).config,
+    --      requires = {
+    --          { 'nvim-lua/lsp-status.nvim', opt = true },
+    --          { 'nvim-lua/lsp_extensions.nvim', opt = true },
+    --      },
+    --  }
+
+    -- use { -- Snippet support for both LSP & Neovim
+    --      'L3MON4D3/LuaSnip',
+    --      opt = true,
+    --      event = { 'InsertEnter' },
+    --      config = function()
+    --          require 'conf.snippets'
+    --      end
+    --      requires = { 'rafamadriz/friendly-snippets', opt = true },
+    --  }
+
+    -- use { -- telescope.nvim - A very useful plugin
+    --      'nvim-telescope/telescope.nvim',
+    --      module = 'telescope',
+    --      setup = require('conf.telescope').setup,
+    --      config = require('conf.telescope').config,
+    --      requires = {
+    --          { 'nvim-lua/popup.nvim' },
+    --          { 'nvim-lua/plenary.nvim'}
+    --      },
+    --  }
+
+    -- use { -- Treesitter plugin for Neovim
+    --      'nvim-treesitter/nvim-treesitter',
+    --      event = { 'BufRead', 'BufNewFile' },
+    --      requires = {
+    --          {
+    --              'nvim-treesitter/nvim-treesitter-refactor',
+    --              after = 'nvim-treesitter'
+    --          },
+    --          {
+    --              'nvim-treesitter/nvim-treesitter-textobjects',
+    --              after = 'nvim-treesitter'
+    --          },
+    --          {
+    --              'lewis6991/spellsitter.nvim',
+    --              after = 'nvim-treesitter',
+    --              config = function()
+    --                  require('spellsitter').setup {
+    --                      hl = 'SpellBad',
+    --                      captures = {},
+    --                  }
+    --              end,
+    --              disable = true  -- Not working?
+    --          },
+    --      },
+    --      run = ':TSUpdate',
+    --      config = require('conf.treesitter').config,
+    --  }
+
 end)
 
 -----------------------------------------------------------------------------//
