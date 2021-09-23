@@ -33,6 +33,7 @@ Following is a list of everything you can find in this repo:
 - [Fira Code Nerd Font][Fira Code Nerd Font] (patched Nerd Fonts with programming ligatures)
 - [Windows Package Manager CLI][Winget] (winget)
 - [Scoop - An alternative & mature package manager for Windows][Scoop]
+- [Less-Windows][Less]
 
 ## Setup Instructions
 
@@ -49,6 +50,27 @@ You can find some of the configs I use in the list below. Don note, each of the 
 - [Starship](./configs/starship)
 - [Bat](./configs/bat)
 - [Winget](./configs/winget)
+
+## Support the Project
+
+This project is maintained with an open-source license which means you're free to copy and/or distribute any sections of this project without repurcussions. But maintaining a project on the sidelines is tough business. So, any helping hands you can provide is a major contribution towards keeping the project intact. Hence, here's how you can help & support the project:
+
+1. Report issues, broken links and/or bugs you come across while using anything mentioned in the repository.
+
+2. Spread the word, let people know about the project so who knows how this project might prove helpful to them.
+
+3. Considering sending a tip or two to financially support so that I can keep working full-time to produce more quality open-source projects.
+
+## Acknowledgements
+
+The projects & many of the configurations you see here wouldn't have been possible without inspirations from other projects. So, following are some of such projects which inspired to work on this project:
+
+- Mathias Bynens's [dotfiles](https://mths.be/dotfiles)
+- Salomon Popp's [dotfiles](https://github.com/disrupted/dotfiles)
+
+## Licensing Terms & Conditions
+
+The project & all of it's source code is released under the T&Cs of the GPL-3.0 license. For more info on the same refer to [LICENSE](./LICENSE).
 
 <!-- Reference Links -->
 [Windows Terminal]: https://github.com/microsoft/terminal
@@ -71,3 +93,4 @@ You can find some of the configs I use in the list below. Don note, each of the 
 [Mozilla Thunderbird]: https://www.thunderbird.net/en-US/
 [Python-Poetry]: https://github.com/python-poetry/poetry
 [Scoop]: https://scoop.sh/
+[Less]: https://github.com/jftuga/less-Windows
