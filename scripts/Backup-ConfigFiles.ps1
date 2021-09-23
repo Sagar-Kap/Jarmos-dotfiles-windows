@@ -22,6 +22,7 @@ Know what & how-to use these script at: https://github.com/Jarmos-san/dotfiles-w
 $RootDirectory = "E:\Projects\dotfiles"
 $ConfigDirectory = Resolve-Path -Path "$RootDirectory\configs"
 
+$GitBashConfigs = Resolve-Path -Path "$ENV:USERPROFILE\.bashrc"
 $WTConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 $WingetConfigurations = Resolve-Path -Path "$ENV:LOCALAPPDATA\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json"
 $StarshipConfigurations = Resolve-Path -Path "$ENV:USERPROFILE\.starship\starship.toml"
@@ -51,8 +52,11 @@ Copy-Item -Path $NeovimConfigurations -Recurse -Force -Destination "$ConfigDirec
 Write-Host "--> Winget CLI" -ForegroundColor Blue
 Copy-Item -Path $WingetConfigurations -Destination "$ConfigDirectory\winget"
 
-Write-Host "--> Bat: A `"cat`" with wings!`n" -ForegroundColor Blue
+Write-Host "--> Bat: A `"cat`" with wings!" -ForegroundColor Blue
 Copy-Item -Path $BatConfigurations -Destination "$ConfigDirectory\bat"
+
+Write-Host "--> Git Bash`n" -ForegroundColor Blue
+Copy-Item -Path $GitBashConfigs -Destination "$ConfigDirectory\git-bash"
 
 Write-Host "All config files copied to local repository! `n" -ForegroundColor DarkMagenta
 
