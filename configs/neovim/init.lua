@@ -118,11 +118,11 @@ packer.startup(function()
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    -- use { -- Plugin for toggling comments
-    --     'b3nj5m1n/kommentary',
-    --     event = { 'BufRead', 'BufNewFile' },
-    --     config = require('conf.kommentary').config,
-    -- }
+    use { -- Plugin for toggling comments
+        'b3nj5m1n/kommentary',
+        event = { 'BufRead', 'BufNewFile' },
+        config = require('conf.kommentary').config,
+    }
 
     -- use { -- File explorer plugin
     --     'kyazdani42/nvim-tree.lua',
