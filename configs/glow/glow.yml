@@ -8,10 +8,10 @@ local: true
 # Disable mouse support in the terminal
 mouse: false
 
-# NOTE: Using a pager breaks the rendering for now.
-# Refer to https://github.com/charmbracelet/glow/issues/296 for more info
+# NOTE: Using a less.exe on Windows breaks the rendering
+# Refer to https://github.com/charmbracelet/glow/issues/296#issuecomment-926165685 for more solution
 # Use a pager to display the Markdown content
-# pager: true
+pager: true
 
 # Wrap content at a certain character limit
 width: 90
