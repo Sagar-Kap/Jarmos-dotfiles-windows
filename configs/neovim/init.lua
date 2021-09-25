@@ -124,20 +124,20 @@ packer.startup(function()
         config = require('conf.kommentary').config,
     }
 
-    -- use { -- File explorer plugin
-    --     'kyazdani42/nvim-tree.lua',
-    --     opt = true,
-    --     cmd = { 'NvimTreeOpen', 'NvimTreeToggle' },
-    --     setup = require('conf.nvim_tree').setup,
-    --     config = require('conf.nvim_tree').config,
-    --     requires = { 'kyazdani42/nvim-web-devicons' },
-    -- }
+    use { -- File explorer plugin
+        'kyazdani42/nvim-tree.lua',
+        opt = true,
+        cmd = { 'NvimTreeOpen', 'NvimTreeToggle' },
+        setup = require('conf.nvim_tree').setup,
+        config = require('conf.nvim_tree').config,
+        requires = { 'kyazdani42/nvim-web-devicons' },
+    }
 
-    -- use { -- Visualize indent guide lines
-    --     'lukas-reineke/indent-blankline.nvim',
-    --     event = { 'BufRead' },
-    --     config = require('conf.indentline').config
-    -- }
+    use { -- Visualize indent guide lines
+        'lukas-reineke/indent-blankline.nvim',
+        event = { 'BufRead' },
+        config = require('conf.indentline').config
+    }
 
     -- use { -- Neovim native LSP
     --      'neovim/nvim-lspconfig',
