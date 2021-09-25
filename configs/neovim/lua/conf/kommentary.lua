@@ -6,10 +6,8 @@
 
 local M = {}
 
-local kommentary = require('kommentary.config')
-
 function M.config()
-    kommentary.configure_language('default', {
+    require('kommentary.config').configure_language('default', {
         prefer_single_line_comments = true,
     })
 end

@@ -161,16 +161,16 @@ packer.startup(function()
     --      requires = { 'rafamadriz/friendly-snippets', opt = true },
     --  }
 
-    -- use { -- telescope.nvim - A very useful plugin
-    --      'nvim-telescope/telescope.nvim',
-    --      module = 'telescope',
-    --      setup = require('conf.telescope').setup,
-    --      config = require('conf.telescope').config,
-    --      requires = {
-    --          { 'nvim-lua/popup.nvim' },
-    --          { 'nvim-lua/plenary.nvim'}
-    --      },
-    --  }
+    use { -- telescope.nvim - A very useful plugin
+         'nvim-telescope/telescope.nvim',
+         -- TODO: Customize nvim-telescope as per requirements later on
+         -- setup = require('conf.telescope').setup,
+         config = require('conf.telescope').config,
+         requires = {
+             { 'nvim-lua/popup.nvim' },
+             { 'nvim-lua/plenary.nvim'}
+         },
+     }
 
     -- use { -- Treesitter plugin for Neovim
     --      'nvim-treesitter/nvim-treesitter',
