@@ -39,9 +39,15 @@ $Packages = Resolve-Path -Path "..\configurations\winget\packages.json"
 
 Invoke-Expression -Command "winget import --import-file $Packages --ignore-unavailable"
 
+# TODO: Remove scoop completely in favor of Chocolatey
 # Will be using it till WinGet is mature & is capable enough to install much more software
 Write-Host "Installing Scoop Package Manager"
 Invoke-WebRequest -Uri "https://get.scoop.sh" | Invoke-Expression
+
+Write-host "Installing Chocolatey Package Manager"
+(Invoke-WebRequest -Uri "https://community.chocolatey.org/install.ps1").Content | Invoke-Expression
+
+# TODO: Gradually replace downloading all software using Chotocolatey
 
 Write-Host "Installing software not available through WinGet"
 
