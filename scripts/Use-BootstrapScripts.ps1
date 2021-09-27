@@ -47,12 +47,13 @@ Invoke-WebRequest -Uri "https://get.scoop.sh" | Invoke-Expression
 Write-host "Installing Chocolatey Package Manager"
 (Invoke-WebRequest -Uri "https://community.chocolatey.org/install.ps1").Content | Invoke-Expression
 
-# TODO: Gradually replace downloading all software using Chotocolatey
-
 Write-Host "Installing software not available through WinGet"
 
 # Install aria2 first so that the downloads afterwards are much faster
 Invoke-Expression -Command "scoop install aria2"
+
+# TODO: Gradually replace downloading all software using Chotocolatey
+Invoke-Expression -Command "choco install neovim less bat hugo starship delta glow mingw -y"
 
 # Scoop makes it easier to install some software which are generally distributed through binaries
 Invoke-Expression -Command "scoop install neovim less bat hugo starship delta glow llvm"
