@@ -45,8 +45,11 @@ Invoke-WebRequest -Uri "https://get.scoop.sh" | Invoke-Expression
 
 Write-Host "Installing software not available through WinGet"
 
+# Install aria2 first so that the downloads afterwards are much faster
+Invoke-Expression -Command "scoop install aria2"
+
 # Scoop makes it easier to install some software which are generally distributed through binaries
-Invoke-Expression -Command "scoop install neovim less bat hugo starship delta glow"
+Invoke-Expression -Command "scoop install neovim less bat hugo starship delta glow llvm"
 
 # Add Scoop buckets to install additional software
 Invoke-Expression -Command "scoop bucket add nerd-fonts"
