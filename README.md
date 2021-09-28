@@ -14,7 +14,8 @@ Following is a list of everything you can find in this repo:
 - [Visual Studio Code][VSCode]
 - [Python Programming Language][Python]
 - [NodeJS][NodeJS]
-- [MongoDB][MongoDB] (can't automate it's installation because of this: [Winget Issue #874][Winget Issue #874])
+- [Windows Subsystem for Linux (WSL)][WSL]
+<!-- - [MongoDB][MongoDB] (can't automate it's installation because of this: [Winget Issue #874][Winget Issue #874]) -->
 - [GNU Privacy Guard][GPG]
 - [Poetry][Python-Poetry]
 <!-- - [Docker][Docker] -->
@@ -51,7 +52,7 @@ You can find some of the configs I use in the list below. Don note, each of the 
 - [Starship](./configs/starship)
 - [Bat](./configs/bat)
 - [Winget](./configs/winget)
-- [Git Bash](./configs/git-bash)
+- [WSL](./configs/wsl)
 
 ## Support the Project
 
@@ -97,3 +98,4 @@ The project & all of it's source code is released under the T&Cs of the GPL-3.0 
 [Scoop]: https://scoop.sh/
 [Less]: https://github.com/jftuga/less-Windows
 [Glow]: https://github.com/charmbracelet/glow
+[WSL]: https://docs.microsoft.com/en-us/windows/wsl/
