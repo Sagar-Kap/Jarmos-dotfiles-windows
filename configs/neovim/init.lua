@@ -8,10 +8,6 @@ local execute = vim.api.nvim_command
 
 local map = utils.map       -- Alias for the map() function
 
--- Miscellaneous Neovim stuff that cant be programmed with native Lua code yet {{{2
-cmd [[ colorscheme gruvbox ]]
-cmd [[ highlight Normal guibg=NONE ctermbg=NONE ]]
-
 -----------------------------------------------------------------------------//
 -- Generic Neovim Configurations {{{1
 -----------------------------------------------------------------------------//
@@ -79,6 +75,10 @@ opt.fillchars = {
 -- Wild & File-globbing patterns {{{2
 opt.pumblend = 7    -- Make popup window transclucent
 opt.pumheight = 20  -- Limit the number of autocomplete items shown
+
+-- Miscellaneous Neovim stuff that cant be programmed with native Lua code yet {{{2
+cmd [[ colorscheme gruvbox ]]
+cmd [[ highlight Normal guibg=NONE ctermbg=NONE ]]
 
 -----------------------------------------------------------------------------//
 -- Plugins {{{1
@@ -172,33 +172,34 @@ packer.startup(function()
          },
      }
 
+    -- No clue what's wrong with it, nothing's working correctly for now
     -- use { -- Treesitter plugin for Neovim
-    --      'nvim-treesitter/nvim-treesitter',
-    --      event = { 'BufRead', 'BufNewFile' },
-    --      requires = {
-    --          {
-    --              'nvim-treesitter/nvim-treesitter-refactor',
-    --              after = 'nvim-treesitter'
-    --          },
-    --          {
-    --              'nvim-treesitter/nvim-treesitter-textobjects',
-    --              after = 'nvim-treesitter'
-    --          },
-    --          {
-    --              'lewis6991/spellsitter.nvim',
-    --              after = 'nvim-treesitter',
-    --              config = function()
-    --                  require('spellsitter').setup {
-    --                      hl = 'SpellBad',
-    --                      captures = {},
-    --                  }
-    --              end,
-    --              disable = true  -- Not working?
-    --          },
-    --      },
-    --      run = ':TSUpdate',
-    --      config = require('conf.treesitter').config,
-    --  }
+    --     'nvim-treesitter/nvim-treesitter',
+    --     event = { 'BufRead', 'BufNewFile' },
+    --     config = require('conf.treesitter').config,
+    --     requires = {
+    --         {
+    --             'nvim-treesitter/nvim-treesitter-refactor',
+    --             after = 'nvim-treesitter'
+    --         },
+    --         {
+    --             'nvim-treesitter/nvim-treesitter-textobjects',
+    --             after = 'nvim-treesitter'
+    --         },
+    --         {
+    --             'lewis6991/spellsitter.nvim',
+    --             after = 'nvim-treesitter',
+    --             config = function()
+    --                 require('spellsitter').setup {
+    --                     hl = 'SpellBad',
+    --                     captures = {},
+    --                 }
+    --             end,
+    --             disable = true  -- Not working?
+    --         },
+    --     },
+    --     run = ':TSUpdate',
+    -- }
 
 end)
 

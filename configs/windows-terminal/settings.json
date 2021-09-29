@@ -19,6 +19,15 @@
     },
     "list": [
       {
+        "commandline": "wsl",
+        "tabTitle": "Ubuntu-20.04",
+        "suppressApplicationTitle": true,
+        "icon": "%USERPROFILE%\\Pictures\\Saved Pictures\\ubuntu_32px.png",
+        "guid": "{9523164a-6856-4d09-b7dd-feb9390b8f9f}",
+        "hidden": false,
+        "name": "Ubuntu-20.04"
+      },
+      {
         "commandline": "powershell.exe",
         "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
         "hidden": false,
@@ -29,12 +38,6 @@
         "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
         "hidden": true,
         "name": "Command Prompt"
-      },
-      {
-        "guid": "{905ee199-8709-449b-b0f1-5ac7ea8638b9}",
-        "commandline": "py.exe",
-        "icon": "%PROGRAMFILES(x86)%\\Python38-32\\python.png",
-        "name": "Python3"
       },
       {
         "guid": "{c945ee96-c0de-4703-af1e-eade65e1727c}",

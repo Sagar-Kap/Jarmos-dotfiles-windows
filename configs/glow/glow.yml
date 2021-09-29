@@ -14,4 +14,4 @@ mouse: false
 pager: true
 
 # Wrap content at a certain character limit
-width: 90
+width: 150
