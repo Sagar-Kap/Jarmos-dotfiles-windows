@@ -41,31 +41,18 @@ Invoke-Expression -Command "winget import --import-file $Packages --ignore-unava
 
 # TODO: Remove scoop completely in favor of Chocolatey
 # Will be using it till WinGet is mature & is capable enough to install much more software
-Write-Host "Installing Scoop Package Manager"
-Invoke-WebRequest -Uri "https://get.scoop.sh" | Invoke-Expression
-
-Write-host "Installing Chocolatey Package Manager"
+Write-Host "Installing Chocolatey Package Manager"
 (Invoke-WebRequest -Uri "https://community.chocolatey.org/install.ps1").Content | Invoke-Expression
 
 Write-Host "Installing software not available through WinGet"
 
-# Install aria2 first so that the downloads afterwards are much faster
-Invoke-Expression -Command "scoop install aria2"
-
-# TODO: Gradually replace downloading all software using Chotocolatey
-Invoke-Expression -Command "choco install neovim less bat hugo starship delta glow mingw -y"
-
-# Scoop makes it easier to install some software which are generally distributed through binaries
-Invoke-Expression -Command "scoop install neovim less bat hugo starship delta glow llvm"
-
-# Add Scoop buckets to install additional software
-Invoke-Expression -Command "scoop bucket add nerd-fonts"
-
-Write-Host "Installing Fira Code NF"
-Invoke-Expression -Command "scoop install firacode"
+Invoke-Expression -Command "choco install neovim less bat hugo starship delta glow mingw firacodenf -y"
 
 Write-Host "Installing `"pipx`" `- A tool for installing Python CLI tools!"
 Invoke-Expression -Command "py -m pip install --upgrade pipx"
+
+Write-Host "Installing Python CLI tools"
+Invoke-Expression -Command "pipx install poetry pre-commit"
 
 Write-Host "Installing `"yarn`" `- An alternate package manager for frontend projects!"
 Invoke-Expression -Command "npm install --global yarn"
