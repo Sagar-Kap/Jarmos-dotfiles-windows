@@ -23,7 +23,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
  wsl.exe --set-default-version 2
  ```
 5. Download Ubuntu for WSL from the [Microsoft Store](https://www.microsoft.com/store/productId/9NBLGGH4MSV6). 
-![Ubuntu from Canonical group on Microsoft Store](./dotfiles-windows/assets/ubuntu.png)
+![Ubuntu from Canonical group on Microsoft Store](/dotfiles-windows/assets/ubuntu.png)
 
 
  There you go, all set up with WSL. 👍
