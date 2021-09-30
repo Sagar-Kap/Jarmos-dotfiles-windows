@@ -25,5 +25,4 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 5. Download Ubuntu for WSL from the [Microsoft Store](https://www.microsoft.com/store/productId/9NBLGGH4MSV6). 
 ![Ubuntu from Canonical group on Microsoft Store](/assets/ubuntu.png)
 
-
  There you go, all set up with WSL. 👍
